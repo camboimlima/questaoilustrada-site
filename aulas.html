@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Aulas · Questão Ilustrada</title>
+<meta name="description" content="Vídeos de cada capítulo da Geometria Ilustrada.">
+<link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Destino dos QR codes da apostila. Para ligar um vídeo, preencha o link em VIDEOS abaixo. */
+:root{--bg:#0D0E0F;--bg2:#141618;--giz:#F4F1E8;--tx:#D9D6CC;--mut:#9AA1A6;--az:#8CC8E6;--line:rgba(244,241,232,.10);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.55 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100svh;
+  background-image:radial-gradient(ellipse 70% 40% at 50% 0%,rgba(140,200,230,.12),transparent)}
+main{max-width:480px;margin:0 auto;padding:48px max(20px,env(safe-area-inset-right,0px)) calc(40px + env(safe-area-inset-bottom,0px)) max(20px,env(safe-area-inset-left,0px));display:flex;flex-direction:column;align-items:center;text-align:center}
+a{color:inherit;text-decoration:none}
+.logo{width:72px;height:72px}
+.tag{margin-top:22px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--az)}
+h1{font:800 27px/1.15 Sora,Inter,sans-serif;color:var(--giz);margin:8px 0 0;letter-spacing:-.02em;text-wrap:balance}
+.card{width:100%;margin-top:26px;background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px 20px}
+.card b{color:var(--giz);font-size:17px}
+.card p{margin:8px 0 0;color:var(--mut);font-size:15px}
+.play{width:56px;height:56px;margin:0 auto 12px;border-radius:50%;border:2px dashed rgba(140,200,230,.6);display:grid;place-items:center}
+.play::after{content:"";border-left:16px solid var(--az);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.btns{width:100%;display:grid;gap:10px;margin-top:18px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:15px 18px;border-radius:14px;font-weight:700;font-size:15.5px}
+.btn.az{background:var(--az);color:#0D0E0F}
+.btn.ln{border:1px solid rgba(140,200,230,.45);color:var(--giz)}
+.lista{width:100%;margin-top:30px;text-align:left}
+.lista h2{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--az);margin:0 0 10px}
+.lista a{display:flex;justify-content:space-between;gap:12px;padding:11px 2px;border-bottom:1px solid var(--line);font-size:14.5px}
+.lista a span:last-child{color:var(--mut);font-size:12.5px;white-space:nowrap}
+.lista a.ok span:last-child{color:var(--az)}
+footer{margin-top:30px;font-size:12px;color:#6c7378}
+</style>
+</head>
+<body>
+<main>
+  <svg class="logo" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-label="Questão Ilustrada" role="img"><rect x="17" y="52" width="66" height="26" rx="5" transform="rotate(-4 50 65)" fill="#8CC8E6" opacity=".34"/><rect x="6" y="6" width="88" height="88" rx="18" stroke="#F4F1E8" stroke-width="5"/><path d="M26 74 L74 74 L26 26 Z" stroke="#F4F1E8" stroke-width="5"/><path d="M74 74 L26 26" stroke="#8CC8E6" stroke-width="6"/><path d="M26 62 L38 62 L38 74" stroke="#F4F1E8" stroke-width="3"/></svg>
+  <div class="tag" id="tag">Geometria Ilustrada</div>
+  <h1 id="tit">Vídeos dos capítulos</h1>
+  <div class="card" id="card">
+    <div class="play" aria-hidden="true"></div>
+    <b>Vídeo deste capítulo em breve</b>
+    <p>Estamos gravando as resoluções e demonstrações em lousa animada. Este mesmo QR code vai abrir o vídeo assim que ele sair.</p>
+  </div>
+  <div class="btns">
+    <a class="btn az" href="https://www.youtube.com/@questaoilustrada" target="_blank" rel="noopener">Ver os vídeos do canal no YouTube</a>
+    <a class="btn ln" href="https://www.instagram.com/questaoilustrada/" target="_blank" rel="noopener">Seguir no Instagram para saber quando sair</a>
+  </div>
+  <nav class="lista" aria-label="Todos os capítulos"><h2>Todos os capítulos</h2><div id="lista"></div></nav>
+  <footer><a href="/">questaoilustrada.com</a></footer>
+</main>
+<script>
+/* Quando um vídeo existir, cole o link entre as aspas do capítulo. Ex.: f1c1:'https://youtu.be/XXXX' */
+const VIDEOS={
+  f1c1:'', f1c2:'', f1c3:'', f1c4:'', f1c5:'', f1c6:'', f1c7:'',
+  f2c1:'', f2c2:'', f2c3:'', f2c4:'',
+  f3c1:'', f3c2:''
+};
+const CAPS={
+  f1c1:['Frente 1 · Capítulo 1','Teorema de Pitágoras'],
+  f1c2:['Frente 1 · Capítulo 2','Ângulos, paralelas, triângulos e polígonos'],
+  f1c3:['Frente 1 · Capítulo 3','Circunferência: ângulos, cordas e secantes'],
+  f1c4:['Frente 1 · Capítulo 4','Tales, semelhança e base média'],
+  f1c5:['Frente 1 · Capítulo 5','Desigualdade triangular e pontos notáveis'],
+  f1c6:['Frente 1 · Capítulo 6','Áreas de quadriláteros e triângulos'],
+  f1c7:['Frente 1 · Capítulo 7','Áreas de figuras circulares'],
+  f2c1:['Frente 2 · Capítulo 1','Posições relativas, paralelepípedos e prismas'],
+  f2c2:['Frente 2 · Capítulo 2','Poliedros e pirâmides'],
+  f2c3:['Frente 2 · Capítulo 3','Cilindros e cones'],
+  f2c4:['Frente 2 · Capítulo 4','Esferas, inscrição de sólidos e troncos'],
+  f3c1:['Frente 3 · Capítulo 1','Trigonometria no triângulo retângulo'],
+  f3c2:['Frente 3 · Capítulo 2','Lei dos senos e lei dos cossenos']
+};
+const c=(new URLSearchParams(location.search).get('c')||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+if(VIDEOS[c]){location.replace(VIDEOS[c])}
+if(CAPS[c]){document.getElementById('tag').textContent=CAPS[c][0];document.getElementById('tit').textContent=CAPS[c][1];document.title=CAPS[c][1]+' · Questão Ilustrada'}
+else{document.getElementById('card').querySelector('b').textContent='Vídeos em produção'}
+document.getElementById('lista').innerHTML=Object.keys(CAPS).map(k=>`<a href="${VIDEOS[k]||'?c='+k}" class="${VIDEOS[k]?'ok':''}"><span>${CAPS[k][0].replace('Frente ','F').replace(' · Capítulo ','.')} · ${CAPS[k][1]}</span><span>${VIDEOS[k]?'assistir':'em breve'}</span></a>`).join('');
+</script>
+</body>
+</html>
