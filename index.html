@@ -125,6 +125,22 @@ footer{margin-top:auto;padding-top:40px;font-size:12px;color:#6c7378}
 .aviso.on{transform:translate(-50%,0);opacity:1}
 @media(max-width:360px){.curso b{font-size:12px}.curso .st{font-size:9.5px;padding:3px 6px}.rede span{font-size:13px}}
 @media(prefers-reduced-motion:reduce){.anim *{animation:none!important}.anim .ent{opacity:1;transform:none;filter:none}.anim .lg .t,.anim .curso .dr,.anim .fig .t{stroke-dashoffset:0}.anim h1 span{background-size:100% 100%}}
+
+/* destaque: o que mais cai */
+.mc{position:relative;display:block;width:100%;margin-top:26px;padding:18px 18px 16px;border-radius:22px;background:linear-gradient(150deg,#1A2B35,#141618 65%);border:1.5px solid rgba(140,200,230,.7);box-shadow:0 18px 50px -14px rgba(140,200,230,.45);overflow:hidden;isolation:isolate;cursor:pointer}
+.mc::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(140,200,230,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(140,200,230,.07) 1px,transparent 1px);background-size:22px 22px;-webkit-mask-image:linear-gradient(120deg,transparent 45%,#000);mask-image:linear-gradient(120deg,transparent 45%,#000);z-index:-1}
+.mc .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:var(--az);color:#0D0E0F;border-radius:999px;padding:4px 10px}
+.mc b.t{display:block;margin-top:10px;font-family:Sora,Inter,sans-serif;font-weight:800;font-size:clamp(20px,5.4vw,25px);line-height:1.15;color:var(--giz)}
+.mc b.t span{background:linear-gradient(transparent 58%,rgba(140,200,230,.42) 58%,rgba(140,200,230,.42) 92%,transparent 92%)}
+.mc p{margin:8px 0 0;font-size:14px;color:var(--tx);max-width:34ch}
+.mc .lin{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.mc .pr{font-family:Sora,Inter,sans-serif;font-weight:800;font-size:22px;color:var(--giz);white-space:nowrap}.mc .pr s{font:500 12px Inter,sans-serif;color:var(--mut);margin-right:5px}
+.mc .go{display:inline-flex;align-items:center;gap:8px;background:var(--az);color:#0D0E0F;font-weight:700;font-size:14px;border-radius:12px;padding:10px 14px}
+.mc .go i{font-style:normal}
+.mc .play{position:absolute;right:16px;top:14px;width:44px;height:44px;border-radius:50%;border:2px solid rgba(140,200,230,.8);display:grid;place-items:center}
+.mc .play::after{content:"";border-left:13px solid var(--az);border-top:8px solid transparent;border-bottom:8px solid transparent;margin-left:3px}
+.mc .fn{display:block;margin-top:10px;font-size:11px;color:var(--mut)}
+.mc::after{content:"";position:absolute;inset:-40% auto -40% -60%;width:35%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-18deg);z-index:-1;animation:brilho 5s ease-in-out 2.4s infinite}
 </style>
 
 <div class="fundo" aria-hidden="true">
@@ -149,6 +165,14 @@ footer{margin-top:auto;padding-top:40px;font-size:12px;color:#6c7378}
   <div class="arroba ent" style="--d:.2s">@questaoilustrada</div>
   <p class="bio ent" style="--d:.28s">Matemática de vestibular explicada no desenho. Fuvest, Unicamp, Unesp e ENEM.</p>
   <div class="dica ent" style="--d:.36s"><svg viewBox="0 0 24 24" fill="none" stroke="#8CC8E6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11V5a2 2 0 0 1 4 0v5"/><path d="M13 10a2 2 0 0 1 4 0v1a2 2 0 0 1 4 0v4a7 7 0 0 1-7 7h-1a7 7 0 0 1-5.6-2.8L5 16.5a2 2 0 0 1 3-2.6L9 15"/></svg>Toque em um botão para abrir</div>
+
+  <a class="mc tap ent" style="--d:.42s" data-link="porque" href="#" aria-label="Geometria Ilustrada: ver o vídeo sobre o conteúdo que mais cai">
+    <span class="tag">O conteúdo que mais cai</span><span class="play" aria-hidden="true"></span>
+    <b class="t">Geometria é <span>1 em cada 5</span> questões de matemática do ENEM*</b>
+    <p>Veja o vídeo e entenda por que a Geometria Ilustrada é o melhor custo-benefício para estudar.</p>
+    <div class="lin"><span class="pr"><s>R$ 57,90</s>R$ 27,90</span><span class="go">Assistir e conhecer <i>→</i></span></div>
+    <small class="fn">*geometria plana + espacial: de 20% a 25%, em 3 levantamentos do ENEM (2009–2025).</small>
+  </a>
 
   <section class="bloco" aria-labelledby="r-cursos">
     <div class="rot ent" id="r-cursos" style="--d:.42s">Nossos cursos</div>
@@ -196,6 +220,7 @@ footer{margin-top:auto;padding-top:40px;font-size:12px;color:#6c7378}
 /* LINKS: troque aqui quando cada endereço mudar */
 const LINKS={
   geometria:'/geometria',
+  porque:'/geometria#por-que',
   youtube:'https://www.youtube.com/@questaoilustrada',
   instagram:'https://www.instagram.com/questaoilustrada/',
   tiktok:'https://www.tiktok.com/@questaoilustrada'

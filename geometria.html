@@ -377,6 +377,12 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
   .anim .rv h2{clip-path:none!important}.anim .mk::after,.anim .sec::before,.anim .stat::after,.anim .price .de::after{transform:none!important}
   .dr{stroke-dashoffset:0!important}.fd{opacity:1!important}.anim .t,.anim .brand .lg *{stroke-dashoffset:0!important}.anim .num text{stroke-dashoffset:0!important}.anim .por .v{transform:none!important}
 }
+
+/* vídeo: o que mais cai */
+.vmc{position:relative;overflow:hidden;border-radius:22px;background:#000;border:1.5px solid rgba(140,200,230,.35);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 8px rgba(140,200,230,.06);aspect-ratio:16/9;width:100%;max-width:960px;margin:28px auto 0}
+.vmc video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0D0E0F}
+.vmc .ph{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 40%,#1b2a33,#0D0E0F 70%);color:var(--giz);text-align:center}.vmc.off .ph{display:flex}.vmc.off video{display:none}
+.fontes{max-width:960px;margin:18px auto 0;font-size:13px;color:var(--mut)}.fontes a{color:var(--az);text-decoration:underline;text-underline-offset:3px}
 </style>
 
 <div class="prog" id="prog"></div>
@@ -410,7 +416,7 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
       <p class="lead h-in" style="--d:.95s">Geometria aparece todo ano na Fuvest, na Unicamp, na Unesp e no ENEM. Aqui cada fórmula é <b>demonstrada no desenho</b>: você entende de onde ela vem e para de esquecer na prova.</p>
       <div class="video v-mob h-in" style="--d:1.05s"><div class="ph"><button class="play" aria-label="Assistir ao vídeo"></button><b>Assista: o que tem dentro (1min30)</b><small style="color:var(--mut)">vídeo de vendas</small></div></div>
       <div class="hpreco h-in" style="--d:1.2s"><span class="de">de <s>R$ 57,90</s> por</span><b>R$ 27,90</b><span class="obs">preço de fundador até 06/12</span></div>
-      <div class="h-in" style="--d:1.15s;margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="btn mag" href="#oferta">Quero a Geometria Ilustrada <span class="ar">→</span></a><a class="lk" href="#recebe">Ver o que vem no kit ↓</a></div>
+      <div class="h-in" style="--d:1.15s;margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="btn mag" href="#oferta">Quero a Geometria Ilustrada <span class="ar">→</span></a><a class="lk" href="#por-que">Assistir: o que mais cai ↓</a><a class="lk" href="#recebe">Ver o que vem no kit ↓</a></div>
       <div class="trust h-in" style="--d:1.25s"><span>PDF com acesso imediato</span><span>Garantia de 7 dias</span><span>Pagamento seguro Kiwify</span></div>
     </div>
     <div class="kit-hero h-in" style="--d:.6s"><div class="kit3d" role="img" aria-label="Ilustração do kit: apostila, caderno de resoluções, cronograma e simulado bônus"><div class="bk cad"><div class="cv"><div class="ey">Geometria Ilustrada</div><div class="tt">Caderno de Resoluções</div><div class="ln"><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="bk cro"><div class="cv"><div class="ey">Geometria Ilustrada</div><div class="tt">Cronograma de Estudos</div><div class="ck"><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i class="ok"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></div><div class="bk ap"><div class="cv"><svg class="lgk" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="52" width="66" height="26" rx="5" transform="rotate(-4 50 65)" fill="#8CC8E6" opacity=".34"/><rect class="fr" pathLength="1" x="6" y="6" width="88" height="88" rx="18" stroke="#F4F1E8" stroke-width="6"/><path class="d2" pathLength="1" d="M26 74 L74 74 L26 26 Z" stroke="#F4F1E8" stroke-width="6"/><path class="d3" pathLength="1" d="M74 74 L26 26" stroke="#8CC8E6" stroke-width="7"/><path class="d3" pathLength="1" d="M26 62 L38 62 L38 74" stroke="#F4F1E8" stroke-width="4"/><path class="d3" pathLength="1" d="M58 74 A16 16 0 0 1 62.7 62.7" stroke="#F4F1E8" stroke-width="4"/></svg><div class="ey">Apostila · Vestibular 2027</div><div class="tt">Geometria <span>Ilustrada</span></div><svg class="fg" viewBox="0 0 100 70" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M8 64 L92 64 L8 8 Z" stroke="#F4F1E8" stroke-width="3.5"/><path d="M92 64 L8 8" stroke="#8CC8E6" stroke-width="4"/><path d="M8 54 L18 54 L18 64" stroke="#F4F1E8" stroke-width="2.2"/></svg><div class="rod">Plana · Espacial · Trigonometria</div></div></div><div class="selo"><small>BÔNUS</small>Simulado</div></div></div>
@@ -424,10 +430,18 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
   </div></div>
 </section>
 
+<section class="sec" id="por-que"><div class="w">
+  <div class="rv"><div class="eyebrow">O conteúdo que mais cai</div>
+  <h2>Fui contar as questões: geometria é <span class="mk">1 em cada 5</span> no ENEM.</h2>
+  <p style="max-width:700px">Somando geometria plana e espacial, ela ocupa de 20% a 25% das questões de matemática. Assista e veja por que a Geometria Ilustrada é o jeito mais direto de estudar esse assunto.</p></div>
+  <div class="vmc rv d1" id="vmcbox"><video id="vmc" controls preload="metadata" playsinline poster="mais-cai-poster.jpg"><source src="mais-cai.mp4" type="video/mp4"></video><div class="ph"><b>Vídeo em breve</b><small style="color:var(--mut)">o que mais cai nos vestibulares</small></div></div>
+  <p class="fontes">Fontes: levantamentos de incidência do ENEM de <a href="https://tessat.com.br/portal/analise-de-incidencia/enem" target="_blank" rel="noopener">Tessat</a> (2010–2025, cerca de 20%), <a href="https://portal.estrategia.com/materias/matematica/o-que-mais-cai-em-matematica-no-enem/" target="_blank" rel="noopener">Estratégia</a> (últimos 10 anos, 20%) e <a href="https://alvoenem.com/materiais/guia/assuntos-que-mais-caem-no-enem" target="_blank" rel="noopener">Alvo ENEM</a> (2009–2025, cerca de 25%). Cada site classifica os assuntos de um jeito, por isso os números variam.</p>
+</div></section>
+
 <section class="sec"><div class="w">
   <div class="rv"><div class="eyebrow">O problema</div>
   <h2>Você não erra geometria por falta de estudo.<br>Erra porque <span class="mk">decorou</span>.</h2>
-  <p style="max-width:680px">Na Fuvest, caíram de 3 a 7 questões de geometria e trigonometria em todos os anos de 2010 a 2025. No ENEM, são mais de 10 por prova.</p></div>
+  <p style="max-width:680px">Na Fuvest, caíram de 3 a 7 questões de geometria e trigonometria em todos os anos de 2010 a 2025. No ENEM, geometria plana e espacial somam de 20% a 25% das questões de matemática.</p></div>
   <div class="dor">
     <div class="card flip"><h3><span class="x">✕</span> "Decoro e esqueço"</h3><p>Fórmula sem sentido some bem na hora da prova.</p></div>
     <div class="card flip d1"><h3><span class="x">✕</span> "Travo na figura"</h3><p>Vem o desenho e você não sabe qual triângulo procurar.</p></div>
@@ -633,5 +647,10 @@ addEventListener('keydown',e=>{if(e.key==='Escape')md.classList.remove('on')});
 })();
 </script>
 
+<script>
+(()=>{const v=document.getElementById('vmc'),b=document.getElementById('vmcbox');if(!v)return;
+const off=()=>b.classList.add('off');v.querySelector('source').addEventListener('error',off);v.addEventListener('error',off);
+if(location.hash==='#por-que'){setTimeout(()=>{const e=document.getElementById('por-que');e&&e.scrollIntoView({behavior:'smooth',block:'start'})},400)}})();
+</script>
 </body>
 </html>
