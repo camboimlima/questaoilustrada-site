@@ -796,5 +796,6 @@ const passo=d=>box.scrollBy({left:d*(cs[0].offsetWidth+18),behavior:'smooth'});
 document.getElementById('fprev').onclick=()=>passo(-1);document.getElementById('fnext').onclick=()=>passo(1);
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();setTimeout(()=>cs[0].classList.add('on'),700);setTimeout(()=>cs[0].classList.remove('on'),2600)}},{threshold:.5}).observe(box)}})();
 </script>
+<script src="/qi-track.js" defer></script>
 </body>
 </html>
