@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Combo ENEM: diagnóstico de matemática, listas de saturação com questões reais do ENEM por assunto, estratégia de prova, folha de fórmulas e 80 flashcards de bônus.">
+<meta property="og:title" content="Combo ENEM · Questão Ilustrada">
+<meta property="og:description" content="Descubra o que você erra e treine até fixar: diagnóstico + listas de saturação do ENEM até 15/11.">
+<meta property="og:image" content="https://questaoilustrada.com/capa-combo.jpg">
+<link rel="icon" href="/favicon.svg">
+</head>
+<body style="margin:0">
+<title>Combo ENEM · Questão Ilustrada</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Patrick+Hand&display=swap">
+<script>document.documentElement.classList.add('anim')</script>
+<style>
+/* Base: página v2 (Sora + Inter, cores do canal). Motion: entradas com máscara, trim path, contagem, brilho. */
+:root{--bg:#0D0E0F;--bg2:#141618;--bg3:#1A1E21;--giz:#F4F1E8;--tx:#D9D6CC;--mut:#9AA1A6;--az:#8CC8E6;--az2:#2C7BA6;--ok:#7CD3A1;--x:#E58B7A;--ink:#1E2124;--cream:#F4F1E8;--line:rgba(244,241,232,.09);
+  --ease:cubic-bezier(.16,1,.3,1);--back:cubic-bezier(.34,1.56,.64,1);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--tx);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:45;background:var(--bg)}
+.w{max-width:1140px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:Sora,Inter,system-ui,sans-serif;color:var(--giz);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(34px,5.2vw,62px);line-height:1.06;font-weight:800}
+h2{font-size:clamp(28px,4vw,42px);line-height:1.12;font-weight:800;margin-bottom:16px}
+h3{font-size:20px;font-weight:700}
+p{margin:0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--az);margin-bottom:12px}
+a{color:inherit}:focus-visible{outline:2px solid var(--az);outline-offset:3px;border-radius:6px}
+
+/* grifo azul: se desenha da esquerda para a direita */
+.mk{position:relative;white-space:nowrap;z-index:0}
+.mk::after{content:"";position:absolute;left:-4px;right:-4px;bottom:.06em;height:.42em;background:rgba(140,200,230,.42);border-radius:4px;z-index:-1;transform-origin:left;transform:scaleX(1)}
+.anim .mk::after{transform:scaleX(0);transition:transform 1s var(--ease) .35s}
+.anim .mk.in::after{transform:scaleX(1)}
+
+/* barra e progresso */
+.prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:100%;background:var(--az);z-index:50;transform-origin:left;transform:scaleX(0);box-shadow:0 0 12px rgba(140,200,230,.7)}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(13,14,15,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(140,200,230,.16)}
+.bar .w{display:flex;justify-content:space-between;align-items:center;gap:14px;height:62px}
+.brand{display:flex;gap:10px;align-items:center;color:var(--giz);font-weight:700;font-family:Sora,Inter,sans-serif;text-decoration:none;white-space:nowrap}
+.brand svg{width:34px;height:34px;flex:none}
+.brand .lg path,.brand .lg rect.fr{stroke-dasharray:1;stroke-dashoffset:0}
+.anim .brand .lg path,.anim .brand .lg rect.fr{stroke-dashoffset:1;animation:trim 1.4s var(--ease) forwards}
+.anim .brand .lg .d2{animation-delay:.35s}.anim .brand .lg .d3{animation-delay:.7s}
+@keyframes trim{to{stroke-dashoffset:0}}
+.cd{font-size:13px;color:var(--mut)}.cd b{color:var(--az);font-variant-numeric:tabular-nums}
+
+/* botões com brilho que atravessa */
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--az);color:#0D0E0F;font-weight:800;font-family:Sora,Inter,sans-serif;text-decoration:none;font-size:18px;padding:17px 30px;border-radius:12px;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(140,200,230,.25);transition:transform .35s var(--ease),box-shadow .35s}
+.btn::after{content:"";position:absolute;inset:-20% auto -20% -60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);z-index:-1;animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,62%{left:-60%}100%{left:130%}}
+.btn:hover{box-shadow:0 18px 44px rgba(140,200,230,.4)}
+.btn.sm{font-size:15px;padding:10px 18px}
+.btn .ar{transition:transform .35s var(--ease)}.btn:hover .ar{transform:translateX(5px)}
+.lk{color:var(--az);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(140,200,230,.4)}
+.trust{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--mut);margin-top:16px}
+.trust span::before{content:"✓ ";color:var(--ok)}
+
+/* seções: linha azul que corre no topo ao entrar */
+section{padding-block:clamp(64px,9vw,110px);position:relative}
+.sec::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(140,200,230,.55),transparent);transform-origin:left;transform:scaleX(1)}
+.anim .sec::before{transform:scaleX(0);transition:transform 1.6s var(--ease)}
+.anim .sec.in::before{transform:scaleX(1)}
+
+/* HERÓI */
+.heroi{padding-block:56px 30px;position:relative;overflow:hidden;isolation:isolate}
+.heroi .fundo{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.quad{position:absolute;inset:0;background-image:linear-gradient(rgba(230,226,214,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(230,226,214,.05) 1px,transparent 1px);background-size:60px 60px;
+  -webkit-mask-image:radial-gradient(420px circle at var(--mx,75%) var(--my,35%),#000 0%,transparent 70%);mask-image:radial-gradient(420px circle at var(--mx,75%) var(--my,35%),#000 0%,transparent 70%)}
+.constr{position:absolute;right:-140px;top:-60px;width:760px;max-width:none;opacity:.55;will-change:transform}
+.constr .gz{stroke:rgba(244,241,232,.10);stroke-width:2;fill:none;stroke-linecap:round}
+.constr .az{stroke:rgba(140,200,230,.28);stroke-width:2.5;fill:none;stroke-linecap:round}
+.constr .t{stroke-dasharray:1;stroke-dashoffset:0}
+.anim .constr .t{stroke-dashoffset:1;animation:trim 2.6s var(--ease) forwards;animation-delay:var(--d,0s)}
+.constr .roda{transform-origin:380px 380px;animation:roda 140s linear infinite}
+@keyframes roda{to{transform:rotate(360deg)}}
+#po{position:absolute;inset:0;width:100%;height:100%}
+.heroi .gridh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center;min-height:min(640px,calc(100svh - 230px))}
+.lead{font-size:19px;color:var(--tx);margin:20px 0 26px;max-width:34em}
+.lead b{color:var(--giz)}
+/* tipografia cinética: cada palavra sobe de dentro de uma máscara */
+.wd{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.wd>span{display:inline-block}
+.wd:has(.mk){overflow:visible}
+.anim .wd>span{transform:translateY(105%);filter:blur(6px);opacity:0;animation:sobe 1s var(--ease) forwards;animation-delay:calc(.25s + var(--i)*.055s)}
+@keyframes sobe{to{transform:none;filter:none;opacity:1}}
+.anim .h-in{opacity:0;transform:translateY(18px);animation:fadeup .9s var(--ease) forwards;animation-delay:var(--d,.9s)}
+@keyframes fadeup{to{opacity:1;transform:none}}
+
+/* vídeo */
+.video{position:relative;border-radius:22px;overflow:hidden;background:#000;border:1.5px solid rgba(140,200,230,.35);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 8px rgba(140,200,230,.06);max-width:100%}
+.video::before{content:"";position:absolute;inset:-2px;border-radius:inherit;padding:2px;background:conic-gradient(from var(--ang,0deg),transparent 0 70%,rgba(140,200,230,.9) 80%,transparent 90%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;z-index:3;pointer-events:none;animation:gira 6s linear infinite}
+@property --ang{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes gira{to{--ang:360deg}}
+.video .ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:radial-gradient(circle at 50% 40%,#1b2a33,#0D0E0F 70%);color:var(--giz);text-align:center;padding:16px}
+.play{width:78px;height:78px;border-radius:50%;background:var(--az);display:flex;align-items:center;justify-content:center;animation:pulse 2.2s infinite;border:0;cursor:pointer}
+.play::after{content:"";border-left:24px solid #0D0E0F;border-top:15px solid transparent;border-bottom:15px solid transparent;margin-left:6px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(140,200,230,.6)}70%{box-shadow:0 0 0 24px rgba(140,200,230,0)}100%{box-shadow:0 0 0 0 rgba(140,200,230,0)}}
+.v-mob{aspect-ratio:9/16;width:min(100%,330px,calc(66svh * 9 / 16));margin:6px auto 0}
+.v-desk{aspect-ratio:16/9;display:none}
+@media(min-width:900px){.heroi .v-mob{display:none}.v-desk{display:block}}
+.anim .v-desk{opacity:0;transform:perspective(1200px) rotateY(-14deg) scale(.92);animation:entra 1.4s var(--ease) .55s forwards}
+@keyframes entra{to{opacity:1;transform:none}}
+
+/* números */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:44px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:22px 18px;text-align:center;position:relative;overflow:hidden}
+.stat .n{font-family:Sora,Inter,sans-serif;font-weight:800;font-size:44px;color:var(--az);line-height:1;font-variant-numeric:tabular-nums}
+.stat p{margin:8px 0 0;font-size:14px;color:var(--mut)}
+.stat::after{content:"";position:absolute;left:20%;right:20%;bottom:0;height:2px;background:var(--az);transform:scaleX(1)}
+.anim .stat::after{transform:scaleX(0);transition:transform 1.2s var(--ease) .3s}.anim .stat.in::after{transform:scaleX(1)}
+
+/* revelações no scroll */
+.anim .rv{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform 1.1s var(--ease)}
+.anim .rv.in{opacity:1;transform:none}
+.anim .rv.d1{transition-delay:.1s}.anim .rv.d2{transition-delay:.2s}.anim .rv.d3{transition-delay:.3s}
+.anim .rv h2{clip-path:inset(0 0 100% 0);transform:translateY(24px);transition:clip-path 1.1s var(--ease) .1s,transform 1.1s var(--ease) .1s}
+.anim .rv.in h2{clip-path:inset(0 0 -20% 0);transform:none}
+.anim .flip{opacity:0;transform:perspective(900px) rotateX(24deg) translateY(40px);transform-origin:50% 100%;transition:opacity .9s var(--ease),transform 1.2s var(--ease)}
+.anim .flip.in{opacity:1;transform:none}
+
+/* problema */
+.dor{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:26px;transition:border-color .3s,transform .4s var(--ease)}
+.card:hover{border-color:rgba(229,139,122,.45);transform:translateY(-4px)}
+.card p{margin:8px 0 0;color:var(--mut)}
+.x{color:var(--x);font-weight:800;display:inline-block}
+.anim .card.in .x{animation:xis .6s var(--back) .5s both}
+@keyframes xis{from{transform:scale(0) rotate(-90deg)}to{transform:none}}
+
+/* lousa */
+.demo{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
+.tabs{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.tab{position:relative;overflow:hidden;text-align:left;background:var(--bg2);border:1.5px solid rgba(244,241,232,.12);border-radius:14px;padding:16px 18px;color:var(--tx);font:inherit;cursor:pointer;transition:border-color .3s,background .3s,transform .3s var(--ease)}
+.tab:hover{transform:translateX(4px)}
+.tab b{display:block;color:var(--giz);font-family:Sora,Inter,sans-serif;font-size:17px}
+.tab small{color:var(--mut)}
+.tab.on{border-color:var(--az);background:#16222a}
+.tab .tm{position:absolute;left:0;bottom:0;height:2px;background:var(--az);width:0}
+.tab.on .tm.run{animation:tm 7s linear forwards}@keyframes tm{to{width:100%}}
+.board{background:#101214;border-radius:22px;border:1.5px solid rgba(244,241,232,.12);aspect-ratio:4/3;position:relative;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.45);max-width:100%}
+.board::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(140,200,230,.07),transparent 60%);pointer-events:none}
+.board svg{position:absolute;inset:3%;width:94%;height:94%}
+.board svg.wipe{animation:wipe .7s var(--ease)}@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.chalk{font-family:"Patrick Hand","Comic Sans MS",cursive}
+.dr{stroke-dasharray:var(--l,600);stroke-dashoffset:var(--l,600)}
+.play-on .dr{animation:draw 1.4s ease forwards;animation-delay:var(--d,0s)}
+.fd{opacity:0}.play-on .fd{animation:fade .6s ease forwards;animation-delay:var(--d,0s)}
+.play-on rect.fd{transform-box:fill-box;transform-origin:left;animation:hl .8s var(--ease) forwards;animation-delay:var(--d,0s)}
+@keyframes draw{to{stroke-dashoffset:0}}@keyframes fade{to{opacity:1}}@keyframes hl{from{opacity:1;transform:scaleX(0)}to{opacity:1;transform:scaleX(1)}}
+
+/* kit, com linha que se desenha conforme o scroll */
+.pkg{display:flex;flex-direction:column;gap:22px;margin-top:34px;position:relative;padding-left:34px}
+.trilha{position:absolute;left:8px;top:20px;bottom:20px;width:3px;background:rgba(244,241,232,.08);border-radius:3px}
+.trilha i{position:absolute;inset:0;background:linear-gradient(var(--az),var(--az2));border-radius:3px;transform-origin:top;transform:scaleY(var(--p,1));box-shadow:0 0 14px rgba(140,200,230,.6)}
+.item{position:relative;display:grid;grid-template-columns:86px minmax(0,1fr) auto;gap:24px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:20px;padding:26px 28px;transition:border-color .3s,box-shadow .4s}
+.item:hover{border-color:rgba(140,200,230,.4);box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.item::before{content:"";position:absolute;left:-32px;top:50%;width:13px;height:13px;margin-top:-6px;border-radius:50%;background:var(--bg);border:3px solid var(--az)}
+.anim .item::before{transform:scale(0);transition:transform .6s var(--back) .3s}.anim .item.in::before{transform:scale(1)}
+.num{width:76px;height:76px}
+.num text{font-family:Sora,Inter,sans-serif;font-weight:800;font-size:56px;fill:transparent;stroke:var(--az);stroke-width:2;stroke-dasharray:240;stroke-dashoffset:0}
+.anim .num text{stroke-dashoffset:240;transition:stroke-dashoffset 1.6s var(--ease) .2s,fill .8s ease 1.2s}
+.anim .item.in .num text{stroke-dashoffset:0}
+.item p.d{margin:6px 0 0;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{font-size:13px;border:1px solid rgba(140,200,230,.4);color:var(--az);border-radius:999px;padding:3px 12px}
+.anim .item .chip{opacity:0;transform:translateY(8px) scale(.9);transition:opacity .5s,transform .5s var(--back)}
+.anim .item.in .chip{opacity:1;transform:none}
+.val{text-align:right}
+.fmt{display:block;font-size:13px;color:var(--mut);margin-bottom:8px;white-space:nowrap}
+.ver{background:none;border:1.5px solid var(--az);color:var(--az);border-radius:10px;padding:7px 14px;font:600 14px Inter,sans-serif;cursor:pointer;transition:background .25s,color .25s}.ver:hover{background:var(--az);color:#0D0E0F}
+.bonus{border:1.5px dashed var(--az);background:linear-gradient(135deg,#12202a,#141618)}
+.bonus .tag{color:#0D0E0F;background:var(--az);font:800 13px Sora,Inter,sans-serif;letter-spacing:.1em;border-radius:8px;padding:8px 0;text-align:center;align-self:center}
+.anim .bonus.in .tag{animation:pop .7s var(--back) .4s both}@keyframes pop{from{transform:scale(.4) rotate(-8deg);opacity:0}}
+
+/* como usar */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-top:40px;position:relative}
+.steps .linha{position:absolute;left:24px;right:24px;top:-18px;height:2px;background:rgba(244,241,232,.08)}
+.steps .linha i{position:absolute;inset:0;background:var(--az);transform-origin:left;transform:scaleX(var(--p,1))}
+.step{background:var(--bg2);border-radius:16px;padding:22px;border-top:3px solid var(--az);position:relative}
+.step::before{content:"";position:absolute;top:-25px;left:22px;width:14px;height:14px;border-radius:50%;background:var(--az);box-shadow:0 0 0 5px rgba(140,200,230,.15)}
+.step .d{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--az);text-transform:uppercase}
+.step p{margin:6px 0 0;font-size:15px;color:var(--mut)}
+
+/* por dentro: vídeos em loop */
+.dentro{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:22px;margin-top:30px}
+.dentro .lado{display:grid;gap:22px}
+.loop{position:relative;border-radius:16px;overflow:hidden;background:var(--bg2);border:1px solid var(--line);aspect-ratio:16/10;max-width:100%}
+.loop video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.loop .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 30%,#18242c,#101214 75%)}
+.pgs{position:relative;height:72%;aspect-ratio:3/4}
+.pg{position:absolute;inset:0;background:#F4F1E8;border-radius:6px;box-shadow:0 14px 30px rgba(0,0,0,.45);padding:12%;display:flex;flex-direction:column;gap:6%;transition:transform 1.2s var(--ease)}
+.pg i{display:block;height:4%;background:#C9CCC8;border-radius:2px}.pg i.t{background:#1E2124;width:60%;height:6%}.pg i.a{background:#8CC8E6;width:40%}.pg i.c{width:80%}
+.pg svg{width:58%;margin:auto 0 0}
+.loop.in .pg:nth-child(1){transform:rotate(-9deg) translateX(-26%)}
+.loop.in .pg:nth-child(2){transform:rotate(-2deg) translateX(-6%)}
+.loop.in .pg:nth-child(3){transform:rotate(6deg) translateX(18%)}
+.loop .ph{padding-bottom:40px}
+.loop .cap{position:absolute;left:0;bottom:0;right:0;padding:26px 14px 12px;background:linear-gradient(transparent,rgba(13,14,15,.92) 55%);font-size:13px;color:var(--giz);font-weight:600;text-shadow:0 2px 10px #000;z-index:2}
+
+/* oferta */
+.offer{background:var(--cream);color:var(--ink);border-radius:28px;padding:44px;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:36px;align-items:center;box-shadow:0 0 0 8px rgba(140,200,230,.25),0 40px 90px rgba(0,0,0,.5);transform-style:preserve-3d;transition:transform .5s var(--ease);position:relative;overflow:hidden}
+.offer::after{content:"";position:absolute;inset:0;background:radial-gradient(500px circle at var(--ox,50%) var(--oy,0%),rgba(140,200,230,.22),transparent 60%);pointer-events:none}
+.offer h2{color:var(--ink)}
+.offer .eyebrow{color:var(--az2)}
+.stack{list-style:none;margin:0;padding:0}
+.stack li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed #CFD6DB;font-size:16px}
+.stack li span:last-child{color:#6B7378;white-space:nowrap}
+.anim .stack li{opacity:0;transform:translateX(-16px);transition:opacity .6s,transform .7s var(--ease)}
+.anim .offer.in .stack li{opacity:1;transform:none}
+.price{text-align:center;position:relative;z-index:1}
+.price .de{position:relative;display:inline-block;color:#6B7378;font-size:18px}
+.price .de::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:2px;background:#B3412E;transform-origin:left;transform:scaleX(1)}
+.anim .price .de::after{transform:scaleX(0);transition:transform .6s var(--ease) .6s}.anim .offer.in .price .de::after{transform:scaleX(1)}
+.por{font-family:Sora,Inter,sans-serif;font-weight:800;font-size:66px;line-height:1;color:var(--ink);display:flex;justify-content:center;align-items:baseline;gap:6px;overflow:hidden;padding-top:6px}
+.por small{font-size:24px}
+.anim .por .v{display:inline-block;transform:translateY(110%);transition:transform 1s var(--back) 1s}
+.anim .offer.in .por .v{transform:none}
+.parc{font-size:14px;color:#4E555B;margin:6px 0 20px}
+.price .btn{width:100%;background:var(--ink);color:var(--cream);box-shadow:0 10px 30px rgba(30,33,36,.25)}
+.cupom{margin-top:16px;border:2px dashed var(--az2);background:#E8F4FA;border-radius:12px;padding:10px;font-size:14px}
+.cupom b{font-family:Sora,Inter,sans-serif;letter-spacing:.12em}
+.timer{display:flex;justify-content:center;gap:8px;margin:0 0 18px}
+.timer div{background:var(--ink);color:var(--cream);border-radius:10px;padding:8px 10px;min-width:58px}
+.timer b{display:block;font-family:Sora,Inter,sans-serif;font-size:24px;font-variant-numeric:tabular-nums}
+.timer b.tk{animation:tk .45s var(--ease)}@keyframes tk{from{transform:translateY(-35%);opacity:.3}}
+.timer span{font-size:11px;color:var(--mut)}
+.gar{display:flex;gap:16px;align-items:center;margin-top:22px;font-size:15px}
+.gar .s{flex:0 0 74px;height:74px;border-radius:50%;border:3px solid var(--az2);display:flex;align-items:center;justify-content:center;font-family:Sora,Inter,sans-serif;font-weight:800;color:var(--az2);text-align:center;line-height:1;font-size:15px}
+.anim .offer.in .gar .s{animation:carimbo .8s var(--back) 1.3s both}@keyframes carimbo{from{transform:scale(1.8) rotate(-20deg);opacity:0}}
+.mini{font-size:12px;color:#6B7378;margin:12px 0 0}
+
+/* perguntas */
+details{background:var(--bg2);border-radius:14px;padding:18px 22px;margin:10px 0;border:1px solid var(--line);transition:border-color .3s}
+details[open]{border-color:rgba(140,200,230,.35)}
+summary{cursor:pointer;font-weight:700;color:var(--giz);list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--az);font-size:22px;line-height:1;transition:transform .35s var(--ease)}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);margin:10px 0 0}
+.fim{padding-block:80px;background:radial-gradient(circle at 50% 0,rgba(140,200,230,.12),transparent 60%);text-align:center}
+footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c7378;font-size:13px;text-align:center}
+.flut{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(13,14,15,.95);border-top:1px solid rgba(140,200,230,.35);padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));display:flex;justify-content:center;gap:16px;align-items:center;transform:translateY(110%);transition:transform .45s var(--ease)}
+.flut.show{transform:none}
+.flut .p{color:var(--giz);font-weight:800;font-family:Sora,Inter,sans-serif}.flut .p s{color:var(--mut);font-weight:400;font-size:13px;margin-right:6px}
+.modal{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.84);display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .35s}
+.modal.on{opacity:1;pointer-events:auto}
+.mbox{position:relative;max-width:560px;width:100%;max-height:90vh;overflow:auto;border-radius:14px;transform:scale(.92) translateY(20px);transition:transform .5s var(--ease)}
+.modal.on .mbox{transform:none}
+.mbox img{width:100%;display:block}
+.mbox .vazio{background:var(--bg2);color:var(--mut);padding:60px 24px;text-align:center;border:1px dashed rgba(140,200,230,.4);border-radius:14px}
+.fx{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:var(--az);font-size:24px;cursor:pointer;z-index:2;color:#0D0E0F}
+
+
+@media(max-width:860px){
+  .heroi .gridh,.demo,.offer,.dentro{grid-template-columns:minmax(0,1fr)}
+  .dor,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .item{grid-template-columns:60px minmax(0,1fr);padding:22px}.num{width:56px;height:56px}.val{grid-column:2;text-align:left}
+  .offer{padding:28px}.cd{display:none}.stack li{flex-direction:column;gap:0}.stack li span:last-child{font-size:13px}
+  .constr{width:560px;right:-260px;top:-40px;opacity:.4}
+  .steps .linha,.step::before{display:none}
+}
+@media(max-width:520px){.dor,.steps{grid-template-columns:minmax(0,1fr)}.por{font-size:56px}.pkg{padding-left:24px}.trilha{left:2px}.item::before{left:-28px}.bar .btn.sm{padding:9px 12px;font-size:14px}.brand span{display:none}}
+
+/* ===== ajustes de diagramação ===== */
+.fim{text-align:left}
+.fimg{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center}
+.fimlist{list-style:none;margin:6px 0 22px;padding:0;display:grid;gap:8px}
+.fimlist li{display:flex;gap:10px;align-items:baseline}.fimlist li::before{content:"✓";color:var(--ok);font-weight:700}
+.fimpreco{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.fimpreco s{color:var(--mut)}.fimpreco b{font-family:Sora,Inter,sans-serif;font-size:34px;color:var(--giz)}.fimpreco span{font-size:13px;color:var(--az)}
+
+/* produto em 3D (ilustração do kit) */
+.kit3d{position:relative;width:min(100%,460px);aspect-ratio:1/1;margin:0 auto;perspective:1600px;container-type:inline-size}
+.kit3d::after{content:"";position:absolute;left:12%;right:8%;bottom:4%;height:10%;background:radial-gradient(closest-side,rgba(140,200,230,.28),transparent);filter:blur(6px);z-index:0}
+.bk{position:absolute;width:54%;aspect-ratio:3/4.1;border-radius:3px 9px 9px 3px;transform-style:preserve-3d;box-shadow:0 30px 50px -10px rgba(0,0,0,.7);transition:transform 1.4s var(--ease);overflow:hidden;z-index:1}
+.bk::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6%;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(255,255,255,.08) 60%,transparent);z-index:2}
+.bk .cv{position:absolute;inset:0;padding:10% 10% 9% 14%;display:flex;flex-direction:column}
+.bk.ap{left:24%;top:14%;z-index:3;background:#0D0E0F;border:1px solid rgba(244,241,232,.12);transform:rotateY(-18deg) rotateX(4deg) rotate(1deg)}
+.bk.ap .cv{background-image:linear-gradient(rgba(230,226,214,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(230,226,214,.05) 1px,transparent 1px);background-size:9cqw 9cqw}
+.bk.cad{left:4%;top:8%;background:#DCEEF7;transform:rotateY(-18deg) rotateX(4deg) rotate(-8deg)}
+.bk.cro{left:42%;top:4%;background:#F4F1E8;transform:rotateY(-18deg) rotateX(4deg) rotate(9deg)}
+.bk .lgk{width:13cqw;height:13cqw}
+.bk .ey{font:700 2.2cqw/1.2 Inter,sans-serif;letter-spacing:.14em;text-transform:uppercase;margin-top:4cqw;color:#8CC8E6}
+.bk .tt{font:800 6.4cqw/1.02 Sora,Inter,sans-serif;letter-spacing:-.02em;margin-top:1.6cqw;color:#F4F1E8}
+.bk .tt span{background:linear-gradient(transparent 58%,rgba(140,200,230,.42) 58%,rgba(140,200,230,.42) 92%,transparent 92%)}
+.bk .fg{margin-top:auto;width:62%}
+.bk .rod{font:500 2.1cqw Inter,sans-serif;color:#9AA1A6;margin-top:3cqw}
+.bk.cad .tt,.bk.cro .tt{color:#1E2124;font-size:4.6cqw}.bk.cad .ey,.bk.cro .ey{color:#2C7BA6}
+.bk .ln{display:grid;gap:2.2cqw;margin-top:5cqw}.bk .ln i{display:block;height:1.1cqw;border-radius:1cqw;background:rgba(30,33,36,.18)}.bk .ln i:nth-child(3n){width:70%}.bk .ln i:nth-child(4){background:#8CC8E6;width:45%}
+.bk .ck{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;margin-top:5cqw}.bk .ck i{aspect-ratio:1;border:.5cqw solid rgba(30,33,36,.35);border-radius:1cqw}.bk .ck i.ok{background:#8CC8E6;border-color:#2C7BA6}
+.selo{position:absolute;right:6%;bottom:14%;z-index:4;width:24%;aspect-ratio:1;border-radius:50%;background:var(--az);color:#0D0E0F;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font:800 3.1cqw/1.1 Sora,Inter,sans-serif;transform:rotate(-12deg);box-shadow:0 14px 30px rgba(0,0,0,.5)}
+.selo small{font:700 2.1cqw Inter,sans-serif;letter-spacing:.1em}
+.anim .rv:not(.in) .bk{transform:rotateY(-18deg) rotateX(4deg) translateY(30px)}
+.anim .rv:not(.in) .selo{transform:scale(0) rotate(-60deg)}
+.anim .selo{transition:transform .9s var(--back) 1s}
+.anim .rv.in .kit3d{animation:boia 6s ease-in-out 1.6s infinite}
+@keyframes boia{50%{transform:translateY(-8px)}}
+
+@media(max-width:860px){
+  .heroi .gridh{min-height:0}
+  .fimg{grid-template-columns:minmax(0,1fr);text-align:center}.fimg .fimlist{justify-items:center}.fimpreco{justify-content:center}
+  .kit3d{width:min(88%,360px)}
+  /* oferta: preço primeiro no celular */
+  .price{order:-1}
+  /* problema: cartões deslizam para o lado */
+  .dor{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1*max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 14px;scrollbar-width:none}
+  .dor::-webkit-scrollbar{display:none}
+  .dor .card{flex:0 0 78%;scroll-snap-align:center}
+  /* por dentro: carrossel */
+  .dentro{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:calc(-1*max(20px,env(safe-area-inset-left,0px)));padding:4px max(20px,env(safe-area-inset-left,0px)) 14px;scrollbar-width:none}
+  .dentro::-webkit-scrollbar{display:none}
+  .dentro .lado{display:contents}
+  .dentro .loop{flex:0 0 84%;scroll-snap-align:center}
+  /* como usar: linha do tempo vertical */
+  .steps{grid-template-columns:minmax(0,1fr);gap:0;padding-left:26px;margin-top:28px}
+  .steps .linha{display:block;left:6px;right:auto;top:8px;bottom:8px;width:2px;height:auto}
+  .steps .linha i{transform-origin:top;transform:scaleY(var(--p,1))}
+  .step{background:none;border-top:0;border-radius:0;padding:0 0 22px}
+  .step::before{display:block;top:6px;left:-26px;width:12px;height:12px}
+}
+@media(max-width:600px){
+  .item{grid-template-columns:minmax(0,1fr);gap:12px}.num{width:44px;height:44px}.val{grid-column:1;display:flex;align-items:center;justify-content:space-between;gap:12px}.fmt{margin:0}
+  .bonus .tag{justify-self:start;padding:6px 12px}
+  .heroi .btn,.price .btn{width:100%}
+  .lead{font-size:17px}
+  .stat{padding:18px 12px}.stat .n{font-size:38px}
+  .offer{padding:22px;border-radius:22px}
+  .timer div{min-width:0;flex:1}
+  .tabs{flex-direction:row;overflow-x:auto;gap:8px;scrollbar-width:none}.tab{flex:0 0 auto;padding:12px 14px}.tab small{display:none}.tab:hover{transform:none}
+}
+
+/* sem vídeo ainda: o herói mostra o produto (troque class="sem-video" em <main> quando o vídeo existir) */
+.kit-hero{display:none}
+.sem-video .video{display:none!important}
+.sem-video .kit-hero{display:block}
+.sem-video .kit-hero .kit3d{width:min(100%,520px)}
+@media(max-width:860px){.sem-video .kit-hero{order:3}.sem-video .kit-hero .kit3d{width:min(82%,340px)}}
+
+/* preço no herói */
+.hpreco{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 -8px}
+.hpreco .de{color:var(--mut);font-size:15px}.hpreco b{font-family:Sora,Inter,sans-serif;font-size:34px;color:var(--giz);line-height:1}.hpreco .obs{font-size:13px;color:var(--az)}
+.flut .p small{display:block;font:500 11.5px Inter,sans-serif;color:var(--mut)}
+/* galeria de páginas reais */
+.cabg{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.galnav{display:flex;align-items:center;gap:12px;font:600 14px Inter,sans-serif;color:var(--mut);font-variant-numeric:tabular-nums}
+.gb{width:46px;height:46px;border-radius:50%;border:1.5px solid rgba(140,200,230,.5);background:var(--bg2);color:var(--giz);font-size:20px;cursor:pointer;transition:background .25s,transform .25s}
+.gb:hover{background:var(--az);color:#0D0E0F;transform:scale(1.06)}
+.gal{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:26px 4px 18px;margin-top:8px;scrollbar-width:thin;scrollbar-color:rgba(140,200,230,.4) transparent}
+.gp{flex:0 0 clamp(220px,26vw,300px);scroll-snap-align:start;border:0;padding:0;background:none;cursor:zoom-in;text-align:left;color:var(--tx)}
+.gp img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .45s var(--ease),box-shadow .45s}
+.gp:hover img{transform:translateY(-8px) rotate(-1deg);box-shadow:0 28px 60px rgba(0,0,0,.6),0 0 0 2px rgba(140,200,230,.5)}
+.gp span{display:block;margin-top:12px;font-size:14px;font-weight:600;color:var(--giz)}
+.mbox{max-width:min(760px,96vw)}
+.mbox img{border-radius:10px 10px 0 0;background:#fff}
+.mcap{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--bg2);padding:12px;border-radius:0 0 10px 10px;color:var(--giz);font-size:14px;font-weight:600}
+/* PDF em aparelhos */
+.pdfg{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(28px,5vw,60px);align-items:center}
+.dev{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.pdfl{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.pdfl li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.pdfl b{color:var(--giz);font-weight:600}.pdfl span{color:var(--mut);font-size:14px}
+/* mapa dos capítulos */
+.mapa{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.fr{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px}
+.frh span{display:block;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--az)}.frh b{font:700 21px Sora,Inter,sans-serif;color:var(--giz)}
+.fr ol{margin:14px 0 0;padding-left:22px;display:grid;gap:7px;font-size:15px}.fr li::marker{color:var(--az);font-weight:700}
+.frn{margin-top:16px;padding-top:14px;border-top:1px dashed rgba(140,200,230,.35);font-size:14px;color:var(--mut)}
+@media(max-width:860px){.pdfg,.mapa{grid-template-columns:minmax(0,1fr)}.gp{flex-basis:68%}.galnav .gb{width:40px;height:40px}}
+
+@media(prefers-reduced-motion:reduce){
+  .anim *{animation:none!important;transition:none!important}
+  .anim .rv,.anim .flip,.anim .wd>span,.anim .h-in,.anim .v-desk,.anim .stack li,.anim .chip{opacity:1!important;transform:none!important;filter:none!important}
+  .anim .rv h2{clip-path:none!important}.anim .mk::after,.anim .sec::before,.anim .stat::after,.anim .price .de::after{transform:none!important}
+  .dr{stroke-dashoffset:0!important}.fd{opacity:1!important}.anim .t,.anim .brand .lg *{stroke-dashoffset:0!important}.anim .num text{stroke-dashoffset:0!important}.anim .por .v{transform:none!important}
+}
+
+/* página Reta Final ENEM: barras da contagem e cartas */
+.bars{display:grid;gap:12px;margin-top:28px;max-width:820px}
+.bar2{display:grid;grid-template-columns:minmax(150px,240px) 1fr 44px;gap:14px;align-items:center;font-size:15px}
+.bar2 .t{color:var(--tx);text-align:right}
+.bar2 .tr{height:22px;border-radius:6px;background:rgba(244,241,232,.06);overflow:hidden}
+.bar2 .tr i{display:block;height:100%;width:var(--w);background:rgba(140,200,230,.55);border-right:3px solid var(--az);border-radius:6px;transform-origin:left;transform:scaleX(1);transition:transform 1.2s var(--ease)}
+.anim .bars:not(.in) .tr i{transform:scaleX(0)}
+.bar2 b{font-family:Sora,Inter,sans-serif;color:var(--giz);font-size:18px}
+.fonte-n{font-size:13px;color:var(--mut);margin-top:14px;max-width:820px}
+.cartas{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.carta{flex:1 1 220px;max-width:280px;background:var(--cream);color:var(--ink);border-radius:16px;padding:18px 18px 16px;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+.carta .nn{font-family:Sora,sans-serif;font-weight:800;font-size:34px;line-height:1}
+.carta .tt{font-family:Sora,sans-serif;font-weight:700;font-size:17px;margin:6px 0 10px}
+.carta .bl{font-size:13.5px;line-height:1.45;border-top:1px dashed #C9CDD1;padding-top:8px;margin-top:8px}
+.carta .bl b{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#4E555B}
+.estr{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.estr h3{margin:14px 0 8px}.estr p{margin:0;color:var(--mut)}
+.estr .big{font-family:Sora,Inter,sans-serif;font-weight:800;font-size:34px;color:var(--az);height:96px;display:flex;align-items:center}
+.estr .big s{opacity:.4}
+.estr .lt{gap:14px}
+.etapas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:30px}
+.etapas .big{font-family:"Patrick Hand";font-size:44px;color:var(--az);line-height:1}
+.etapas h3{margin:8px 0 6px}.etapas p{margin:0;color:var(--mut)}
+.diagbox{margin-top:26px;max-width:820px}
+.diagbox img{width:100%;height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.45)}
+@media (max-width:860px){.etapas{grid-template-columns:1fr}}
+.trisvg{width:100%;max-width:240px;height:96px;display:block}
+@media (max-width:860px){.estr{grid-template-columns:1fr}}
+.fcs{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 2px 22px;margin-top:26px;scrollbar-width:none}
+.fcs::-webkit-scrollbar{display:none}
+.fc{flex:0 0 calc((100% - 54px)/4);aspect-ratio:9/16;perspective:1400px;background:none;border:0;padding:0;cursor:pointer;scroll-snap-align:start;-webkit-tap-highlight-color:transparent}
+.fci{position:relative;display:block;width:100%;height:100%;transition:transform .7s var(--ease);transform-style:preserve-3d}
+.fc.on .fci{transform:rotateY(180deg)}
+.fci img{position:absolute;inset:0;width:100%;height:100%;border-radius:16px;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:0 18px 40px rgba(0,0,0,.45)}
+.fci img.v{transform:rotateY(180deg)}
+.fc:focus-visible{outline:3px solid var(--az);outline-offset:4px;border-radius:16px}
+@media (max-width:860px){.fc{flex-basis:calc((100% - 18px)/2.3)}}
+@media (max-width:620px){.fc{flex-basis:74%}}
+@media (prefers-reduced-motion:reduce){.fci{transition:none}}
+.usos-t{font-family:Sora,Inter,sans-serif;font-size:22px;color:var(--giz);margin:46px 0 0}
+.usos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:18px}
+.uso{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:20px 22px 22px}
+.uso .vis{height:250px;display:flex;align-items:center;justify-content:center;position:relative;margin-bottom:14px;border-radius:12px;background:rgba(140,200,230,.05);overflow:hidden}
+.uso .tg{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--az);font-weight:700}
+.uso h3{margin:6px 0 6px}.uso p{margin:0;color:var(--mut);font-size:15px}
+.cel{width:118px;height:228px;border-radius:24px;border:6px solid #2A2E33;background:#2A2E33;box-shadow:0 16px 34px rgba(0,0,0,.5);overflow:hidden;transform:rotate(-4deg)}
+.cel img{width:100%;height:100%;object-fit:cover;border-radius:16px;display:block}
+.a4{width:160px;height:auto;border-radius:4px;box-shadow:0 16px 34px rgba(0,0,0,.5);transform:rotate(3deg)}
+.tes{position:absolute;right:22%;bottom:16px;font-size:30px;color:var(--az);transform:rotate(-20deg)}
+.anki{width:86%;max-width:300px;background:#F4F1E8;color:#1D2125;border-radius:12px;box-shadow:0 16px 34px rgba(0,0,0,.5);font-size:12.5px;line-height:1.35;overflow:hidden}
+.anki .ab{display:flex;justify-content:space-between;background:#DCD8CC;padding:7px 12px;font-size:11px;font-weight:700;color:#4E555B}
+.anki .aq{padding:12px 14px 8px;text-align:center}
+.anki hr{border:0;border-top:1px solid #C9C5B9;margin:0 14px}
+.anki .ar{padding:10px 14px 12px;text-align:center;font-size:18px;font-weight:700}
+.anki .ar span{background:linear-gradient(transparent 55%,rgba(140,200,230,.6) 55%,rgba(140,200,230,.6) 92%,transparent 92%)}
+.anki .abt{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;padding:0 10px 12px}
+.anki .abt b{font-size:10.5px;text-align:center;border:1px solid #C9C5B9;border-radius:6px;padding:5px 0;background:#fff}
+.anki .abt b.r{color:#B3412E}.anki .abt b.g{color:#2E7D4F}
+@media (max-width:860px){.usos{grid-template-columns:1fr}.uso .vis{height:230px}}
+@media (max-width:620px){.bar2{grid-template-columns:110px 1fr 34px;font-size:13px;gap:8px}}
+.tab{--yl:#E8C468;--rd:#E07A6A;--gr:#7CC79A;position:relative;width:min(100%,560px);margin:0 auto;border-radius:28px;background:#24282D;padding:14px;box-shadow:0 30px 70px rgba(0,0,0,.55),inset 0 0 0 1px rgba(255,255,255,.06);transform:perspective(1400px) rotateY(-9deg) rotateX(3deg)}
+.tabi{border-radius:16px;background:#111315;overflow:hidden;display:flex;flex-direction:column;border:1px solid rgba(230,226,214,.08)}
+.tbar{padding:8px 12px;background:#1A1D20;font-size:11px;color:#8B8F94;text-align:center;border-bottom:1px solid rgba(230,226,214,.06)}
+.tbar span{background:#0D0E0F;border-radius:999px;padding:3px 12px}
+.tbody{flex:1;display:grid;grid-template-columns:1.25fr 1fr;gap:14px;padding:16px}
+.tk{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--az);font-weight:700}
+.tn{font-family:Sora,Inter,sans-serif;font-weight:700;font-size:clamp(15px,2vw,20px);color:var(--giz);margin:4px 0 12px}
+.tbs{display:grid;gap:8px}
+.tb{display:grid;grid-template-columns:minmax(0,1.15fr) 1fr 28px;gap:8px;align-items:center;font-size:clamp(10px,1.15vw,12px);color:var(--tx)}
+.tb i{height:10px;border-radius:5px;background:rgba(244,241,232,.07);overflow:hidden}
+.tb u{display:block;height:100%;width:var(--w);background:var(--c);border-radius:5px;transform-origin:left;animation:tbg 1.1s var(--dl) both cubic-bezier(.2,.8,.2,1)}
+@keyframes tbg{from{transform:scaleX(0)}}
+.tb b{font-size:11px;color:var(--giz);text-align:right}
+.tr2{border-left:1px solid rgba(230,226,214,.08);padding-left:14px;display:flex;flex-direction:column}
+.tr2 ol{margin:8px 0 0;padding-left:18px;display:grid;gap:7px;font-size:clamp(10px,1.15vw,12px);color:var(--tx)}
+.tr2 li b{display:block;font-weight:600;color:var(--giz)}
+.tr2 em{font-style:normal;font-size:9.5px;font-weight:700;border-radius:999px;padding:1px 7px}
+.tr2 em.p1{background:rgba(224,122,106,.18);color:#F0A294}.tr2 em.p2{background:rgba(232,196,104,.16);color:#EBCB7C}
+.tdia{margin-top:auto;font-size:clamp(10px,1.15vw,12px);color:var(--tx);background:rgba(140,200,230,.08);border-left:3px solid var(--az);border-radius:6px;padding:8px 10px}
+.tdia b{color:var(--giz)}
+.tag1,.tag2{position:absolute;font-family:"Patrick Hand",cursive;font-size:20px;color:#0D0E0F;background:var(--az);border-radius:10px;padding:4px 12px;box-shadow:0 10px 24px rgba(0,0,0,.4);transform:rotate(-5deg)}
+.tag1{left:22px;top:-20px}.tag2{right:-12px;top:-20px;transform:rotate(4deg)}.tab b,.tab em,.tab li,.tab span{font-size:inherit;line-height:1.3}.tab .tb b{font-size:11px}.tab .tr2 em{font-size:9.5px}.tab .tn{line-height:1.25}.tab .tn b,.tab .tdia b{display:inline}.sem-video .kit-hero{overflow:visible;padding:26px 0 30px}.kitrow{margin-top:34px;width:min(100%,560px);margin-left:auto;margin-right:auto}.krt{font-family:"Patrick Hand",cursive;font-size:20px;color:var(--az);margin-bottom:8px}.kri{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}.kr{background:var(--bg2,#15181B);border:1px solid rgba(230,226,214,.1);border-radius:12px;padding:8px 8px 10px;text-align:left;line-height:1.25}.kr img{display:block;width:100%;height:auto;aspect-ratio:3/3.4;object-fit:cover;object-position:top;border-radius:6px;margin-bottom:8px;background:#fff}.kr b{display:block;font-size:13px;color:var(--giz);font-weight:600}.kr span{display:block;font-size:12px;color:var(--mut);margin-top:2px}.kr.bn{border-color:rgba(140,200,230,.5)}.kr.bn span{color:var(--az);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:11px}@media(max-width:520px){.kri{grid-template-columns:repeat(2,minmax(0,1fr))}.kr img{aspect-ratio:4/3}}.kit-hero .tab{overflow:visible!important}.tag1,.tag2{line-height:1.2!important;z-index:2;white-space:nowrap}.tab .tbody{padding-top:20px;padding-bottom:22px}
+.kit-hero .tab{animation:tfl 6s ease-in-out infinite alternate}
+@keyframes tfl{to{transform:perspective(1400px) rotateY(-5deg) rotateX(2deg) translateY(-6px)}}
+@media(max-width:860px){.sem-video .kit-hero{order:2;margin-top:6px}.tab{transform:none;animation:none!important;aspect-ratio:auto}.tbody{grid-template-columns:1fr;gap:12px}.tr2{border-left:0;padding-left:0;border-top:1px solid rgba(230,226,214,.08);padding-top:12px}.tag1{left:8px;top:-18px}.tag2{right:6px;top:auto;bottom:-18px}.tb,.tr2 ol,.tdia{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.tb u,.kit-hero .tab{animation:none}}
+.cd .cdl{white-space:nowrap}
+@media(max-width:860px){.bar .cd{display:block!important;font-size:12px;text-align:center;line-height:1.25}.bar .cd .lg{display:block}}
+.bar .cd .sh{display:none}@media(max-width:400px){.bar .cd .lg{display:none}.bar .cd .sh{display:inline}}
+.val{flex-wrap:wrap;justify-content:flex-end}.amo{flex-basis:100%;text-align:right;margin-top:6px;font-size:14px;color:#8CC8E6;text-decoration:underline;text-underline-offset:3px}
+.amg{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.amc{display:flex;flex-direction:column;gap:12px;text-decoration:none;color:inherit;padding:14px}
+.amc img{width:100%;height:auto;aspect-ratio:1240/1754;object-fit:cover;object-position:top;border-radius:8px;border:1px solid rgba(230,226,214,.14)}
+.amc .tg{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8CC8E6}.amc h3{margin:4px 0 6px}.amc p{margin:0 0 10px;font-size:15px}
+.amc .ab{display:inline-block;background:#8CC8E6;color:#0D0E0F;font-weight:700;border-radius:999px;padding:7px 14px;font-size:14px}
+.amc:hover{transform:translateY(-3px)}
+@media(max-width:900px){.amg{grid-template-columns:1fr 1fr}}@media(max-width:520px){.amg{grid-template-columns:1fr}.amc{flex-direction:row}.amc img{width:38%}}
+</style>
+
+<div class="prog" id="prog"></div>
+<header class="bar"><div class="w">
+  <a class="brand" href="#topo" aria-label="Questão Ilustrada, início"><svg class="lg" viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="52" width="66" height="26" rx="5" transform="rotate(-4 50 65)" fill="#8CC8E6" opacity=".34"/><rect class="fr" pathLength="1" x="6" y="6" width="88" height="88" rx="18" stroke="#F4F1E8" stroke-width="6"/><path class="d2" pathLength="1" d="M26 74 L74 74 L26 26 Z" stroke="#F4F1E8" stroke-width="6"/><path class="d3" pathLength="1" d="M74 74 L26 26" stroke="#8CC8E6" stroke-width="7"/><path class="d3" pathLength="1" d="M26 62 L38 62 L38 74" stroke="#F4F1E8" stroke-width="4"/><path class="d3" pathLength="1" d="M58 74 A16 16 0 0 1 62.7 62.7" stroke="#F4F1E8" stroke-width="4"/></svg><span>Questão Ilustrada</span></a>
+  <div class="cd" id="cdf"><span class="lg">Prova de Matemática do ENEM em </span><span class="sh">ENEM em </span><b class="cdl" id="dfv">--d --h --m --s</b></div>
+  <a class="btn sm" href="#oferta">Quero o combo</a>
+</div></header>
+
+<main id="topo" class="sem-video">
+<section class="heroi">
+  <div class="fundo" aria-hidden="true">
+    <div class="quad"></div>
+    <svg class="constr" id="constr" viewBox="0 0 760 760" fill="none">
+      <g class="roda">
+        <circle class="gz t" pathLength="1" cx="380" cy="380" r="300" style="--d:.2s"/>
+        <path class="gz t" pathLength="1" d="M380 80 L640 530 L120 530 Z" style="--d:.6s"/>
+        <path class="az t" pathLength="1" d="M380 80 L380 530" style="--d:1.2s;stroke-dasharray:1"/>
+        <path class="gz t" pathLength="1" d="M380 380 L640 530" style="--d:1.4s"/>
+        <circle class="gz t" pathLength="1" cx="380" cy="430" r="150" style="--d:1s"/>
+        <path class="az t" pathLength="1" d="M352 530 L352 502 L380 502" style="--d:1.8s"/>
+        <path class="gz t" pathLength="1" d="M180 530 A60 60 0 0 0 150 478" style="--d:2s"/>
+      </g>
+    </svg>
+    <canvas id="po"></canvas>
+  </div>
+  <div class="w gridh">
+    <div>
+      <div class="eyebrow h-in" style="--d:.1s">Combo ENEM · diagnóstico de matemática</div>
+      <h1 id="h1">Descubra o que você erra. Treine até <span class="mk">fixar</span>.</h1>
+      <p class="lead h-in" style="--d:.95s">Faça a <b>Prova Diagnóstico</b> de 30 questões e veja, na hora, <b>quanto você acerta em cada assunto</b> e onde está perdendo ponto. A página monta a ordem do que estudar e quantas questões fazer por dia. Depois, listas de saturação com questões reais do ENEM, até acertar.</p>
+      <div class="hpreco h-in" style="--d:1.2s"><span class="de">Curso completo por</span><b>R$ 37,90</b><span class="obs">até a prova de 15/11</span></div>
+      <div class="h-in" style="--d:1.15s;margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="btn mag" href="#oferta">Quero o Combo ENEM <span class="ar">→</span></a><a class="lk" href="#amostras">Ver amostras em PDF ↓</a></div>
+      <div class="trust h-in" style="--d:1.25s"><span>PDF com acesso imediato</span><span>Garantia de 7 dias</span><span>Pagamento seguro Kiwify</span></div>
+    </div>
+    <div class="kit-hero h-in" style="--d:.6s"><div class="tab" role="img" aria-label="Exemplo do resultado do diagnóstico num tablet: nota de cada assunto e a ordem do que estudar">
+<div class="tabi"><div class="tbar"><span>questaoilustrada.com/diagnostico-enem</span></div>
+<div class="tbody"><div class="tl">
+<div class="tk">Seu diagnóstico</div><div class="tn">Você acertou <b>17 de 30</b></div>
+<div class="tbs"><div class="tb"><span>Geometria plana</span><i><u style="--w:67%;--c:var(--yl);--dl:0.25s"></u></i><b>6/9</b></div><div class="tb"><span>Geometria espacial</span><i><u style="--w:33%;--c:var(--rd);--dl:0.37s"></u></i><b>2/6</b></div><div class="tb"><span>Porcentagem</span><i><u style="--w:33%;--c:var(--rd);--dl:0.49s"></u></i><b>1/3</b></div><div class="tb"><span>Razão e proporção</span><i><u style="--w:100%;--c:var(--gr);--dl:0.61s"></u></i><b>3/3</b></div><div class="tb"><span>Estatística</span><i><u style="--w:67%;--c:var(--yl);--dl:0.73s"></u></i><b>2/3</b></div><div class="tb"><span>Probabilidade</span><i><u style="--w:33%;--c:var(--rd);--dl:0.85s"></u></i><b>1/3</b></div><div class="tb"><span>Funções</span><i><u style="--w:67%;--c:var(--yl);--dl:0.97s"></u></i><b>2/3</b></div></div></div>
+<div class="tr2"><div class="tk">Sua ordem de estudo</div>
+<ol><li><b>Geometria espacial</b><em class="p1">prioridade</em></li><li><b>Porcentagem e juros</b><em class="p1">prioridade</em></li><li><b>Probabilidade</b><em class="p1">prioridade</em></li><li><b>Geometria plana</b><em class="p2">reforço</em></li></ol>
+<div class="tdia">≈ <b>9 questões</b> por dia até 14/11</div></div></div></div>
+<div class="tag1">o que você erra</div><div class="tag2">seu plano até a prova</div></div>
+<div class="kitrow"><div class="krt">+ tudo isto no combo</div><div class="kri">
+<div class="kr"><img src="pg-sat-2.webp" alt="" loading="eager" width="1240" height="1754"><b>7 Listas de Saturação</b><span>209 questões</span></div>
+<div class="kr"><img src="pg-enem-1.webp" alt="" loading="eager" width="1240" height="1754"><b>Simulado de geometria</b><span>45 questões</span></div>
+<div class="kr"><img src="pg-estr-2.webp" alt="" loading="eager" width="1240" height="1754"><b>Estratégia + fórmulas</b><span>reta final</span></div>
+<div class="kr bn"><img src="fc-34-f.webp" alt="" loading="eager" width="540" height="960"><b>80 Flashcards</b><span>bônus</span></div>
+</div></div></div>
+  </div>
+  <div class="w"><div class="stats">
+    <div class="stat rv"><div class="n" data-count="30">30</div><p>questões no diagnóstico, cerca de 1h30</p></div>
+    <div class="stat rv d1"><div class="n" data-count="209">209</div><p>questões reais do ENEM nas listas de saturação</p></div>
+    <div class="stat rv d2"><div class="n" data-count="7">7</div><p>listas, uma para cada assunto</p></div>
+    <div class="stat rv d3"><div class="n" data-count="80">80</div><p>flashcards de geometria de bônus</p></div>
+  </div></div>
+</section>
+
+<section class="sec"><div class="w">
+  <div class="rv"><div class="eyebrow">O problema</div>
+  <h2>Faltam poucos dias.<br>Não dá para estudar <span class="mk">tudo</span>.</h2>
+  <p style="max-width:680px">Na reta final, o que rende é saber exatamente onde você perde ponto e treinar aquilo, do jeito que cai, até não errar mais.</p></div>
+  <div class="dor">
+    <div class="card flip"><h3><span class="x">✕</span> "Não sei por onde começar"</h3><p>O diagnóstico mostra o que você erra e monta a ordem das listas para você.</p></div>
+    <div class="card flip d1"><h3><span class="x">✕</span> "Estudo e erro o mesmo tipo"</h3><p>Ver uma questão resolvida não fixa. Fazer 20, 30 do mesmo assunto, fixa.</p></div>
+    <div class="card flip d2"><h3><span class="x">✕</span> "Esqueço a fórmula na hora"</h3><p>Folha de fórmulas para a véspera e 80 flashcards de bônus para revisar todo dia.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="como"><div class="w">
+  <div class="rv"><div class="eyebrow">Como funciona</div>
+  <h2>Três etapas até a <span class="mk">prova</span>.</h2>
+  <p style="max-width:700px">Você não precisa decidir o que estudar. O curso decide com você, a partir do que você erra.</p></div>
+  <div class="etapas">
+    <div class="card rv"><div class="big">1</div><h3>Diagnóstico</h3><p>Só 30 questões: 15 de geometria e 15 de matemática básica. Marque as respostas na nossa página e veja a nota de cada assunto.</p></div>
+    <div class="card rv d1"><div class="big">2</div><h3>Saturação</h3><p>O diagnóstico monta a ordem das listas e diz quantas questões fazer por dia. Cada lista tem só questões reais do ENEM daquele assunto: errou porcentagem, faz a lista de porcentagem até fixar.</p></div>
+    <div class="card rv d2"><div class="big">3</div><h3>Reta final</h3><p>Na véspera, a folha de fórmulas e o guia de estratégia: como a TRI calcula a nota, o tempo de cada questão e como chutar melhor.</p></div>
+  </div>
+  <div class="diagbox rv"><img src="diag-resultado.webp" alt="Exemplo do resultado do diagnóstico: nota por assunto e ordem das listas" loading="lazy" width="1200" height="1180"><p class="fonte-n">Exemplo do resultado do diagnóstico. Suas respostas ficam só no seu aparelho.</p></div>
+</div></section>
+
+<section class="sec" style="background:rgba(140,200,230,.03)"><div class="w">
+  <div class="rv"><div class="eyebrow">A contagem</div>
+  <h2>O que mais cai de geometria no <span class="mk">ENEM</span></h2>
+  <p style="max-width:700px">Lemos as 495 questões de Matemática das 11 últimas provas regulares: <b>128 eram de geometria, mais de 1 em cada 4</b>. O simulado do diagnóstico segue essa proporção: 11 de volume, 9 de áreas, 5 de escala, 5 de Pitágoras e trigonometria, 5 de circunferência, 5 de vistas, 3 de poliedros e 2 de ângulos.</p></div>
+  <div class="bars rv"><div class="bar2"><span class="t">Volume e capacidade</span><span class="tr"><i style="--w:100.0%;transition-delay:0.0s"></i></span><b>32</b></div><div class="bar2"><span class="t">Áreas e perímetros</span><span class="tr"><i style="--w:81.2%;transition-delay:0.1s"></i></span><b>26</b></div><div class="bar2"><span class="t">Semelhança e escala</span><span class="tr"><i style="--w:46.9%;transition-delay:0.2s"></i></span><b>15</b></div><div class="bar2"><span class="t">Pitágoras e trigonometria</span><span class="tr"><i style="--w:46.9%;transition-delay:0.3s"></i></span><b>15</b></div><div class="bar2"><span class="t">Circunferência, arcos e setores</span><span class="tr"><i style="--w:43.8%;transition-delay:0.4s"></i></span><b>14</b></div><div class="bar2"><span class="t">Vistas, projeções e planificações</span><span class="tr"><i style="--w:43.8%;transition-delay:0.5s"></i></span><b>14</b></div><div class="bar2"><span class="t">Poliedros e Euler</span><span class="tr"><i style="--w:21.9%;transition-delay:0.6s"></i></span><b>7</b></div><div class="bar2"><span class="t">Ângulos e polígonos</span><span class="tr"><i style="--w:15.6%;transition-delay:0.7s"></i></span><b>5</b></div></div>
+  <p class="fonte-n">Contagem da Questão Ilustrada, lendo cada questão das provas oficiais do INEP. Ficaram de fora conversões de unidade sem figura, gráficos de funções trigonométricas, geometria analítica e questões anuladas. Outros levantamentos, com critérios diferentes, chegam a 20% a 25%.</p>
+</div></section>
+
+<section id="recebe" class="sec"><div class="w">
+  <div class="rv"><div class="eyebrow">O que você recebe</div>
+  <h2>Diagnóstico, saturação e <span class="mk">reta final</span>.</h2>
+  <p style="max-width:640px">Tudo em PDF, na área de membros, liberado logo depois do pagamento.</p></div>
+  <div class="pkg" id="pkg"><div class="trilha" aria-hidden="true"><i></i></div>
+    <div class="item rv"><svg class="num" viewBox="0 0 76 76" aria-hidden="true"><text x="38" y="58" text-anchor="middle">1</text></svg><div><h3>Etapa 1 · Diagnóstico</h3><p class="d">A Prova Diagnóstico: 30 questões num PDF só (15 de geometria e 15 de matemática básica), com folha de respostas e resoluções, e a página que monta o seu diagnóstico. O simulado completo, de 45 questões, fica para treinar depois.</p>
+      <div class="chips"><span class="chip" style="transition-delay:.3s">Nota por assunto</span><span class="chip" style="transition-delay:.38s">Ordem das listas</span><span class="chip" style="transition-delay:.46s">Questões por dia até 15/11</span></div></div>
+      <div class="val"><span class="fmt">30 questões</span><button class="ver" data-img="q">Ver uma página</button><a class="amo" href="amostras/amostra-prova-diagnostico.pdf" target="_blank" rel="noopener">Abrir amostra em PDF ↗</a></div></div>
+    <div class="item rv"><svg class="num" viewBox="0 0 76 76" aria-hidden="true"><text x="38" y="58" text-anchor="middle">2</text></svg><div><h3>Etapa 2 · 7 Listas de Saturação</h3><p class="d">Uma lista por assunto, só com questões reais do ENEM, gabarito oficial e a página "Antes de começar" com as fórmulas e as pegadinhas: geometria plana (37), geometria espacial (31), porcentagem e juros, razão e proporção, estatística e gráficos, probabilidade e contagem, funções.</p>
+      <div class="chips"><span class="chip" style="transition-delay:.3s">209 questões</span><span class="chip" style="transition-delay:.38s">Gabarito do INEP</span><span class="chip" style="transition-delay:.46s">Quadro "Meu controle"</span></div></div>
+      <div class="val"><span class="fmt">PDF · 7 listas</span><button class="ver" data-img="s">Ver uma página</button><a class="amo" href="amostras/amostra-lista-de-saturacao.pdf" target="_blank" rel="noopener">Abrir amostra em PDF ↗</a></div></div>
+    <div class="item rv"><svg class="num" viewBox="0 0 76 76" aria-hidden="true"><text x="38" y="58" text-anchor="middle">3</text></svg><div><h3>Etapa 3 · Reta final</h3><p class="d">Estratégia de prova no ENEM (TRI, tempo e chute, com o checklist do dia 15/11) e a folha de fórmulas de geometria e matemática básica para reler na véspera.</p></div>
+      <div class="val"><span class="fmt">PDF · 2 guias</span><button class="ver" data-img="e">Ver uma página</button><a class="amo" href="amostras/amostra-reta-final.pdf" target="_blank" rel="noopener">Abrir amostra em PDF ↗</a></div></div>
+    <div class="item bonus rv"><div class="tag">BÔNUS</div><div><h3>80 Flashcards de Geometria</h3><p class="d">Plana (38), espacial (26) e trigonometria (16). Pergunta na frente; no verso, a fórmula-chave, de onde ela vem e a pegadinha. No celular, impresso ou no Anki.</p></div>
+      <div class="val"><span class="fmt">80 cartas · 3 formatos</span><button class="ver" data-img="f">Ver uma folha</button></div></div>
+  </div>
+</div></section>
+
+<section class="sec" id="cards"><div class="w">
+  <div class="rv cabg"><div><div class="eyebrow">Bônus · Flashcards</div>
+    <h2>A fórmula e <span class="mk">de onde ela vem</span>.</h2>
+    <p style="max-width:620px">Cards reais do material. Na frente, a pergunta com a figura. No verso, a fórmula-chave, de onde ela vem e a pegadinha. <b>Toque em um card para virar.</b></p></div>
+    <div class="galnav"><button class="gb" id="fprev" aria-label="Cards anteriores">←</button><button class="gb" id="fnext" aria-label="Próximos cards">→</button></div></div>
+  <div class="fcs rv d1" id="fcs"><button class="fc" aria-label="Flashcard Teorema de Pitágoras: toque para virar" aria-pressed="false"><span class="fci"><img src="fc-1-f.webp" alt="Frente do flashcard: Teorema de Pitágoras" loading="lazy" width="540" height="960"><img class="v" src="fc-1-v.webp" alt="Verso do flashcard: Teorema de Pitágoras" loading="lazy" width="540" height="960"></span></button><button class="fc" aria-label="Flashcard Área do círculo: toque para virar" aria-pressed="false"><span class="fci"><img src="fc-34-f.webp" alt="Frente do flashcard: Área do círculo" loading="lazy" width="540" height="960"><img class="v" src="fc-34-v.webp" alt="Verso do flashcard: Área do círculo" loading="lazy" width="540" height="960"></span></button><button class="fc" aria-label="Flashcard Cilindro: toque para virar" aria-pressed="false"><span class="fci"><img src="fc-52-f.webp" alt="Frente do flashcard: Cilindro" loading="lazy" width="540" height="960"><img class="v" src="fc-52-v.webp" alt="Verso do flashcard: Cilindro" loading="lazy" width="540" height="960"></span></button><button class="fc" aria-label="Flashcard Líquido no cone: toque para virar" aria-pressed="false"><span class="fci"><img src="fc-57-f.webp" alt="Frente do flashcard: Líquido no cone" loading="lazy" width="540" height="960"><img class="v" src="fc-57-v.webp" alt="Verso do flashcard: Líquido no cone" loading="lazy" width="540" height="960"></span></button><button class="fc" aria-label="Flashcard Relação de Euler: toque para virar" aria-pressed="false"><span class="fci"><img src="fc-46-f.webp" alt="Frente do flashcard: Relação de Euler" loading="lazy" width="540" height="960"><img class="v" src="fc-46-v.webp" alt="Verso do flashcard: Relação de Euler" loading="lazy" width="540" height="960"></span></button><button class="fc" aria-label="Flashcard Altura com um ângulo: toque para virar" aria-pressed="false"><span class="fci"><img src="fc-69-f.webp" alt="Frente do flashcard: Altura com um ângulo" loading="lazy" width="540" height="960"><img class="v" src="fc-69-v.webp" alt="Verso do flashcard: Altura com um ângulo" loading="lazy" width="540" height="960"></span></button></div>
+  <div class="chips" style="margin-top:6px"><span class="chip">38 de geometria plana</span><span class="chip">26 de espacial</span><span class="chip">16 de trigonometria</span></div>
+  <h3 class="usos-t rv">3 jeitos de usar os mesmos 80 cards</h3>
+  <div class="usos">
+    <div class="uso rv"><div class="vis"><div class="cel"><img src="fc-34-f.webp" alt="Flashcard aberto no celular" loading="lazy" width="540" height="960"></div></div>
+      <div class="tg">1 · Celular</div><h3>PDF vertical</h3><p>Um card por tela, frente e depois verso, com sumário por capítulo. Para revisar no ônibus ou na fila.</p></div>
+    <div class="uso rv d1"><div class="vis"><img class="a4" src="pg-fc-imp-02.webp" alt="Folha A4 com 9 flashcards para imprimir" loading="lazy" width="1240" height="1755"><span class="tes" aria-hidden="true">✂</span></div>
+      <div class="tg">2 · Impresso</div><h3>A4, 9 por folha</h3><p>Imprima frente e verso, recorte e leve no bolso. O fundo branco gasta pouca tinta.</p></div>
+    <div class="uso rv d2"><div class="vis"><div class="anki" aria-hidden="true"><div class="ab"><span>Geometria Ilustrada</span><span>12 · 3 · 5</span></div>
+        <div class="aq">Triângulo retângulo de hipotenusa <i>a</i> e catetos <i>b</i> e <i>c</i>. Qual a relação entre os lados?</div><hr><div class="ar"><span>a² = b² + c²</span></div>
+        <div class="abt"><b class="r">Novamente</b><b>Difícil</b><b class="g">Bom</b><b>Fácil</b></div></div></div>
+      <div class="tg">3 · Anki</div><h3>Baralho pronto</h3><p>As 80 cartas para importar no Anki, que traz cada card de volta na hora de revisar. Com guia de importação passo a passo.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" style="background:rgba(140,200,230,.03)"><div class="w">
+  <div class="rv"><div class="eyebrow">Estratégia de prova</div>
+  <h2>Saber a matéria é metade. A outra é <span class="mk">não desperdiçar ponto</span>.</h2>
+  <p style="max-width:680px">Um guia curto para ler na véspera: como a nota é calculada e o que isso muda na hora de decidir o que fazer, o que pular e como chutar.</p></div>
+  <div class="estr">
+    <div class="card rv"><svg viewBox="0 0 220 110" class="trisvg" aria-hidden="true"><path d="M20 95 H210 M20 95 V10" stroke="#E6E2D6" stroke-opacity=".5" stroke-width="2" fill="none"/><path d="M20 78 H210" stroke="#E6E2D6" stroke-opacity=".35" stroke-dasharray="5 5" stroke-width="2"/><path d="M20 78 C 90 78, 100 76, 115 55 S 150 18, 210 15" stroke="#8CC8E6" stroke-width="4" fill="none" stroke-linecap="round"/><text x="24" y="73" fill="#A9A69C" font-size="11">chute</text><text x="120" y="107" fill="#A9A69C" font-size="11" text-anchor="middle">o quanto você sabe →</text></svg><h3>Como a TRI calcula a nota</h3><p>Por que errar uma fácil custa mais que errar uma difícil, e por que nunca deixar nada em branco.</p></div>
+    <div class="card rv d1"><div class="big">≈ 3 min</div><h3>Tempo e ordem de ataque</h3><p>Um plano de tempo para o 2º dia, os temas que valem garantir primeiro e os sinais de que é hora de pular.</p></div>
+    <div class="card rv d2"><div class="big lt"><span>A</span><span>B</span><s>C</s><s>D</s><span>E</span></div><h3>Eliminar antes de chutar</h3><p>Ordem de grandeza, unidade, estimativa e casos extremos. E o checklist do dia 15/11.</p></div>
+  </div>
+  <div class="rv" style="margin-top:22px"><button class="ver" data-img="e">Ver uma página do guia</button></div>
+</div></section>
+
+<section class="sec"><div class="w">
+  <div class="rv"><div class="eyebrow">Como usar</div><h2>Do primeiro dia à prova</h2></div>
+  <div class="steps" id="steps"><div class="linha" aria-hidden="true"><i></i></div>
+    <div class="step rv"><div class="d">Dia 1</div><h3>Diagnóstico</h3><p>30 questões. Veja o que errou.</p></div>
+    <div class="step rv d1"><div class="d">Até a véspera</div><h3>Listas na ordem</h3><p>As questões do dia, até acertar 8 em 10.</p></div>
+    <div class="step rv d2"><div class="d">Todo dia</div><h3>10 min de flashcards</h3><p>Fórmulas na ponta da língua.</p></div>
+    <div class="step rv d3"><div class="d">Véspera e 15/11</div><h3>Reta final</h3><p>Folha de fórmulas e estratégia.</p></div>
+  </div>
+</div></section>
+
+<section class="sec" id="amostras" style="background:rgba(140,200,230,.03)"><div class="w">
+  <div class="rv"><div class="eyebrow">Amostras em PDF</div><h2>Abra e veja como é <span class="mk">por dentro</span>.</h2>
+  <p style="max-width:640px">Páginas reais do material, do jeito que você vai receber. Abrem numa nova aba.</p></div>
+  <div class="amg">
+    <a class="card amc rv" href="amostras/amostra-prova-diagnostico.pdf" target="_blank" rel="noopener"><img src="pg-prova.webp" alt="Capa da Prova Diagnóstico" loading="lazy" width="1240" height="1754"><div><div class="tg">Etapa 1</div><h3>Prova Diagnóstico</h3><p>A capa com o passo a passo, 3 das 30 questões e a folha de respostas.</p><span class="ab">Abrir PDF ↗</span></div></a>
+    <a class="card amc rv d1" href="amostras/amostra-lista-de-saturacao.pdf" target="_blank" rel="noopener"><img src="pg-sat-amostra.webp" alt="Página Antes de começar da lista de porcentagem e juros" loading="lazy" width="1240" height="1754"><div><div class="tg">Etapa 2</div><h3>Lista de Saturação</h3><p>A lista de porcentagem e juros: capa, "Antes de começar" e as primeiras questões.</p><span class="ab">Abrir PDF ↗</span></div></a>
+    <a class="card amc rv d2" href="amostras/amostra-reta-final.pdf" target="_blank" rel="noopener"><img src="pg-folha.webp" alt="Folha de fórmulas" loading="lazy" width="1240" height="1754"><div><div class="tg">Etapa 3</div><h3>Reta final</h3><p>Uma página da folha de fórmulas e uma do guia de estratégia (TRI).</p><span class="ab">Abrir PDF ↗</span></div></a>
+    <a class="card amc rv d3" href="amostras/amostra-simulado.pdf" target="_blank" rel="noopener"><img src="pg-enem-1.webp" alt="Capa do simulado de geometria" loading="lazy" width="1240" height="1754"><div><div class="tg">Simulado</div><h3>Simulado de geometria</h3><p>A capa e 2 das 45 questões, com as figuras redesenhadas.</p><span class="ab">Abrir PDF ↗</span></div></a>
+  </div>
+</div></section>
+
+<section class="sec" id="dentro"><div class="w">
+  <div class="rv cabg"><div><div class="eyebrow">Por dentro do combo</div><h2>Folheie antes de comprar.</h2>
+  <p style="max-width:560px">Páginas reais do simulado, das listas de saturação, da estratégia e dos flashcards. Toque em uma página para ampliar.</p></div>
+  <div class="galnav"><button class="gb" id="gprev" aria-label="Página anterior">←</button><span id="gcont">1 / 17</span><button class="gb" id="gnext" aria-label="Próxima página">→</button></div></div>
+  <div class="gal rv d1" id="gal"><button class="gp" data-i="0" aria-label="Ampliar: Prova Diagnóstico: capa"><img src="pg-prova.webp" alt="Página do combo: Prova Diagnóstico: capa" loading="lazy" width="1240" height="1754"><span>Prova Diagnóstico: capa</span></button><button class="gp" data-i="1" aria-label="Ampliar: Prova Diagnóstico: folha de respostas"><img src="pg-prova-folha.webp" alt="Página do combo: Prova Diagnóstico: folha de respostas" loading="lazy" width="1240" height="1754"><span>Prova Diagnóstico: folha de respostas</span></button><button class="gp" data-i="2" aria-label="Ampliar: Capa do simulado"><img src="pg-enem-1.webp" alt="Página do combo: Capa do simulado" loading="lazy" width="1240" height="1754"><span>Capa do simulado</span></button><button class="gp" data-i="3" aria-label="Ampliar: O que mais cai: a contagem"><img src="pg-enem-3.webp" alt="Página do combo: O que mais cai: a contagem" loading="lazy" width="1240" height="1754"><span>O que mais cai: a contagem</span></button><button class="gp" data-i="4" aria-label="Ampliar: Plano de 10 dias"><img src="pg-enem-5.webp" alt="Página do combo: Plano de 10 dias" loading="lazy" width="1240" height="1754"><span>Plano de 10 dias</span></button><button class="gp" data-i="5" aria-label="Ampliar: Cartão-resposta"><img src="pg-enem-6.webp" alt="Página do combo: Cartão-resposta" loading="lazy" width="1240" height="1754"><span>Cartão-resposta</span></button><button class="gp" data-i="6" aria-label="Ampliar: Questão do ENEM 2015"><img src="pg-enem-26.webp" alt="Página do combo: Questão do ENEM 2015" loading="lazy" width="1240" height="1754"><span>Questão do ENEM 2015</span></button><button class="gp" data-i="7" aria-label="Ampliar: Questão do ENEM 2025"><img src="pg-enem-34.webp" alt="Página do combo: Questão do ENEM 2025" loading="lazy" width="1240" height="1754"><span>Questão do ENEM 2025</span></button><button class="gp" data-i="8" aria-label="Ampliar: Questão do ENEM 2022"><img src="pg-enem-37.webp" alt="Página do combo: Questão do ENEM 2022" loading="lazy" width="1240" height="1754"><span>Questão do ENEM 2022</span></button><button class="gp" data-i="9" aria-label="Ampliar: Resoluções com caminho rápido"><img src="pg-enem-63.webp" alt="Página do combo: Resoluções com caminho rápido" loading="lazy" width="1240" height="1754"><span>Resoluções com caminho rápido</span></button><button class="gp" data-i="10" aria-label="Ampliar: Estratégia: como a TRI calcula a nota"><img src="pg-estr-2.webp" alt="Página do combo: Estratégia: como a TRI calcula a nota" loading="lazy" width="1240" height="1754"><span>Estratégia: como a TRI calcula a nota</span></button><button class="gp" data-i="11" aria-label="Ampliar: Estratégia: ordem de ataque e tempo"><img src="pg-estr-3.webp" alt="Página do combo: Estratégia: ordem de ataque e tempo" loading="lazy" width="1240" height="1754"><span>Estratégia: ordem de ataque e tempo</span></button><button class="gp" data-i="12" aria-label="Ampliar: Flashcards para imprimir: frente"><img src="pg-fc-imp-02.webp" alt="Página do combo: Flashcards para imprimir: frente" loading="lazy" width="1240" height="1754"><span>Flashcards para imprimir: frente</span></button><button class="gp" data-i="13" aria-label="Ampliar: Flashcards para imprimir: verso"><img src="pg-fc-imp-03.webp" alt="Página do combo: Flashcards para imprimir: verso" loading="lazy" width="1240" height="1754"><span>Flashcards para imprimir: verso</span></button><button class="gp" data-i="14" aria-label="Ampliar: Lista de saturação: antes de começar"><img src="pg-sat-1.webp" alt="Página do combo: Lista de saturação: antes de começar" loading="lazy" width="1240" height="1754"><span>Lista de saturação: antes de começar</span></button><button class="gp" data-i="15" aria-label="Ampliar: Lista de saturação: questões"><img src="pg-sat-2.webp" alt="Página do combo: Lista de saturação: questões" loading="lazy" width="1240" height="1754"><span>Lista de saturação: questões</span></button><button class="gp" data-i="16" aria-label="Ampliar: Folha de fórmulas"><img src="pg-folha.webp" alt="Página do combo: Folha de fórmulas" loading="lazy" width="1240" height="1754"><span>Folha de fórmulas</span></button></div>
+</div></section>
+
+<section class="sec"><div class="w pdfg">
+  <div class="rv"><div class="eyebrow">Seu material, sempre com você</div>
+    <h2>Tudo em <span class="mk">PDF</span>, na hora.</h2>
+    <p>Logo depois do pagamento, você baixa os arquivos na área de membros da Kiwify. Estude no celular ou imprima a versão clara.</p>
+    <ul class="pdfl"><li><b>Simulado de geometria</b><span>72 páginas · escuro e claro</span></li><li><b>Prova Diagnóstico</b><span>30 questões + folha de respostas + resoluções</span></li><li><b>7 Listas de Saturação</b><span>209 questões · para imprimir</span></li><li><b>Folha de fórmulas</b><span>2 páginas · escuro e claro</span></li><li><b>Flashcards para imprimir</b><span>A4, 9 por folha, frente e verso</span></li><li><b>Flashcards para celular</b><span>PDF vertical, com sumário</span></li><li><b>Baralho do Anki</b><span>80 cartas + guia de importação</span></li><li><b>Estratégia de prova no ENEM</b><span>4 páginas · versão escura e clara</span></li></ul>
+  </div>
+  <div class="rv d1"><img class="dev" src="combo-plataforma.webp" alt="Combo ENEM: diagnóstico no celular, listas de saturação, simulado e flashcards" loading="lazy" width="1200" height="1000"></div>
+</div></section>
+
+<section id="oferta" class="sec"><div class="w">
+  <div class="offer rv" id="offer">
+    <div>
+      <div class="eyebrow">Combo ENEM</div>
+      <h2>Descubra o que você erra e treine até fixar, até a prova</h2>
+      <ul class="stack">
+        <li style="transition-delay:.2s"><span>1. Diagnóstico de 30 questões + página</span><span>o que estudar</span></li>
+        <li style="transition-delay:.3s"><span>2. 7 Listas de Saturação (209 questões)</span><span>treinar até fixar</span></li>
+        <li style="transition-delay:.4s"><span>3. Estratégia de prova + folha de fórmulas</span><span>a reta final</span></li>
+        <li style="transition-delay:.5s"><span>Bônus: 80 Flashcards de Geometria</span><span>a revisão diária</span></li>
+      </ul>
+      <div class="gar"><div class="s">7<br>dias</div><span><b>Garantia incondicional.</b> Se não for para você, peça o reembolso em até 7 dias e devolvemos 100%.</span></div>
+    </div>
+    <div class="price">
+      <div style="font-size:14px;color:#4E555B;margin-bottom:8px">A prova de Matemática começa em</div>
+      <div class="timer" id="timer"><div><b>--</b><span>dias</span></div><div><b>--</b><span>horas</span></div><div><b>--</b><span>min</span></div><div><b>--</b><span>seg</span></div></div>
+      <div style="font-size:14px;color:#4E555B;font-weight:600">Diagnóstico + Saturação + Reta final</div>
+      <div class="por"><small>R$</small><span class="v">37,90</span></div>
+      <div class="parc">à vista no Pix ou parcelado no cartão</div>
+      <a class="btn mag" id="comprar" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM</a>
+      <p class="mini">Domingo, 15/11, às 13h30. Comece hoje pelo diagnóstico.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" style="padding-top:40px"><div class="w">
+  <div class="rv"><h2>Perguntas frequentes</h2></div>
+  <details class="rv"><summary>As questões são do ENEM mesmo?</summary><p>Sim. Todas são de provas regulares do ENEM, com o gabarito oficial do INEP. O simulado tem 45 questões de 2015 a 2025 com figuras redesenhadas; as listas de saturação trazem questões de 2009 a 2025, com as figuras das provas originais. Cada questão foi resolvida de novo por um revisor independente.</p></details>
+  <details class="rv"><summary>O que é uma lista de saturação?</summary><p>É uma lista com muitas questões de um único assunto, do jeito que cai no ENEM. Você faz até o erro sumir: errou porcentagem, faz a lista de porcentagem; errou geometria plana, faz a de geometria plana. Cada lista começa com as fórmulas e as pegadinhas do assunto e termina com o gabarito e o quadro "Meu controle".</p></details>
+  <details class="rv"><summary>Como funciona o diagnóstico?</summary><p>Você faz 15 questões de geometria e 15 de matemática básica (cerca de 1h30), marca as respostas na nossa página e recebe a nota de cada assunto, a ordem das listas e quantas questões fazer por dia até a prova. As respostas ficam salvas só no seu aparelho.</p></details>
+  <details class="rv"><summary>Preciso ter a Geometria Ilustrada?</summary><p>Não. O combo funciona sozinho. As resoluções e os flashcards indicam o capítulo da apostila só para quem quiser se aprofundar.</p></details>
+  <details class="rv"><summary>Já tenho a Geometria Ilustrada. Vale a pena?</summary><p>Sim. Nenhuma questão do simulado nem das listas se repete com a apostila, e o curso cobre também a matemática básica. Os flashcards vêm de bônus: se você já os levou junto com a apostila, são os mesmos.</p></details>
+  <details class="rv"><summary>Começo atrasado. Ainda dá tempo?</summary><p>Dá. O diagnóstico calcula quantas questões fazer por dia com os dias que faltam. Comece pelas listas marcadas como prioridade.</p></details>
+  <details class="rv"><summary>Como funcionam os flashcards?</summary><p>São 80 cartas com a pergunta na frente e a resposta atrás: fórmula-chave, de onde ela vem e a pegadinha. Imprima em A4 (9 por folha, frente e verso), use o PDF no celular (com sumário por capítulo) ou importe no Anki, com o guia passo a passo.</p></details>
+  <details class="rv"><summary>O que tem no guia de estratégia?</summary><p>Como a TRI calcula a nota e por que as fáceis pesam, um plano de tempo para o 2º dia, os temas que valem garantir primeiro, os sinais de que vale pular, como eliminar alternativas antes de chutar e o checklist do dia da prova. Nenhum método garante nota, mas a estratégia evita desperdiçar pontos.</p></details>
+  <details class="rv"><summary>Como recebo?</summary><p>Logo após o pagamento você entra na área de membros da Kiwify e baixa os PDFs.</p></details>
+  <details class="rv"><summary>Posso ver antes de comprar?</summary><p>Pode. Abra as amostras em PDF nesta página: a Prova Diagnóstico, uma Lista de Saturação, o simulado e a reta final. Ou folheie as páginas na galeria.</p></details>
+</div></section>
+
+<section class="fim sec"><div class="w fimg">
+  <div class="rv"><img class="dev" src="combo-plataforma.webp" alt="Combo ENEM: diagnóstico no celular, listas de saturação, simulado e flashcards" loading="lazy" width="1200" height="1000"></div>
+  <div class="rv d1">
+    <div class="eyebrow">Combo ENEM</div>
+    <h2>Pronto para descobrir o que você <span class="mk">erra</span>?</h2>
+    <ul class="fimlist"><li>Diagnóstico com 30 questões</li><li>7 listas de saturação, 209 questões do ENEM</li><li>Estratégia de prova e folha de fórmulas</li><li>Bônus: 80 flashcards de geometria</li></ul>
+    <div class="fimpreco"><b>R$ 37,90</b><span>Curso completo</span></div>
+    <a class="btn mag" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM <span class="ar">→</span></a>
+  </div>
+</div></section>
+</main>
+
+<footer><div class="w">© 2026 Questão Ilustrada · @questaoilustrada · Questões do ENEM (INEP); textos, figuras e resoluções da Questão Ilustrada. Material de uso pessoal, proibida a revenda.</div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Página do material"><div class="mbox"><button class="fx" aria-label="Fechar">×</button><div id="mcont"></div></div></div>
+<div class="flut" id="flut"><span class="p">R$ 37,90<small>Combo ENEM · 7 dias de garantia</small></span><a class="btn sm" href="#oferta">Quero o combo</a></div>
+
+<script>
+(()=>{
+const RED=matchMedia('(prefers-reduced-motion: reduce)').matches, FINO=matchMedia('(pointer:fine)').matches;
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+
+/* título: quebra em palavras para a tipografia cinética */
+(function(){const h=$('#h1');let i=0;
+  const wrap=t=>t.split(/(\s+)/).map(w=>w.trim()?`<span class="wd"><span style="--i:${i++}">${w}</span></span>`:w).join('');
+  h.innerHTML=[...h.childNodes].map(n=>n.nodeType===3?wrap(n.textContent):`<span class="wd"><span style="--i:${i++}">${n.outerHTML}</span></span>`).join('');
+  setTimeout(()=>h.querySelector('.mk')&&h.querySelector('.mk').classList.add('in'),900);})();
+
+/* revelações */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target;t.classList.add('in');
+  t.querySelectorAll('.mk').forEach(m=>m.classList.add('in'));
+  if(t.dataset.count!==undefined||t.querySelector('[data-count]'))conta(t.matches('[data-count]')?t:t.querySelector('[data-count]'));
+  io.unobserve(t)}),{threshold:.18,rootMargin:'0px 0px -6% 0px'});
+$$('.rv,.flip,.sec,.stat,.loop,.bars').forEach(el=>io.observe(el));
+
+function conta(el){if(!el||el._c)return;el._c=1;const t=+el.dataset.count;if(RED){el.textContent=t;return}let s=null;
+  const f=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/1600,1);el.textContent=Math.round(t*(1-Math.pow(2,-10*p)));if(p<1)requestAnimationFrame(f)};el.textContent=0;requestAnimationFrame(f)}
+
+/* lousa: troca com cortina e avança sozinha */
+const board=$('#board')||document.createElement('div'),tabs=$$('.tab');let atual=0,auto=true,tmr;
+function show(i){board.querySelectorAll('svg').forEach((s,k)=>{s.style.display=k==i?'block':'none';s.classList.remove('play-on','wipe');if(k==i){s.getBoundingClientRect();s.classList.add('play-on','wipe')}});
+  tabs.forEach((t,k)=>{t.classList.toggle('on',k==i);t.setAttribute('aria-selected',k==i);const m=t.querySelector('.tm');m.classList.remove('run');if(k==i&&auto){m.getBoundingClientRect();m.classList.add('run')}});
+  atual=i;clearTimeout(tmr);if(auto&&!RED)tmr=setTimeout(()=>show((atual+1)%3),7000)}
+tabs.forEach(t=>t.addEventListener('click',()=>{auto=false;show(+t.dataset.b)}));
+new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){show(0);o.disconnect()}},{threshold:.4}).observe(board);
+
+/* scroll: barra de progresso, trilhas que se desenham, paralaxe, botão flutuante */
+const prog=$('#prog'),flut=$('#flut'),of=$('#oferta'),pkg=$('#pkg'),stp=$('#steps'),cons=$('#constr');
+function prog01(el,a,b){const r=el.getBoundingClientRect(),h=innerHeight;return Math.max(0,Math.min(1,(h*a-r.top)/(r.height+h*(a-b))))}
+let pend=false;function onScroll(){if(pend)return;pend=true;requestAnimationFrame(()=>{pend=false;const d=document.documentElement,y=d.scrollTop;
+  prog.style.transform=`scaleX(${y/(d.scrollHeight-d.clientHeight)||0})`;
+  const r=of.getBoundingClientRect();flut.classList.toggle('show',y>700&&(r.top>innerHeight||r.bottom<0));
+  if(!RED){pkg.style.setProperty('--p',prog01(pkg,.8,.5).toFixed(3));stp.style.setProperty('--p',prog01(stp,.9,.3).toFixed(3));
+    if(y<1200)cons.style.transform=`translateY(${y*.25}px) rotate(${y*.02}deg)`}})}
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+if(RED){pkg.style.setProperty('--p',1);stp.style.setProperty('--p',1)}
+
+/* luz do mouse: o quadriculado só aparece perto do cursor */
+const heroi=$('.heroi');
+if(FINO&&!RED)heroi.addEventListener('pointermove',e=>{const r=heroi.getBoundingClientRect();heroi.style.setProperty('--mx',(e.clientX-r.left)+'px');heroi.style.setProperty('--my',(e.clientY-r.top)+'px')});
+
+/* botões magnéticos e oferta com inclinação 3D */
+if(FINO&&!RED){$$('.mag').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.12}px,${(e.clientY-r.top-r.height/2)*.25}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+  const o=$('#offer');o.addEventListener('pointermove',e=>{const r=o.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+    o.style.transform=`perspective(1400px) rotateY(${(x-.5)*4}deg) rotateX(${(.5-y)*4}deg)`;o.style.setProperty('--ox',x*100+'%');o.style.setProperty('--oy',y*100+'%')});
+  o.addEventListener('pointerleave',()=>o.style.transform='')}
+
+/* pó de giz no herói */
+(function(){const c=$('#po');if(RED||!c)return;const x=c.getContext('2d');let W,H,ps=[],vis=true;
+  function rs(){const r=heroi.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;c.width=W*dpr;c.height=H*dpr;x.setTransform(dpr,0,0,dpr,0,0)}
+  rs();addEventListener('resize',rs);
+  for(let i=0;i<38;i++)ps.push({x:Math.random()*W,y:Math.random()*H,r:.5+Math.random()*1.5,v:.08+Math.random()*.25,a:.05+Math.random()*.22,s:Math.random()*6,az:Math.random()<.25});
+  new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(heroi);
+  (function f(t){if(vis){x.clearRect(0,0,W,H);ps.forEach(p=>{p.y-=p.v;p.x+=Math.sin(t/2400+p.s)*.15;if(p.y<-5){p.y=H+5;p.x=Math.random()*W}
+    x.beginPath();x.arc(p.x,p.y,p.r,0,7);x.fillStyle=p.az?`rgba(140,200,230,${p.a})`:`rgba(244,241,232,${p.a})`;x.fill()})}requestAnimationFrame(f)})(0)})();
+
+/* contagens regressivas, com o dígito descendo a cada troca */
+const fim=new Date('2026-11-15T13:30:00-03:00'),fuv=new Date('2026-11-15T13:30:00-03:00'),tb=$$('#timer b');
+function tick(){const n=new Date(),d=Math.max(0,fim-n);[Math.floor(d/864e5),Math.floor(d/36e5)%24,Math.floor(d/6e4)%60,Math.floor(d/1e3)%60].forEach((v,i)=>{const s=String(v).padStart(2,'0');
+  if(tb[i].textContent!==s){tb[i].textContent=s;if(!RED){tb[i].classList.remove('tk');void tb[i].offsetWidth;tb[i].classList.add('tk')}}});
+  const q=fuv-n;if(q>0){const z=v=>String(v).padStart(2,'0');$('#dfv').textContent=Math.floor(q/864e5)+'d '+z(Math.floor(q/36e5)%24)+'h '+z(Math.floor(q/6e4)%60)+'m '+z(Math.floor(q/1e3)%60)+'s'}else $('#cdf').style.visibility='hidden'}
+tick();setInterval(tick,1000);
+
+/* galeria + lightbox ("Ver uma página" abre a página certa) */
+const GAL=[...document.querySelectorAll('.gp')].map(b=>({src:b.querySelector('img').getAttribute('src'),t:b.querySelector('span').textContent}));
+const md=$('#modal');let gi=0;
+function abre(i){gi=(i+GAL.length)%GAL.length;$('#mcont').innerHTML=`<img src="${GAL[gi].src}" alt="${GAL[gi].t}"><div class="mcap"><button class="gb" data-m="-1" aria-label="Anterior">←</button><span>${GAL[gi].t} · ${gi+1}/${GAL.length}</span><button class="gb" data-m="1" aria-label="Próxima">→</button></div>`;md.classList.add('on')}
+$$('.gp').forEach(b=>b.onclick=()=>abre(+b.dataset.i));
+const VER={q:0,r:9,p:4,e:10,f:12,s:15};$$('.ver').forEach(b=>b.onclick=()=>abre(VER[b.dataset.img]));
+md.onclick=e=>{const m=e.target.closest&&e.target.closest('[data-m]');if(m){abre(gi+(+m.dataset.m));return}if(e.target===md||e.target.classList.contains('fx'))md.classList.remove('on')};
+addEventListener('keydown',e=>{if(!md.classList.contains('on'))return;if(e.key==='ArrowRight')abre(gi+1);if(e.key==='ArrowLeft')abre(gi-1)});
+const gal=$('#gal'),gc=$('#gcont');
+function gpasso(d){const w=gal.querySelector('.gp').getBoundingClientRect().width+16;gal.scrollBy({left:d*w,behavior:RED?'auto':'smooth'})}
+$('#gprev').onclick=()=>gpasso(-1);$('#gnext').onclick=()=>gpasso(1);
+gal.addEventListener('scroll',()=>{const w=gal.querySelector('.gp').getBoundingClientRect().width+16;gc.textContent=Math.min(GAL.length,Math.round(gal.scrollLeft/w)+1)+' / '+GAL.length},{passive:true});
+addEventListener('keydown',e=>{if(e.key==='Escape')md.classList.remove('on')});
+})();
+</script>
+
+<script>
+(()=>{const box=document.getElementById('fcs');if(!box)return;const cs=[...box.querySelectorAll('.fc')];
+cs.forEach(c=>c.addEventListener('click',()=>{c.classList.toggle('on');c.setAttribute('aria-pressed',c.classList.contains('on'))}));
+const passo=d=>box.scrollBy({left:d*(cs[0].offsetWidth+18),behavior:'smooth'});
+document.getElementById('fprev').onclick=()=>passo(-1);document.getElementById('fnext').onclick=()=>passo(1);
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){new IntersectionObserver((es,o)=>{if(es[0].isIntersecting){o.disconnect();setTimeout(()=>cs[0].classList.add('on'),700);setTimeout(()=>cs[0].classList.remove('on'),2600)}},{threshold:.5}).observe(box)}})();
+</script>
+</body>
+</html>

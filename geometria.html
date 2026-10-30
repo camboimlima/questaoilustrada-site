@@ -383,6 +383,23 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
 .vmc video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#0D0E0F}
 .vmc .ph{display:none;position:absolute;inset:0;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:radial-gradient(circle at 50% 40%,#1b2a33,#0D0E0F 70%);color:var(--giz);text-align:center}.vmc.off .ph{display:flex}.vmc.off video{display:none}
 .fontes{max-width:960px;margin:18px auto 0;font-size:13px;color:var(--mut)}.fontes a{color:var(--az);text-decoration:underline;text-underline-offset:3px}
+
+/* vídeos do YouTube (carregam só no clique) */
+.yv{display:flex;gap:26px;justify-content:center;align-items:flex-start;margin-top:30px;flex-wrap:wrap}
+.yf{margin:0}
+.yh{flex:1 1 560px;max-width:760px}.yv9{flex:0 0 auto;width:min(100%,300px)}
+.yb{position:relative;width:100%;border-radius:22px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#1b2a33,#0D0E0F 70%);border:1.5px solid rgba(140,200,230,.4);box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 8px rgba(140,200,230,.06);cursor:pointer;aspect-ratio:16/9;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s}
+.yv9 .yb{aspect-ratio:9/16}
+.yb:hover{transform:translateY(-4px);border-color:#8CC8E6}
+.yb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.85}
+.yb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.yp{position:absolute;left:50%;top:50%;width:72px;height:72px;margin:-36px 0 0 -36px;border-radius:50%;background:rgba(13,14,15,.7);border:2px solid #8CC8E6;display:grid;place-items:center;box-shadow:0 0 0 0 rgba(140,200,230,.6);animation:pulsa 2s ease-out infinite}
+.yp::after{content:"";border-left:20px solid #8CC8E6;border-top:12px solid transparent;border-bottom:12px solid transparent;margin-left:5px}
+@keyframes pulsa{to{box-shadow:0 0 0 18px rgba(140,200,230,0)}}
+.yf figcaption{margin-top:12px;text-align:center;font-weight:700;color:var(--giz)}.yf figcaption small{color:var(--mut);font-weight:500;margin-left:6px}
+.yv9{display:none}
+@media(max-width:700px){.yh{display:none}.yv9{display:block;width:min(86vw,320px)}}
+#por-que .mk{display:inline;white-space:normal;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 </style>
 
 <div class="prog" id="prog"></div>
@@ -431,11 +448,15 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
 </section>
 
 <section class="sec" id="por-que"><div class="w">
-  <div class="rv"><div class="eyebrow">O conteúdo que mais cai</div>
-  <h2>Fui contar as questões: geometria é <span class="mk">1 em cada 5</span> no ENEM.</h2>
-  <p style="max-width:700px">Somando geometria plana e espacial, ela ocupa de 20% a 25% das questões de matemática. Assista e veja por que a Geometria Ilustrada é o jeito mais direto de estudar esse assunto.</p></div>
-  <div class="vmc rv d1" id="vmcbox"><video id="vmc" controls preload="metadata" playsinline poster="mais-cai-poster.jpg"><source src="mais-cai.mp4" type="video/mp4"></video><div class="ph"><b>Vídeo em breve</b><small style="color:var(--mut)">o que mais cai nos vestibulares</small></div></div>
-  <p class="fontes">Fontes: levantamentos de incidência do ENEM de <a href="https://tessat.com.br/portal/analise-de-incidencia/enem" target="_blank" rel="noopener">Tessat</a> (2010–2025, cerca de 20%), <a href="https://portal.estrategia.com/materias/matematica/o-que-mais-cai-em-matematica-no-enem/" target="_blank" rel="noopener">Estratégia</a> (últimos 10 anos, 20%) e <a href="https://alvoenem.com/materiais/guia/assuntos-que-mais-caem-no-enem" target="_blank" rel="noopener">Alvo ENEM</a> (2009–2025, cerca de 25%). Cada site classifica os assuntos de um jeito, por isso os números variam.</p>
+  <div class="rv"><div class="eyebrow">Assista antes de decidir</div>
+  <h2>Você erra a questão e não sabe o quê? <span class="mk">Assine a Geometria Ilustrada.</span></h2>
+  <p style="max-width:700px">Em 1 minuto e meio, veja os erros de geometria que mais derrubam na prova e como a Geometria Ilustrada resolve cada um, passo a passo, no desenho.</p></div>
+  <div class="yv rv d1">
+    <figure class="yf yh"><div class="yb" data-yt="KE_v-jAlLvY" role="button" tabindex="0" aria-label="Assistir: Você erra sempre geometria? (vídeo)"><img loading="lazy" alt="" onerror="this.remove()" src="https://i.ytimg.com/vi/KE_v-jAlLvY/hqdefault.jpg"><span class="yp"></span></div><figcaption>Você erra sempre geometria? <small>vídeo · 1:30</small></figcaption></figure>
+    <figure class="yf yv9"><div class="yb" data-yt="isDyQ4hkm7w" data-short="1" role="button" tabindex="0" aria-label="Assistir: Você erra sempre geometria? (shorts)"><img loading="lazy" alt="" onerror="this.remove()" src="https://i.ytimg.com/vi/isDyQ4hkm7w/hqdefault.jpg"><span class="yp"></span></div><figcaption>Você erra sempre geometria? <small>vídeo curto</small></figcaption></figure>
+  </div>
+  <div class="rv d2" style="text-align:center;margin-top:30px"><a class="btn mag" href="#oferta">Quero a Geometria Ilustrada <span class="ar">→</span></a></div>
+  <p class="fontes">Dado do ENEM: somando geometria plana e espacial, são de 20% a 25% das questões de matemática, segundo levantamentos de <a href="https://tessat.com.br/portal/analise-de-incidencia/enem" target="_blank" rel="noopener">Tessat</a> (2010–2025), <a href="https://portal.estrategia.com/materias/matematica/o-que-mais-cai-em-matematica-no-enem/" target="_blank" rel="noopener">Estratégia</a> (últimos 10 anos) e <a href="https://alvoenem.com/materiais/guia/assuntos-que-mais-caem-no-enem" target="_blank" rel="noopener">Alvo ENEM</a> (2009–2025). Cada site classifica os assuntos de um jeito, por isso os números variam.</p>
 </div></section>
 
 <section class="sec"><div class="w">
@@ -648,8 +669,9 @@ addEventListener('keydown',e=>{if(e.key==='Escape')md.classList.remove('on')});
 </script>
 
 <script>
-(()=>{const v=document.getElementById('vmc'),b=document.getElementById('vmcbox');if(!v)return;
-const off=()=>b.classList.add('off');v.querySelector('source').addEventListener('error',off);v.addEventListener('error',off);
+(()=>{document.querySelectorAll('.yb').forEach(b=>{const go=()=>{if(b.querySelector('iframe'))return;const id=b.dataset.yt;
+  const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+id+'?autoplay=1&rel=0&playsinline=1';f.allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';f.allowFullscreen=true;f.title='Questão Ilustrada: Você erra sempre geometria?';
+  b.innerHTML='';b.appendChild(f)};b.addEventListener('click',go);b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}})});
 if(location.hash==='#por-que'){setTimeout(()=>{const e=document.getElementById('por-que');e&&e.scrollIntoView({behavior:'smooth',block:'start'})},400)}})();
 </script>
 </body>

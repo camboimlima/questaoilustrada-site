@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Diagnóstico ENEM · Questão Ilustrada</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Patrick+Hand&display=swap">
+<style>
+:root{--bg:#0D0E0F;--bg2:#15171A;--giz:#F4F1E8;--tx:#E6E2D6;--mut:#A9A69C;--az:#8CC8E6;--line:rgba(244,241,232,.12);--ok:#7FD1A0;--mid:#F2C46D;--bad:#F08A7E}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);background-image:linear-gradient(rgba(230,226,214,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(230,226,214,.04) 1px,transparent 1px);background-size:60px 60px;color:var(--tx);font-family:Inter,system-ui,sans-serif;line-height:1.55}
+.w{max-width:980px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);padding:14px 0}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--giz);text-decoration:none;font-family:"Patrick Hand";font-size:22px}
+.brand svg{width:34px;height:34px}
+.tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--az);font-weight:700}
+h1{font-family:Sora,Inter;font-weight:800;color:var(--giz);font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 12px}
+h2{font-family:Sora,Inter;font-weight:700;color:var(--giz);font-size:24px;margin:0 0 10px}
+.mk{background:linear-gradient(transparent 55%,rgba(140,200,230,.40) 55%,rgba(140,200,230,.40) 92%,transparent 92%)}
+.lead{font-size:17px;max-width:700px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0}
+.st{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px}
+.st b{display:block;font-family:Sora;color:var(--giz);margin-bottom:4px}
+.st .n{font-family:"Patrick Hand";font-size:30px;color:var(--az);line-height:1}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:22px;margin:22px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:8px 18px}
+.q{display:flex;align-items:center;gap:8px;padding:4px 0}
+.q .num{width:28px;font-weight:700;color:var(--giz);font-variant-numeric:tabular-nums}
+.q button{width:30px;height:30px;border-radius:50%;border:1.5px solid rgba(244,241,232,.35);background:transparent;color:var(--tx);font-weight:700;font-size:13px;cursor:pointer;padding:0}
+.q button.on{background:var(--az);border-color:var(--az);color:#0D0E0F}
+.q button:focus-visible{outline:2px solid var(--az);outline-offset:2px}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:12px}
+.cnt{font-size:14px;color:var(--mut)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--az);color:#0D0E0F;border:0;border-radius:12px;padding:14px 22px;font-weight:700;font-size:16px;cursor:pointer;font-family:Inter}
+.btn.sec{background:transparent;color:var(--giz);border:1.5px solid rgba(244,241,232,.3)}
+.lk{color:var(--az);background:none;border:0;cursor:pointer;font-size:14px;text-decoration:underline;padding:0}
+#res{display:none}
+.bar{display:grid;grid-template-columns:minmax(150px,260px) 1fr 70px;gap:12px;align-items:center;margin:9px 0;font-size:15px}
+.bar .tr{height:16px;border-radius:8px;background:rgba(244,241,232,.07);overflow:hidden}
+.bar .tr i{display:block;height:100%;border-radius:8px}
+.bar b{text-align:right;font-family:Sora;color:var(--giz)}
+.plan{counter-reset:p;list-style:none;padding:0;margin:0}
+.plan li{counter-increment:p;position:relative;padding:14px 16px 14px 58px;border:1px solid var(--line);border-radius:14px;margin-bottom:10px;background:rgba(244,241,232,.02)}
+.plan li:before{content:counter(p);position:absolute;left:16px;top:12px;font-family:"Patrick Hand";font-size:28px;color:var(--az)}
+.plan li b{color:var(--giz)}
+.pill{display:inline-block;font-size:12px;font-weight:700;border-radius:20px;padding:2px 10px;margin-left:6px;vertical-align:middle}
+.p1{background:rgba(240,138,126,.18);color:var(--bad)}.p2{background:rgba(242,196,109,.18);color:var(--mid)}.p3{background:rgba(127,209,160,.18);color:var(--ok)}
+.small{font-size:13px;color:var(--mut)}
+.hl{border-left:3px solid var(--az);padding:10px 14px;background:rgba(140,200,230,.06);border-radius:0 10px 10px 0}
+footer{border-top:1px solid var(--line);margin-top:40px;padding:20px 0;font-size:13px;color:var(--mut)}
+@media (max-width:720px){.steps{grid-template-columns:1fr}.bar{grid-template-columns:110px 1fr 54px;font-size:13px}}
+@media print{body{background:#fff;color:#111}header,.no-print,#ent,footer{display:none!important}.card{border-color:#ccc;background:#fff}h1,h2,.plan li b,.bar b{color:#111}#res{display:block!important}}
+</style></head><body>
+<header><div class="w"><a class="brand" href="https://questaoilustrada.com"><svg viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="17" y="52" width="66" height="26" rx="5" transform="rotate(-4 50 65)" fill="#8CC8E6" opacity=".34"/><rect x="6" y="6" width="88" height="88" rx="18" stroke="#F4F1E8" stroke-width="6"/><path d="M26 74 L74 74 L26 26 Z" stroke="#F4F1E8" stroke-width="6"/><path d="M74 74 L26 26" stroke="#8CC8E6" stroke-width="7"/><path d="M26 62 L38 62 L38 74" stroke="#F4F1E8" stroke-width="4"/></svg>Questão Ilustrada</a><span class="tag">Combo ENEM · Etapa 1</span></div></header>
+<main class="w">
+<section style="padding:34px 0 0">
+<div class="tag">Diagnóstico</div>
+<h1>Descubra o que estudar <span class="mk">primeiro</span>.</h1>
+<p class="lead">São só 30 questões, todas no PDF <b>Prova Diagnóstico ENEM</b> (Etapa 1 da área de membros): 1 a 15 de geometria e 16 a 30 de matemática básica. Marque as respostas aqui. Você recebe a nota de cada assunto, a ordem das Listas de Saturação e quantas questões fazer por dia até a prova.</p>
+<div class="steps">
+<div class="st"><span class="n">1</span><b>Faça a Prova Diagnóstico</b>As 30 questões do PDF, em até 1 h 30 min, sem consultar nada.</div>
+<div class="st"><span class="n">2</span><b>Anote na folha de respostas</b>Ela fica no PDF, logo depois da questão 30.</div>
+<div class="st"><span class="n">3</span><b>Marque aqui e veja o resultado</b>Suas respostas ficam salvas neste aparelho. Dá para fazer em partes.</div>
+</div>
+</section>
+<div id="ent">
+<section class="card"><div class="row"><h2>Geometria <span class="small">(questões 1 a 15)</span></h2><span class="cnt" id="c1"></span></div><div class="grid" id="g1"></div></section>
+<section class="card"><div class="row"><h2>Matemática básica <span class="small">(questões 16 a 30)</span></h2><span class="cnt" id="c2"></span></div><div class="grid" id="g2"></div></section>
+<div class="row no-print" style="margin:6px 0 30px"><button class="btn" id="ver">Ver meu diagnóstico →</button><button class="lk" id="limpar">Apagar minhas respostas</button></div>
+</div>
+<section id="res">
+<div class="card"><div class="tag">Seu resultado</div><h2 id="rt" style="margin-top:6px"></h2><div id="bars"></div><p class="small" style="margin-top:10px">Verde: 80% ou mais · amarelo: 50% a 79% · vermelho: abaixo de 50%. Assunto sem resposta não entra na conta.</p></div>
+<div class="card"><div class="tag">Sua ordem de estudo</div><h2 style="margin-top:6px">Etapa 2: as Listas de Saturação, nesta ordem</h2>
+<p class="hl" id="ritmo"></p><ol class="plan" id="plan"></ol>
+<p class="small">A ordem junta duas coisas: o quanto você errou e o quanto o assunto cai no ENEM. As listas estão na área de membros, no módulo "Etapa 2".</p></div>
+<div class="card" id="errs"></div>
+<div class="row no-print"><button class="btn" onclick="print()">Salvar em PDF / imprimir</button><button class="btn sec" id="voltar">Revisar respostas</button></div>
+</section>
+</main>
+<footer><div class="w">© 2026 Questão Ilustrada · Combo ENEM · Questões do ENEM (INEP). Suas respostas ficam só no seu aparelho.</div></footer>
+<script>
+(()=>{
+const D=JSON.parse(new TextDecoder().decode(Uint8Array.from(atob("eyJsaXN0YSI6IFtbMSwgIkMiLCAiR0UiLCAiVm9sdW1lIGUgY2FwYWNpZGFkZSJdLCBbMiwgIkUiLCAiR1AiLCAiw4FyZWFzIGUgcGVyw61tZXRyb3MgZGUgZmlndXJhcyBwbGFuYXMiXSwgWzMsICJCIiwgIkdQIiwgIkNpcmN1bmZlcsOqbmNpYSwgYXJjb3MgZSBzZXRvcmVzIl0sIFs0LCAiQSIsICJHUCIsICJQaXTDoWdvcmFzIGUgdHJpZ29ub21ldHJpYSJdLCBbNSwgIkEiLCAiR1AiLCAiw4FyZWFzIGUgcGVyw61tZXRyb3MgZGUgZmlndXJhcyBwbGFuYXMiXSwgWzYsICJBIiwgIkdQIiwgIlBpdMOhZ29yYXMgZSB0cmlnb25vbWV0cmlhIl0sIFs3LCAiQiIsICJHRSIsICJWb2x1bWUgZSBjYXBhY2lkYWRlIl0sIFs4LCAiQyIsICJHRSIsICJQb2xpZWRyb3MgZSBFdWxlciJdLCBbOSwgIkMiLCAiR1AiLCAiQ2lyY3VuZmVyw6puY2lhLCBhcmNvcyBlIHNldG9yZXMiXSwgWzEwLCAiQSIsICJHUCIsICLDgXJlYXMgZSBwZXLDrW1ldHJvcyBkZSBmaWd1cmFzIHBsYW5hcyJdLCBbMTEsICJEIiwgIkdFIiwgIlZvbHVtZSBlIGNhcGFjaWRhZGUiXSwgWzEyLCAiRSIsICJHRSIsICJWaXN0YXMsIHByb2plw6fDtWVzIGUgcGxhbmlmaWNhw6fDtWVzIl0sIFsxMywgIkEiLCAiR1AiLCAiU2VtZWxoYW7Dp2EgZSBlc2NhbGEiXSwgWzE0LCAiRSIsICJHUCIsICJTZW1lbGhhbsOnYSBlIGVzY2FsYSJdLCBbMTUsICJEIiwgIkdFIiwgIlZvbHVtZSBlIGNhcGFjaWRhZGUiXV0sICJ0ZXN0ZSI6IFtbMTYsICJEIiwgIkIxIiwgIiJdLCBbMTcsICJEIiwgIkIyIiwgIiJdLCBbMTgsICJFIiwgIkIzIiwgIiJdLCBbMTksICJBIiwgIkI0IiwgIiJdLCBbMjAsICJEIiwgIkI1IiwgIiJdLCBbMjEsICJDIiwgIkIxIiwgIiJdLCBbMjIsICJDIiwgIkIyIiwgIiJdLCBbMjMsICJCIiwgIkIzIiwgIiJdLCBbMjQsICJCIiwgIkI0IiwgIiJdLCBbMjUsICJCIiwgIkI1IiwgIiJdLCBbMjYsICJBIiwgIkIxIiwgIiJdLCBbMjcsICJCIiwgIkIyIiwgIiJdLCBbMjgsICJDIiwgIkIzIiwgIiJdLCBbMjksICJCIiwgIkI0IiwgIiJdLCBbMzAsICJBIiwgIkI1IiwgIiJdXSwgIm5vbWVzIjogeyJHUCI6ICJHZW9tZXRyaWEgcGxhbmEiLCAiR0UiOiAiR2VvbWV0cmlhIGVzcGFjaWFsIiwgIkIxIjogIlBvcmNlbnRhZ2VtIGUganVyb3MiLCAiQjIiOiAiUmF6w6NvLCBwcm9wb3LDp8OjbyBlIGdyYW5kZXphcyIsICJCMyI6ICJFc3RhdMOtc3RpY2EgZSBncsOhZmljb3MiLCAiQjQiOiAiUHJvYmFiaWxpZGFkZSBlIGNvbnRhZ2VtIiwgIkI1IjogIkZ1bsOnw7VlcyBlIGdyw6FmaWNvcyJ9LCAibG4iOiB7IkdQIjogMSwgIkdFIjogMiwgIkIxIjogMywgIkIyIjogNCwgIkIzIjogNSwgIkI0IjogNiwgIkI1IjogN30sICJuIjogeyJHUCI6IDM3LCAiR0UiOiAzMSwgIkIxIjogMjcsICJCMiI6IDMwLCAiQjMiOiAyOCwgIkI0IjogMzAsICJCNSI6IDI2fSwgInBlc28iOiB7IkdQIjogOTQsICJHRSI6IDY4LCAiQjEiOiA1NiwgIkIyIjogNzAsICJCMyI6IDgxLCAiQjQiOiA1OSwgIkI1IjogNjh9fQ=="),c=>c.charCodeAt(0))));
+const L="ABCDE",KEY="qi-diag-enem-v2";
+let st={a:{},b:{}};try{st=JSON.parse(localStorage.getItem(KEY))||st}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(st))}catch(e){}};
+function grid(el,arr,key,cnt){const g=document.getElementById(el);g.innerHTML='';
+ arr.forEach(([n])=>{const r=document.createElement('div');r.className='q';r.innerHTML='<span class="num">'+String(n).padStart(2,'0')+'</span>';
+  for(const l of L){const b=document.createElement('button');b.textContent=l;b.setAttribute('aria-label','Questão '+n+', alternativa '+l);
+   if(st[key][n]===l)b.classList.add('on');
+   b.onclick=()=>{st[key][n]=st[key][n]===l?undefined:l;if(!st[key][n])delete st[key][n];save();grid(el,arr,key,cnt);};r.appendChild(b);}
+  g.appendChild(r);});
+ document.getElementById(cnt).textContent=Object.keys(st[key]).length+' de '+arr.length+' marcadas';}
+grid('g1',D.lista,'a','c1');grid('g2',D.teste,'b','c2');
+document.getElementById('limpar').onclick=()=>{if(Object.keys(st.a).length+Object.keys(st.b).length===0)return;st={a:{},b:{}};save();grid('g1',D.lista,'a','c1');grid('g2',D.teste,'b','c2');};
+document.getElementById('voltar').onclick=()=>{document.getElementById('res').style.display='none';document.getElementById('ent').style.display='';scrollTo(0,0)};
+document.getElementById('ver').onclick=()=>{
+ const T={};const errs={};
+ const SUB={};const add=(arr,key)=>arr.forEach(([n,g,t,sub])=>{const r=st[key][n];if(!r)return;T[t]=T[t]||{ok:0,tot:0};T[t].tot++;if(sub){SUB[sub]=SUB[sub]||{ok:0,tot:0};SUB[sub].tot++;if(r===g)SUB[sub].ok++;}if(r===g)T[t].ok++;else{(errs[t]=errs[t]||[]).push('Questão '+n)}});
+ add(D.lista,'a');add(D.teste,'b');
+ const ks=Object.keys(T);
+ if(!ks.length){alert('Marque pelo menos algumas respostas.');return;}
+ let ok=0,tot=0;ks.forEach(k=>{ok+=T[k].ok;tot+=T[k].tot});
+ document.getElementById('rt').textContent='Você acertou '+ok+' de '+tot+' ('+Math.round(100*ok/tot)+'%)';
+ const order=Object.keys(D.nomes).filter(k=>T[k]);
+ document.getElementById('bars').innerHTML=order.map(k=>{const p=T[k].ok/T[k].tot,c=p>=.8?'var(--ok)':p>=.5?'var(--mid)':'var(--bad)';
+  return '<div class="bar"><span>'+D.nomes[k]+'</span><span class="tr"><i style="width:'+Math.max(4,p*100)+'%;background:'+c+'"></i></span><b>'+T[k].ok+'/'+T[k].tot+'</b></div>'}).join('');
+ const plan=order.map(k=>{const p=T[k].ok/T[k].tot;const n=D.n[k];const q=p<.5?n:p<.8?Math.ceil(n/2):Math.min(5,n);
+  return {k,p,q,score:(1-p)*D.peso[k]+(p<.5?100:0),cls:p<.5?'p1':p<.8?'p2':'p3',lab:p<.5?'prioridade':p<.8?'reforço':'manutenção'}}).sort((a,b)=>b.score-a.score);
+ const hoje=new Date(),prova=new Date('2026-11-14T23:59:00-03:00');const dias=Math.max(1,Math.ceil((prova-hoje)/864e5));
+ const totq=plan.reduce((s,x)=>s+x.q,0);
+ document.getElementById('ritmo').innerHTML='São <b>'+totq+' questões</b> até a véspera da prova ('+dias+' dia'+(dias>1?'s':'')+'): cerca de <b>'+Math.ceil(totq/dias)+' por dia</b>. Siga a ordem abaixo e só passe para a próxima lista quando acertar 8 em 10.';
+ document.getElementById('plan').innerHTML=plan.map(x=>'<li><b>Lista '+D.ln[x.k]+' · '+D.nomes[x.k]+'</b><span class="pill '+x.cls+'">'+x.lab+'</span><br><span class="small">'+
+   (x.q===D.n[x.k]?'Faça a lista inteira: '+x.q+' questões.':x.lab==='reforço'?'Faça '+x.q+' das '+D.n[x.k]+' questões (as ímpares) e refaça as que errar.':'Faça '+x.q+' questões para manter o ritmo.')+'</span></li>').join('');
+ const ek=order.filter(k=>errs[k]);
+ const subs=Object.keys(SUB);const subh=subs.length?'<h3 style="font-family:Sora;color:var(--giz);font-size:17px;margin:18px 0 6px">Dentro da geometria</h3>'+subs.sort((a,b)=>SUB[a].ok/SUB[a].tot-SUB[b].ok/SUB[b].tot).map(k=>'<p style="margin:4px 0">'+k+': <b>'+SUB[k].ok+'/'+SUB[k].tot+'</b></p>').join(''):'';
+ document.getElementById('errs').innerHTML='<div class="tag">Para revisar</div><h2 style="margin-top:6px">Questões que você errou</h2>'+
+   (ek.length?ek.map(k=>'<p><b>'+D.nomes[k]+':</b> '+errs[k].join(', ')+'</p>').join('')+'<p class="small">As resoluções de todas as questões estão no final da Prova Diagnóstico.</p>':'<p>Nenhum erro nas questões marcadas. Excelente!</p>')+subh;
+ document.getElementById('ent').style.display='none';document.getElementById('res').style.display='block';scrollTo(0,0);
+};
+})();
+</script></body></html>
