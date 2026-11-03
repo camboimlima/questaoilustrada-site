@@ -81,7 +81,7 @@
 
   /* 5. aviso de privacidade */
   function aviso(){
-    if (get('qi_consent') || document.getElementById('qiN')) return;
+    if (window.QI_SEM_AVISO || get('qi_consent') || document.getElementById('qiN')) return;
     var b = document.createElement('div');
     var alto = document.getElementById('flut') ? 84 : 12;
     b.style.cssText='position:fixed;left:12px;right:12px;bottom:'+alto+'px;z-index:99999;max-width:560px;margin:auto;background:#17191b;color:#E6E2D6;border:1px solid #333;border-radius:12px;padding:12px 14px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px #0008;display:flex;gap:10px;align-items:center;flex-wrap:wrap';
@@ -93,6 +93,7 @@
     b.querySelector('#qiY').onclick=function(){done('yes')};
     b.querySelector('#qiN').onclick=function(){done('no')};
   }
+  window.qiAviso = aviso; /* /teste: chama o aviso só depois do resultado */
   /* o aviso espera a pessoa rolar ou 20 s, para não cobrir o botão principal */
   document.addEventListener('DOMContentLoaded', function(){
     if (get('qi_consent')) return;

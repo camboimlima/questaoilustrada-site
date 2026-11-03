@@ -1,102 +1,422 @@
 <!doctype html>
 <html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Teste grátis de matemática do ENEM · Questão Ilustrada</title>
-<meta name="description" content="5 questões reais do ENEM para descobrir o que você mais erra em matemática.">
+<meta name="description" content="5 questões reais do ENEM, cerca de 15 minutos, para descobrir o que você mais erra em matemática.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0D0E0F">
+<meta property="og:title" content="Teste grátis: o que você mais erra em matemática no ENEM?">
+<meta property="og:description" content="5 questões reais do ENEM, cerca de 15 minutos e diagnóstico na hora.">
+<meta property="og:image" content="https://questaoilustrada.com/capa-combo.jpg">
+<meta property="og:url" content="https://questaoilustrada.com/teste">
+<script>window.QI_SEM_AVISO=1</script>
 <link rel="icon" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-:root{--bg:#0D0E0F;--bg2:#15171A;--giz:#F4F1E8;--tx:#E6E2D6;--mut:#A9A69C;--az:#8CC8E6;--line:rgba(244,241,232,.14);--ok:#7FD1A0;--bad:#F08A7E}
-*{box-sizing:border-box}html,body{margin:0}
-body{min-height:100vh;background:var(--bg);background-image:linear-gradient(rgba(230,226,214,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(230,226,214,.04) 1px,transparent 1px);background-size:60px 60px;color:var(--tx);font:17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
-.w{max-width:640px;margin:0 auto;padding:0 18px 48px}
-header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;color:var(--giz);font-weight:700}
-header small{color:var(--mut);font-weight:500}
-h1,h2{color:var(--giz);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
-h1{font-size:clamp(30px,8vw,42px)}h2{font-size:24px}
-.tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--az);font-weight:700;margin:18px 0 8px}
-.card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
-.btn{display:block;width:100%;border:0;border-radius:12px;background:var(--az);color:#0D0E0F;font:700 17px Inter,system-ui,sans-serif;padding:15px 18px;text-align:center;text-decoration:none;cursor:pointer}
-.btn[disabled]{opacity:.4;cursor:default}
-.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:var(--az);transition:width .25s}
-.meta{display:flex;justify-content:space-between;color:var(--mut);font-size:14px}
-.en p{margin:0 0 12px}
-.alt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:transparent;color:var(--tx);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;font:inherit;cursor:pointer}
-.alt b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(244,241,232,.4);color:var(--giz)}
-.alt.on{border-color:var(--az);background:rgba(140,200,230,.1)}.alt.on b{background:var(--az);border-color:var(--az);color:#0D0E0F}
-.alt:focus-visible,.btn:focus-visible{outline:2px solid var(--az);outline-offset:2px}
-table{border-collapse:collapse;margin:0 0 12px;width:100%}th,td{border:1px solid var(--line);padding:6px 10px;text-align:center}
-.src{font-size:13px;color:var(--mut)}
-.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.1;margin:0 3px}.fr span:first-child{border-bottom:1px solid currentColor;padding:0 3px}
+:root{--bg:#0D0E0F;--bg2:#141618;--bg3:#1A1E21;--giz:#F4F1E8;--tx:#D9D6CC;--mut:#A3AAAF;--az:#8CC8E6;--az2:#2C7BA6;--ok:#7CD3A1;--x:#E58B7A;--ink:#1E2124;--cream:#F4F1E8;--line:rgba(244,241,232,.11);--ease:cubic-bezier(.16,1,.3,1);--back:cubic-bezier(.34,1.56,.64,1);color-scheme:dark}
+*{box-sizing:border-box}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:var(--bg);background-image:linear-gradient(rgba(230,226,214,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(230,226,214,.08) 1px,transparent 1px);background-size:60px 60px;color:var(--tx);font:18px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+[hidden]{display:none!important}img{max-width:100%}
+.w{max-width:720px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
+.wl{max-width:1060px}
+h1,h2,h3{font-family:Sora,Inter,system-ui,sans-serif;color:var(--giz);margin:0;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(33px,6.4vw,50px);line-height:1.1;font-weight:800}
+h2{font-size:clamp(27px,4.4vw,38px);line-height:1.14;font-weight:800;margin-bottom:12px}
+h3{font-size:19px;font-weight:700;line-height:1.25}
+p{margin:0}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--az);margin-bottom:10px}
+.lead{font-size:19px;margin-top:14px;color:var(--tx)}.lead b{color:var(--giz)}
+:focus-visible{outline:2px solid var(--az);outline-offset:3px;border-radius:6px}
+.mk{background-image:linear-gradient(transparent 56%,rgba(140,200,230,.42) 56%,rgba(140,200,230,.42) 92%,transparent 92%);background-repeat:no-repeat;background-size:100% 100%;-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 .1em;margin:0 -.1em}
+.anim .mk{background-size:0% 100%;transition:background-size 1s var(--ease) .3s}.anim .mk.in{background-size:100% 100%}
+
+/* topo */
+.bar{position:sticky;top:0;z-index:40;background:rgba(13,14,15,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(140,200,230,.16);padding-top:env(safe-area-inset-top,0px)}
+.bar .w{display:flex;justify-content:space-between;align-items:center;gap:12px;height:58px}
+.brand{display:flex;gap:10px;align-items:center;color:var(--giz);font-weight:700;font-family:Sora,Inter,sans-serif;font-size:16px;white-space:nowrap}
+.brand svg{width:32px;height:32px;flex:none}
+.topd{font-size:14px;color:var(--mut);font-variant-numeric:tabular-nums;white-space:nowrap}.topd b{color:var(--az)}
+
+/* botões */
+.btn{position:relative;overflow:hidden;isolation:isolate;display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--az);color:#0D0E0F;font-weight:800;font-family:Sora,Inter,sans-serif;text-decoration:none;font-size:18px;padding:17px 26px;border-radius:12px;border:0;cursor:pointer;box-shadow:0 10px 30px rgba(140,200,230,.25);transition:transform .3s var(--ease),box-shadow .3s,opacity .2s}
+.btn::after{content:"";position:absolute;inset:-20% auto -20% -60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);z-index:-1;animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,62%{left:-60%}100%{left:130%}}
+.btn:active{transform:scale(.98)}.btn.full{display:flex;width:100%}.btn.sm{font-size:14px;padding:9px 14px;box-shadow:none}
+.btn[disabled]{opacity:.38;cursor:default;box-shadow:none}.btn[disabled]::after{display:none}
+.btn.gh{background:transparent;color:var(--giz);border:1.5px solid rgba(244,241,232,.3);box-shadow:none}.btn.gh::after{display:none}
+.lk{color:var(--az);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(140,200,230,.4)}
+.trust{display:flex;gap:6px 16px;flex-wrap:wrap;font-size:14px;color:var(--mut);margin-top:14px}.trust span::before{content:"✓ ";color:var(--ok)}
+
+/* início */
+#ini{padding:34px 0 40px}
+.ini3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0}
+.ini3 div{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:14px 8px;text-align:center}
+.ini3 b{display:block;font:800 26px/1.1 Sora,Inter,sans-serif;color:var(--az)}.ini3 span{font-size:14px;color:var(--mut)}
+.pas{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px}
+.pas li{display:grid;grid-template-columns:36px minmax(0,1fr);gap:12px;align-items:start;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:13px 14px}
+.pas i{font:800 16px/34px Sora,Inter,sans-serif;font-style:normal;width:34px;height:34px;border-radius:50%;background:var(--az);color:#0D0E0F;text-align:center}
+.pas b{display:block;color:var(--giz)}.pas span{font-size:16px;color:var(--mut)}
+.nota{font-size:14px;color:var(--mut);line-height:1.5}
+#calc{padding:70px 0}.calc{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:12px;font-size:18px;color:var(--giz)}
+.calc li{opacity:0;animation:cin .35s var(--ease) forwards}.calc li:nth-child(2){animation-delay:.45s}.calc li:nth-child(3){animation-delay:.9s}.calc li::before{content:"✓ ";color:var(--ok);font-weight:800}
+@keyframes cin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* questão */
+#qz{padding:16px 0 128px}
+.qh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+.qh b{font:700 18px Sora,Inter,sans-serif;color:var(--giz)}.qh span{font-size:14px;color:var(--mut)}
+.dots{display:flex;gap:8px;margin-bottom:16px}
+.dots button{flex:1;height:40px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg2);color:var(--mut);font:700 16px Inter,system-ui,sans-serif;cursor:pointer;padding:0}
+.dots button.fe{background:rgba(140,200,230,.18);border-color:rgba(140,200,230,.5);color:var(--giz)}
+.dots button.at{border-color:var(--az);color:var(--giz);box-shadow:0 0 0 2px rgba(140,200,230,.25)}
+.dots button[disabled]{opacity:.5;cursor:default}
+.paper{background:var(--cream);color:var(--ink);border-radius:16px;padding:22px 20px;font-size:18.5px;line-height:1.62;box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.paper p{margin:0 0 14px}.paper p:last-child{margin:0;font-weight:600}
+.paper table{border-collapse:collapse;margin:0 0 14px;width:100%;font-size:17px;background:#fff}
+.paper th,.paper td{border:1px solid #C7C9C4;padding:7px 10px;text-align:center}.paper th{background:#E5E8E6;font-size:15px;line-height:1.3}
+.paper .src{font-size:13px;color:#5E656A;font-weight:400}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.15;margin:0 3px;font-weight:600}.fr span:first-child{border-bottom:1.5px solid currentColor;padding:0 3px}
 .rd{text-decoration:overline}
-.res{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}.res:first-child{border-top:0}
-.res i{font-style:normal;font-weight:800}.res .y{color:var(--ok)}.res .n{color:var(--bad)}
-.res small{display:block;color:var(--mut)}
-.mk{background:linear-gradient(transparent 55%,rgba(140,200,230,.4) 55%,rgba(140,200,230,.4) 92%,transparent 92%)}
-.preco{font-size:15px;color:var(--mut)}.preco s{margin-right:8px}.preco b{font-size:32px;color:var(--giz)}
-.cup{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1.5px dashed var(--az);border-radius:12px;padding:10px 12px;margin:12px 0;font-weight:700;color:var(--giz)}
-.cup button{background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:7px 10px;font:inherit;font-size:14px;cursor:pointer}
-ul{padding-left:20px;margin:8px 0 14px}
-[hidden]{display:none!important}
-</style></head><body><div class="w">
-<header><span>Questão Ilustrada</span><small>Teste grátis</small></header>
-<main id="app">
-<section id="ini">
-<p class="tag">ENEM · matemática</p>
-<h1>Descubra o que você <span class="mk">mais erra</span>.</h1>
-<p>São 5 questões reais do ENEM, uma de cada assunto. No fim, você vê na hora o que errou e como melhorar.</p>
-<div class="card"><b style="color:var(--giz)">Antes de começar</b><ul><li>Tenha papel e caneta por perto.</li><li>Não pesquise: o objetivo é ver onde você está hoje.</li><li>É grátis e não pede cadastro.</li></ul></div>
-<button class="btn" id="go">Começar o teste</button>
-</section>
-<section id="qz" hidden>
-<div class="meta"><span id="pos"></span><span id="ori"></span></div><div class="bar"><i id="pb"></i></div>
-<div class="card"><div class="en" id="en"></div><div id="alts"></div></div>
-<button class="btn" id="nx" disabled>Próxima</button>
-</section>
-<section id="fim" hidden>
-<p class="tag">Seu resultado</p>
-<h1 id="nota"></h1><p id="msg"></p>
-<div class="card" id="lista"></div>
-<div class="card" id="of">
-<h2 id="ofh"></h2><p id="ofp"></p>
-<ul><li>Diagnóstico completo de 30 questões, com nota por assunto</li><li>7 listas de saturação com 209 questões reais do ENEM</li><li>Plano de questões por dia até a prova</li><li>Estratégia de prova, folha de fórmulas e 80 flashcards de geometria</li></ul>
-<div id="cb"><p class="preco"><s>R$ 37,90</s><b>R$ 29,56</b></p>
-<div class="cup"><span>Cupom: DIAGNOSTICO</span><button id="cp">Copiar</button></div><p class="src">Cupom válido até 14/11, às 23h59.</p></div>
-<div id="sb" hidden><p class="preco"><b>R$ 37,90</b></p></div>
-<a class="btn" id="buy" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM</a>
-<p class="src">PDF com acesso imediato · garantia de 7 dias · pagamento pela Kiwify</p>
+.ask{font-size:15px;color:var(--mut);margin:18px 0 8px}
+.alt{display:flex;gap:14px;align-items:center;width:100%;min-height:60px;text-align:left;background:var(--bg2);color:var(--giz);border:1.5px solid rgba(244,241,232,.2);border-radius:14px;padding:11px 16px;margin:0 0 10px;font:500 19px/1.3 Inter,system-ui,sans-serif;cursor:pointer;transition:border-color .2s,background .2s}
+.alt b{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(244,241,232,.45);font:700 16px Sora,Inter,sans-serif}
+.alt.on{border-color:var(--az);background:#16262F}.alt.on b{background:var(--az);border-color:var(--az);color:#0D0E0F}
+.qnav{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(13,14,15,.95);border-top:1px solid rgba(140,200,230,.3);padding:10px 0 calc(10px + env(safe-area-inset-bottom,0px))}
+.qnav .w{display:flex;gap:10px}.qnav .btn{padding:15px 16px;flex:1}.qnav .btn.gh{flex:0 0 112px}
+
+/* resultado */
+.sc{padding-block:clamp(44px,8vw,76px);position:relative}
+.sc::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(140,200,230,.5),transparent)}
+.hdiag{padding-block:30px 44px}
+.dg{display:grid;gap:26px}
+.score{display:flex;align-items:center;gap:18px;margin:22px 0 4px}
+.ring{width:112px;height:112px;flex:none;position:relative}.ring svg{transform:rotate(-90deg);width:100%;height:100%}
+.ring circle{fill:none;stroke-width:11}.ring .t{stroke:rgba(244,241,232,.1)}.ring .v{stroke:var(--az);stroke-linecap:round;stroke-dasharray:283;stroke-dashoffset:var(--o);transition:stroke-dashoffset 1.3s var(--ease) .25s}
+.ring div{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:800 34px Sora,Inter,sans-serif;color:var(--giz)}.ring div small{font-size:17px;color:var(--mut);font-weight:600;margin-left:1px}
+.score p{font-size:17px;line-height:1.5}
+.pan{border-radius:18px;background:#111315;border:1px solid rgba(140,200,230,.28);box-shadow:0 26px 60px rgba(0,0,0,.5),0 0 0 6px rgba(140,200,230,.05);overflow:hidden}
+.panb{padding:9px 14px;background:#1A1D20;font-size:13px;color:#9CA2A7;text-align:center;border-bottom:1px solid rgba(230,226,214,.07)}
+.panc{padding:18px 18px 16px}
+.pant{font:700 13px Inter,sans-serif;letter-spacing:.13em;text-transform:uppercase;color:var(--az);margin-bottom:6px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 92px 34px;gap:10px;align-items:center;padding:9px 0;border-top:1px solid rgba(244,241,232,.07);font-size:16px;color:var(--giz)}
+.row:first-of-type{border-top:0}
+.row i{display:block;height:9px;border-radius:9px;background:rgba(244,241,232,.1);overflow:hidden}.row u{display:block;height:100%;width:var(--w);border-radius:9px;background:var(--c);transition:width 1.1s var(--ease) var(--d)}
+.anim .pre .row u{width:0}
+.amos{font-size:14px;line-height:1.45;color:var(--mut);margin-top:10px;padding-top:10px;border-top:1px solid rgba(244,241,232,.07)}
+.row b{font-size:15px;text-align:right;color:var(--c);font-variant-numeric:tabular-nums}
+
+.erros{display:grid;gap:14px;margin-top:22px}
+details.er{background:var(--bg2);border:1px solid rgba(229,139,122,.32);border-radius:18px;overflow:hidden}
+details.er summary{display:grid;grid-template-columns:36px minmax(0,1fr) 22px;gap:12px;align-items:center;padding:15px 16px;cursor:pointer;list-style:none}
+details.er summary::-webkit-details-marker{display:none}
+details.er summary::after{content:"+";color:var(--az);font-size:26px;line-height:1;text-align:center;transition:transform .3s var(--ease)}details.er[open] summary::after{transform:rotate(45deg)}
+.xi{width:36px;height:36px;border-radius:50%;background:rgba(229,139,122,.16);color:var(--x);display:grid;place-items:center;font-weight:800}
+.st small{display:block;font-size:13px;color:var(--mut)}.st b{font:700 18px/1.25 Sora,Inter,sans-serif;color:var(--giz)}
+.erb{padding:0 16px 16px;display:grid;gap:12px}
+.cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.cmp div{border-radius:12px;padding:10px 12px;background:rgba(229,139,122,.1)}.cmp div+div{background:rgba(124,211,161,.1)}
+.lab{display:block;font-size:13px;color:var(--mut);margin-bottom:2px}.cmp b{font-size:19px;color:var(--x)}.cmp div+div b{color:var(--ok)}
+.bx p{font-size:17px;line-height:1.5}.bx p b{color:var(--giz)}
+.rem{border-radius:14px;background:linear-gradient(135deg,#142430,#141618);border:1.5px solid rgba(140,200,230,.45);overflow:hidden}
+.rem img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#16222a;cursor:zoom-in}
+.remt{padding:12px 14px 14px}.remt .lab{color:var(--az);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12.5px}
+.remt b{display:block;font:700 19px/1.25 Sora,Inter,sans-serif;color:var(--giz);margin-bottom:4px}.remt span.d{display:block;font-size:16px;line-height:1.45}
+
+.plano{list-style:none;margin:20px 0 0;padding:0;display:grid;gap:10px}
+.plano li{display:grid;grid-template-columns:34px minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px 14px;color:var(--giz);font-size:17px;line-height:1.3}
+.plano i{font:800 15px/32px Sora,Inter,sans-serif;font-style:normal;width:32px;height:32px;border-radius:50%;background:var(--az);color:#0D0E0F;text-align:center}
+.plano em{font-style:normal;font-size:14px;color:var(--az);white-space:nowrap}
+.dia{margin-top:14px;font-size:17px;color:var(--tx)}.dia b{color:var(--giz)}
+
+.brid{display:grid;gap:22px;align-items:center}
+.pont{margin-top:24px;border-radius:18px;padding:20px 18px;background:linear-gradient(135deg,#142430,#141618);border:1.5px solid rgba(140,200,230,.45)}
+.pont h3{font-size:23px;margin-bottom:8px}.pont p{font-size:17px;line-height:1.5}.ganho{margin:12px 0 16px;padding:10px 12px;border-radius:10px;background:rgba(140,200,230,.12)}.ganho b{color:var(--giz)}
+.pont .btn{font-size:17px;padding:16px 14px}
+.vert{display:table;margin:14px auto 2px;font-size:15px}
+.recg{display:grid;gap:22px;align-items:center}
+.dev{display:block;width:100%;height:auto;border-radius:16px;box-shadow:0 26px 60px rgba(0,0,0,.5)}
+.stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:26px}
+.stat{background:var(--bg2);border:1px solid var(--line);border-bottom:2px solid var(--az);border-radius:14px;padding:16px 12px;text-align:center}
+.stat b{display:block;font:800 36px/1 Sora,Inter,sans-serif;color:var(--az)}.stat span{display:block;margin-top:6px;font-size:14px;line-height:1.35;color:var(--mut)}
+
+.lcar{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:20px calc(-1*max(18px,env(safe-area-inset-left,0px))) 0;padding:4px max(18px,env(safe-area-inset-left,0px)) 12px;scrollbar-width:none}
+.lcar::-webkit-scrollbar{display:none}
+.lc{flex:0 0 min(76%,290px);scroll-snap-align:center;background:var(--bg2);border:1px solid var(--line);border-radius:14px;overflow:hidden;position:relative}
+.lc.p{border-color:var(--az)}
+.lc img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:#16222a;cursor:zoom-in}
+.lc div{padding:10px 12px 12px}.lc b{display:block;color:var(--giz);font-size:16px;line-height:1.3}.lc span{font-size:14px;color:var(--mut)}
+.lc em{position:absolute;top:8px;left:8px;font:800 12px Sora,Inter,sans-serif;font-style:normal;color:#0D0E0F;background:var(--az);border-radius:8px;padding:4px 9px}
+.dica{font-size:14px;color:var(--mut);margin-top:2px}
+
+.kit{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:22px}
+.ki{background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:8px 8px 12px;line-height:1.3;position:relative}
+.ki img{display:block;width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:8px;background:#fff;cursor:zoom-in;margin-bottom:9px}
+.ki b{display:block;font-size:16px;color:var(--giz);padding:0 4px}.ki span{display:block;font-size:14px;color:var(--mut);padding:2px 4px 0}
+.ki em{font:800 11px Sora,Inter,sans-serif;font-style:normal;color:#0D0E0F;background:var(--az);border-radius:6px;padding:2px 6px;vertical-align:1px;text-transform:uppercase}
+
+.offer{background:var(--cream);color:var(--ink);border-radius:24px;padding:24px 20px;display:grid;gap:22px;box-shadow:0 0 0 7px rgba(140,200,230,.25),0 34px 80px rgba(0,0,0,.5)}
+.offer h2{color:var(--ink)}.offer .eyebrow{color:var(--az2)}
+.stack{list-style:none;margin:6px 0 0;padding:0}
+.stack li{display:flex;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px dashed #C6CED3;font-size:17px;line-height:1.35}.stack li::before{content:"✓";color:var(--az2);font-weight:800}
+.price{text-align:center}.aut{margin-top:14px;font-size:14px;line-height:1.45;color:#4E555B}
+.tim{font-size:14px;color:#4E555B;margin-bottom:8px}
+.timer{display:flex;justify-content:center;gap:8px;margin:0 0 16px}
+.timer div{flex:1;max-width:76px;background:var(--ink);color:var(--cream);border-radius:10px;padding:7px 4px}
+.timer b{display:block;font:800 23px/1.15 Sora,Inter,sans-serif;font-variant-numeric:tabular-nums}.timer span{font-size:11.5px;color:#A3AAAF}
+.de{position:relative;display:inline-block;color:#5E656A;font-size:18px}.de::after{content:"";position:absolute;left:-4px;right:-4px;top:52%;height:2px;background:#B3412E}
+.por{font-family:Sora,Inter,sans-serif;font-weight:800;font-size:58px;line-height:1.05;color:var(--ink);display:flex;justify-content:center;align-items:baseline;gap:6px}.por small{font-size:23px}
+.parc{font-size:14px;color:#4E555B;margin:4px 0 14px}
+.price .btn{width:100%;background:var(--ink);color:var(--cream);box-shadow:0 10px 30px rgba(30,33,36,.25)}
+.cup{margin-top:12px;border:2px dashed var(--az2);background:#E8F4FA;border-radius:12px;padding:9px 12px;font-size:14.5px;line-height:1.3}
+.cup b{font-family:Sora,Inter,sans-serif;letter-spacing:.09em;font-size:15px}
+.mini{font-size:13px;color:#5E656A;margin-top:10px}
+.gar{display:flex;gap:14px;align-items:center;margin-top:18px;font-size:15.5px;line-height:1.4}
+.gar .s{flex:0 0 66px;height:66px;border-radius:50%;border:3px solid var(--az2);display:flex;align-items:center;justify-content:center;font:800 14px/1 Sora,Inter,sans-serif;color:var(--az2);text-align:center}
+
+#oferta,#recebe{scroll-margin-top:64px}
+details.fq{background:var(--bg2);border-radius:14px;padding:15px 18px;margin:10px 0;border:1px solid var(--line)}
+details.fq[open]{border-color:rgba(140,200,230,.35)}
+details.fq summary{cursor:pointer;font-weight:700;color:var(--giz);list-style:none;display:flex;justify-content:space-between;gap:12px;font-size:17px;line-height:1.35}
+details.fq summary::-webkit-details-marker{display:none}details.fq summary::after{content:"+";color:var(--az);font-size:22px;line-height:1;transition:transform .3s var(--ease)}details.fq[open] summary::after{transform:rotate(45deg)}
+details.fq p{color:var(--tx);margin-top:8px;font-size:16.5px;line-height:1.5}
+.fim2{text-align:center}.fim2 .btn{margin-top:14px}.fim2 p{margin-top:14px;font-size:15px;color:var(--mut)}
+footer{padding:22px 0 calc(96px + env(safe-area-inset-bottom,0px));color:#7D8388;font-size:13px;line-height:1.5;text-align:center}
+.rq footer,#ftq{padding-bottom:24px}
+.flut{position:fixed;left:0;right:0;bottom:0;z-index:30;background:rgba(13,14,15,.96);border-top:1px solid rgba(140,200,230,.35);padding:10px max(14px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(14px,env(safe-area-inset-left,0px));display:flex;justify-content:space-between;gap:12px;align-items:center;transform:translateY(110%);transition:transform .45s var(--ease)}
+.flut.show{transform:none}
+.flut .p{color:var(--giz);font:800 19px/1.15 Sora,Inter,sans-serif}.flut .p s{color:var(--mut);font:400 13px Inter,sans-serif;margin-right:5px}.flut .p small{display:block;font:500 12px Inter,sans-serif;color:var(--mut);margin-top:2px}
+.flut .btn{padding:12px 16px;font-size:15px;flex:none}
+.modal{position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.88);display:flex;align-items:center;justify-content:center;padding:16px;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal.on{opacity:1;pointer-events:auto}
+.mbox{position:relative;max-width:560px;width:100%;max-height:90vh;overflow:auto;border-radius:12px;background:#16222a}.mbox img{width:100%;display:block}
+.fx{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;width:44px;height:44px;border-radius:50%;border:0;background:var(--az);font-size:26px;line-height:1;cursor:pointer;z-index:61;color:#0D0E0F}
+.anim .rv{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .9s var(--ease)}.anim .rv.in{opacity:1;transform:none}
+@media(min-width:760px){
+ body{font-size:18px}
+ .dg{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:44px;align-items:center}
+ .erros{grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+ .brid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px}
+ .stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .kit{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .lcar{margin-inline:0;padding-inline:0}
+ .offer{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);grid-template-areas:'oh price' 'ob price';padding:40px;column-gap:40px;row-gap:12px;align-items:center}.oh{grid-area:oh;align-self:end}.ob{grid-area:ob;align-self:start}.price{grid-area:price}
+ .recg{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:44px}
+ .lcar{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}.dica{display:none}
+ .pont{padding:24px}
+ .paper{padding:28px 30px}
+}
+@media(max-width:380px){.brand span{font-size:14px}.row{grid-template-columns:minmax(0,1fr) 64px 32px}.por{font-size:50px}.qnav .btn.gh{flex-basis:92px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+</style></head>
+<body class="rq">
+<header class="bar"><div class="w" id="barw">
+<span class="brand"><svg viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="52" width="66" height="26" rx="5" transform="rotate(-4 50 65)" fill="#8CC8E6" opacity=".34"/><rect x="6" y="6" width="88" height="88" rx="18" stroke="#F4F1E8" stroke-width="6"/><path d="M26 74 L74 74 L26 26 Z" stroke="#F4F1E8" stroke-width="6"/><path d="M74 74 L26 26" stroke="#8CC8E6" stroke-width="7"/><path d="M26 62 L38 62 L38 74" stroke="#F4F1E8" stroke-width="4"/><path d="M58 74 A16 16 0 0 1 62.7 62.7" stroke="#F4F1E8" stroke-width="4"/></svg><span>Questão Ilustrada</span></span>
+<span class="topd" id="topd">Teste grátis</span>
+</div></header>
+
+<main>
+<section id="ini"><div class="w">
+<div class="eyebrow">Teste grátis · matemática do ENEM</div>
+<h1>Descubra o que você <span class="mk in">mais erra</span>.</h1>
+<p class="lead">5 questões reais do ENEM, uma de cada assunto. No fim, você vê <b>na hora</b> o que errou e como corrigir.</p>
+<div class="ini3"><div><b>5</b><span>questões</span></div><div><b>15</b><span>minutos</span></div><div><b>R$ 0</b><span>sem cadastro</span></div></div>
+<button class="btn full" id="go">Começar o teste <span>→</span></button>
+<p class="nota" style="margin-top:12px;text-align:center" id="contn" hidden>Você parou em uma questão. Suas respostas continuam salvas neste aparelho.</p>
+<ol class="pas">
+<li><i>1</i><div><b>Resolva como na prova</b><span>Papel e caneta na mão. Sem pesquisar.</span></div></li>
+<li><i>2</i><div><b>Veja onde errou e por quê</b><span>O diagnóstico aponta o assunto e o provável motivo do erro.</span></div></li>
+<li><i>3</i><div><b>Saiba como corrigir</b><span>Ele indica a lista de saturação certa para cada erro.</span></div></li>
+</ol>
+</div></section>
+
+<section id="qz" hidden><div class="w">
+<div class="qh"><b id="pos"></b><span id="ori"></span></div>
+<div class="dots" id="dots"></div>
+<div class="paper" id="en"></div>
+<p class="ask">Marque uma alternativa:</p>
+<div id="alts"></div>
 </div>
-<p class="src">Cinco questões mostram só uma amostra. O diagnóstico completo mede cada assunto com mais questões.</p>
+<div class="qnav"><div class="w"><button class="btn gh" id="bk">Voltar</button><button class="btn" id="nx" disabled>Próxima</button></div></div>
 </section>
+
+<section id="calc" hidden><div class="w"><div class="eyebrow">Só um instante</div><h1>Montando seu <span class="mk in">diagnóstico</span></h1>
+<ul class="calc"><li>Corrigindo as 5 questões</li><li>Separando por assunto</li><li>Escolhendo as listas certas</li></ul></div></section>
+
+<div id="fim" hidden>
+<section class="hdiag"><div class="w wl dg">
+ <div class="rv">
+  <div class="eyebrow">Seu diagnóstico</div>
+  <h1 id="nota"></h1>
+  <div class="score"><div class="ring" id="ring" role="img"><svg viewBox="0 0 110 110"><circle class="t" cx="55" cy="55" r="45"/><circle class="v" cx="55" cy="55" r="45" id="rv"/></svg><div id="rtx"></div></div><p id="msg"></p></div>
+ </div>
+ <div class="pan rv pre" id="pan"><div class="panb">questaoilustrada.com · resultado</div><div class="panc"><div class="pant">Acertos por assunto</div><div id="lista"></div><p class="amos">Uma questão por assunto mostra só uma amostra. A Prova Diagnóstico completa mede cada assunto com mais questões.</p></div></div>
+</div></section>
+
+<section class="sc" id="sErr"><div class="w wl">
+ <div class="rv"><div class="eyebrow">O que corrigir</div><h2 id="errh"></h2><p id="errp"></p></div>
+ <div class="erros" id="erros"></div>
+</div></section>
+
+<section class="sc" id="sPlan"><div class="w">
+ <div class="rv" id="pl1"><div class="eyebrow">Seu plano</div><h2>A ordem para corrigir seus <span class="mk">erros</span></h2>
+ <ol class="plano" id="plano"></ol>
+ <p class="dia" id="dia"></p></div>
+ <div class="pont rv">
+  <h3 id="brh"></h3>
+  <p id="brp"></p>
+  <p class="ganho" id="ganho"><b>Por ter feito o teste, você ganhou 22% de desconto.</b> O Combo sai por R$ 29,56 até 14/11.</p>
+  <a class="btn full buy" data-w="plano" href="https://pay.kiwify.com.br/ExLvoff"><span id="ctap">Quero corrigir meus erros</span> <span>→</span></a>
+  <a class="lk vert" href="#recebe">Ver tudo o que vem no Combo ↓</a>
+ </div>
+</div></section>
+
+<section class="sc" id="recebe"><div class="w wl">
+ <div class="recg"><div class="rv"><div class="eyebrow">O que você recebe</div><h2>Tudo em PDF, <span class="mk">na hora</span>.</h2><p>Acesso imediato na área de membros. As páginas abaixo são reais: toque em uma imagem para ampliar.</p></div>
+ <div class="rv"><img class="dev" src="combo-plataforma.webp" alt="Combo ENEM: diagnóstico no celular, listas de saturação, simulado e flashcards" loading="lazy" width="1200" height="1000"></div></div>
+ <h3 style="margin-top:26px">7 Listas de Saturação · 209 questões</h3>
+ <div class="lcar rv" id="lcar"></div>
+ <p class="dica">Deslize para ver as 7 listas →</p>
+ <h3 style="margin-top:30px">E mais</h3>
+ <div class="kit rv">
+  <div class="ki"><img src="pg-prova.webp" data-z alt="Página da Prova Diagnóstico" loading="lazy" width="1240" height="1754"><b>Prova Diagnóstico completa</b><span>30 questões e nota por assunto</span></div>
+  <div class="ki"><img src="diag-resultado.webp" data-z alt="Exemplo do resultado do diagnóstico completo" loading="lazy" width="1200" height="1180"><b>Ordem de estudo</b><span>Quantas questões fazer por dia</span></div>
+  <div class="ki"><img src="pg-enem-1.webp" data-z alt="Capa do simulado de geometria" loading="lazy" width="1240" height="1754"><b>Simulado de geometria</b><span>45 questões do ENEM</span></div>
+  <div class="ki"><img src="pg-estr-2.webp" data-z alt="Página do guia de estratégia de prova" loading="lazy" width="1240" height="1754"><b>Estratégia de prova</b><span>TRI, tempo e chute</span></div>
+  <div class="ki"><img src="pg-folha.webp" data-z alt="Folha de fórmulas" loading="lazy" width="1240" height="1754"><b>Folha de fórmulas</b><span>Para reler na véspera</span></div>
+  <div class="ki"><img src="fc-34-f.webp" data-z alt="Flashcard de geometria" loading="lazy" width="540" height="960"><b>80 Flashcards <em>bônus</em></b><span>Celular, impresso ou Anki</span></div>
+ </div>
+</div></section>
+
+<section class="sc" id="oferta"><div class="w wl">
+ <div class="offer rv">
+  <div class="oh"><div class="eyebrow">Combo ENEM</div><h2 id="ofh">Corrija o que você errou</h2></div>
+  <div class="price">
+   <div id="cb1"><div class="tim">Seu desconto acaba em</div><div class="timer" id="timer"><div><b>--</b><span>dias</span></div><div><b>--</b><span>horas</span></div><div><b>--</b><span>min</span></div><div><b>--</b><span>seg</span></div></div><span class="de">R$ 37,90</span></div>
+   <div class="por"><small>R$</small><span id="pv">29,56</span></div>
+   <div class="parc"><span id="pq">cerca de R$ 0,14 por questão · </span>Pix ou cartão</div>
+   <a class="btn buy" data-w="oferta" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM <span>→</span></a>
+   <p class="cup" id="cb2">Cupom <b>DIAGNOSTICO</b> já aplicado</p>
+   <p class="mini">PDF com acesso imediato · pagamento seguro pela Kiwify</p>
+  </div>
+  <div class="ob">
+   <ul class="stack"><li>Prova Diagnóstico completa, com 30 questões e nota por assunto</li><li id="st2">7 Listas de Saturação (209 questões reais do ENEM)</li><li>Simulado de geometria (45 questões)</li><li>Estratégia de prova + folha de fórmulas</li><li>Bônus: 80 Flashcards de Geometria</li></ul>
+   <div class="gar"><div class="s">7<br>dias</div><span><b>Garantia incondicional.</b> Se não for para você, peça o reembolso em até 7 dias e devolvemos 100%.</span></div>
+   <p class="aut">Do Questão Ilustrada, canal de matemática para vestibular com mais de 850 mil visualizações em um mês no Instagram.</p>
+  </div>
+ </div>
+</div></section>
+
+<section class="sc" style="padding-top:20px"><div class="w">
+ <h2 class="rv">Perguntas frequentes</h2>
+ <details class="fq"><summary>O que é uma lista de saturação?</summary><p>É uma lista com muitas questões de um único assunto, do jeito que cai no ENEM. Você faz até o erro sumir. Cada lista começa com as fórmulas e as pegadinhas do assunto e termina com o gabarito e o quadro "Meu controle".</p></details>
+ <details class="fq"><summary>As questões são do ENEM mesmo?</summary><p>Sim. Todas são de provas regulares do ENEM, com o gabarito oficial do INEP.</p></details>
+ <details class="fq"><summary>Como recebo?</summary><p>Logo após o pagamento, você entra na área de membros da Kiwify e baixa os PDFs.</p></details>
+ <details class="fq"><summary>Começo atrasado. Ainda dá tempo?</summary><p>Dá. A Prova Diagnóstico calcula quantas questões fazer por dia com os dias que faltam. Comece pelas listas marcadas como prioridade.</p></details>
+ <details class="fq"><summary>Posso ver uma lista antes de comprar?</summary><p>Pode. Abra a <a class="lk" href="amostras/amostra-lista-de-saturacao.pdf" target="_blank" rel="noopener">amostra da lista em PDF</a> ou veja a <a class="lk" href="/comboenem">página completa do Combo ENEM</a>.</p></details>
+</div></section>
+
+<section class="sc fim2"><div class="w">
+ <h2 id="f2h">Agora você sabe o que treinar.</h2>
+ <a class="btn full buy" data-w="fim" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM <span>→</span></a>
+ <div class="trust" style="justify-content:center"><span>Acesso imediato</span><span>Garantia de 7 dias</span><span>Pagamento seguro</span></div>
+ <p><a class="lk" href="#" id="ref">Refazer o teste</a></p>
+</div></section>
+</div>
 </main>
-<p class="src">Questões da aplicação regular do ENEM 2024 (INEP), caderno azul. Gabarito oficial.</p>
-</div>
+<footer id="ftq"><div class="w">Questões da aplicação regular do ENEM 2024 (INEP), caderno azul, com gabarito oficial. © 2026 Questão Ilustrada · @questaoilustrada</div></footer>
+<div class="flut" id="flut"><span class="p"><s id="fs">R$ 37,90</s><span id="fv">R$ 29,56</span><small id="fm">com cupom · garantia de 7 dias</small></span><a class="btn buy" data-w="barra" href="https://pay.kiwify.com.br/ExLvoff">Quero o combo</a></div>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Página ampliada"><button class="fx" id="mx" aria-label="Fechar">×</button><div class="mbox"><img id="mi" alt=""></div></div>
+
 <script>
 (()=>{
 const fr=(a,b)=>'<span class="fr"><span>'+a+'</span><span>'+b+'</span></span>';
+const LI=[,{t:'Geometria plana',q:37},{t:'Geometria espacial',q:31},{t:'Porcentagem e juros',q:27},{t:'Razão, proporção e grandezas',q:30},{t:'Estatística e leitura de gráficos',q:28},{t:'Probabilidade e contagem',q:30},{t:'Funções e gráficos',q:26}];
 const Q=[
-{n:154,t:'Estatística e gráficos',l:5,q:28,c:'C',e:'<p>Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo.</p><p>O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais.</p><table><tr><th>Tipo de serviço</th><th>Tempo necessário para a leitura completa do contrato (em minuto)</th></tr><tr><td>A</td><td>36</td></tr><tr><td>B</td><td>17</td></tr><tr><td>C</td><td>27</td></tr><tr><td>D</td><td>13</td></tr><tr><td>E</td><td>13</td></tr><tr><td>F</td><td>13</td></tr></table><p class="src">ROMERO, L. Não li e concordo. Superinteressante, n. 307, ago. 2012 (adaptado).</p><p>O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente,</p>',a:['13,0.','15,0.','19,8.','20,0.','23,3.']},
-{n:160,t:'Porcentagem e juros',l:3,q:27,c:'D',e:'<p>Uma piscina tem capacidade de 2 500 000 litros. Seu sistema de abastecimento foi regulado para ter uma vazão constante de 6 000 litros de água por minuto. O mesmo sistema foi instalado em uma segunda piscina, com capacidade de 2 750 000 litros, e regulado para ter uma vazão, também constante, capaz de enchê-la em um tempo 20% maior que o gasto para encher a primeira piscina.</p><p>A vazão do sistema de abastecimento da segunda piscina, em litro por minuto, é</p>',a:['8 250.','7 920.','6 545.','5 500.','5 280.']},
-{n:146,t:'Geometria plana',l:1,q:37,c:'B',e:'<p>Um fazendeiro pretende construir um galinheiro ocupando uma região plana de formato retangular, com lados de comprimentos <i>L</i> metro e <i>C</i> metro. Os lados serão cercados por telas de tipos diferentes. Nos lados de comprimento <i>L</i> metro, será utilizada uma tela cujo metro linear custa R$ 20,00, enquanto, nos outros dois lados, uma que custa R$ 15,00. O fazendeiro quer gastar, no máximo, R$ 6 000,00 na compra de toda a tela necessária para o galinheiro, e deseja que o galinheiro tenha a maior área possível.</p><p>Qual será a medida, em metro, do maior lado do galinheiro?</p>',a:['85','100','175','200','350']},
-{n:165,t:'Probabilidade e contagem',l:6,q:30,c:'B',e:'<p>Para melhorar o fluxo de ônibus em uma avenida que tem dois semáforos, a prefeitura reduzirá o tempo em que cada sinal ficará vermelho, que atualmente é de 15 segundos a cada 60 segundos. Admita que o instante de chegada de um ônibus a cada semáforo é aleatório.</p><p>O engenheiro de tráfego da prefeitura calculou a probabilidade de um ônibus encontrar cada um deles vermelho, obtendo '+fr(15,60)+'. A partir daí, estabeleceu uma mesma redução na quantidade do tempo, em segundo, em que cada sinal ficará vermelho, de maneira que a probabilidade de um ônibus encontrar ambos os sinais vermelhos numa mesma viagem seja igual a '+fr(4,100)+', considerando os eventos independentes.</p><p>Para isso, a redução do tempo em que o sinal ficará vermelho, em segundo, estabelecida pelo engenheiro foi de</p>',a:['1,35.','3,00.','9,00.','12,60.','13,80.']},
-{n:149,t:'Geometria espacial',l:2,q:31,c:'E',e:'<p>Em uma empresa é comercializado um produto em embalagens em formato de cilindro circular reto, com raio medindo 3 cm, e altura medindo 15 cm. Essa empresa planeja comercializar o mesmo produto em embalagens em formato de cubo, com capacidade igual a 80% da capacidade da embalagem cilíndrica utilizada atualmente.</p><p>Use 3 como valor aproximado para π.</p><p>A medida da aresta da nova embalagem, em centímetro, deve ser</p>',a:['6','18','6√<span class="rd">6</span>','6∛<span class="rd">6</span>','3∛<span class="rd">12</span>']}
+{n:154,t:'Estatística e gráficos',l:5,c:'C',e:'<p>Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo.</p><p>O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais.</p><table><tr><th>Tipo de serviço</th><th>Tempo necessário para a leitura completa do contrato (em minuto)</th></tr><tr><td>A</td><td>36</td></tr><tr><td>B</td><td>17</td></tr><tr><td>C</td><td>27</td></tr><tr><td>D</td><td>13</td></tr><tr><td>E</td><td>13</td></tr><tr><td>F</td><td>13</td></tr></table><p class="src">ROMERO, L. Não li e concordo. Superinteressante, n. 307, ago. 2012 (adaptado).</p><p>O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente,</p>',a:['13,0.','15,0.','19,8.','20,0.','23,3.'],
+ s:'Média é a soma dividida pela quantidade: <b>119 ÷ 6 ≈ 19,8</b>.',
+ w:{A:'13,0 é a <b>moda</b>, o valor que mais se repete. A questão pede a média.',B:'15,0 é a <b>mediana</b>, o valor do meio. A questão pede a média.',D:'20,0 arredonda demais. A questão pede uma casa decimal.',E:'23,3 aparece quando o 13 entra só uma vez na soma. Ele se repete 3 vezes.'}},
+{n:160,t:'Porcentagem e juros',l:3,c:'D',e:'<p>Uma piscina tem capacidade de 2 500 000 litros. Seu sistema de abastecimento foi regulado para ter uma vazão constante de 6 000 litros de água por minuto. O mesmo sistema foi instalado em uma segunda piscina, com capacidade de 2 750 000 litros, e regulado para ter uma vazão, também constante, capaz de enchê-la em um tempo 20% maior que o gasto para encher a primeira piscina.</p><p>A vazão do sistema de abastecimento da segunda piscina, em litro por minuto, é</p>',a:['8 250.','7 920.','6 545.','5 500.','5 280.'],
+ s:'Tempo da 1ª piscina: 2 500 000 ÷ 6 000. Com 20% a mais, 500 minutos. Vazão: <b>2 750 000 ÷ 500 = 5 500</b>.',
+ w:{A:'8 250 sai de um tempo 20% <b>menor</b>. Tempo 20% maior é × 1,2.',B:'7 920 sai de multiplicar por 1,2. Tempo maior significa vazão menor: o 1,2 divide.',C:'6 545 sai de inverter os fatores: a conta certa é 6 000 × 1,1 ÷ 1,2.',E:'5 280 sai de tirar 20% da vazão. Dividir por 1,2 não é o mesmo que multiplicar por 0,8.'}},
+{n:146,t:'Geometria plana',l:1,c:'B',e:'<p>Um fazendeiro pretende construir um galinheiro ocupando uma região plana de formato retangular, com lados de comprimentos <i>L</i> metro e <i>C</i> metro. Os lados serão cercados por telas de tipos diferentes. Nos lados de comprimento <i>L</i> metro, será utilizada uma tela cujo metro linear custa R$ 20,00, enquanto, nos outros dois lados, uma que custa R$ 15,00. O fazendeiro quer gastar, no máximo, R$ 6 000,00 na compra de toda a tela necessária para o galinheiro, e deseja que o galinheiro tenha a maior área possível.</p><p>Qual será a medida, em metro, do maior lado do galinheiro?</p>',a:['85','100','175','200','350'],
+ s:'Custo: 40L + 30C = 6 000. A maior área vem com metade do dinheiro em cada tipo de tela: 40L = 3 000 e 30C = 3 000. Assim, L = 75 e <b>C = 100</b>.',
+ w:{A:'85 vem de supor um quadrado (L = C). Com preços diferentes, a maior área não é um quadrado.',C:'175 é a soma dos dois lados (75 + 100). A pergunta é só o maior lado.',D:'200 sai ao contar um lado de cada tipo. O retângulo tem 2 lados L e 2 lados C.',E:'350 sai ao contar um lado de cada tipo e ainda somar os lados (150 + 200).'}},
+{n:165,t:'Probabilidade e contagem',l:6,c:'B',e:'<p>Para melhorar o fluxo de ônibus em uma avenida que tem dois semáforos, a prefeitura reduzirá o tempo em que cada sinal ficará vermelho, que atualmente é de 15 segundos a cada 60 segundos. Admita que o instante de chegada de um ônibus a cada semáforo é aleatório.</p><p>O engenheiro de tráfego da prefeitura calculou a probabilidade de um ônibus encontrar cada um deles vermelho, obtendo '+fr(15,60)+'. A partir daí, estabeleceu uma mesma redução na quantidade do tempo, em segundo, em que cada sinal ficará vermelho, de maneira que a probabilidade de um ônibus encontrar ambos os sinais vermelhos numa mesma viagem seja igual a '+fr(4,100)+', considerando os eventos independentes.</p><p>Para isso, a redução do tempo em que o sinal ficará vermelho, em segundo, estabelecida pelo engenheiro foi de</p>',a:['1,35.','3,00.','9,00.','12,60.','13,80.'],
+ s:'Eventos independentes: p × p = 4/100, logo p = 2/10. Vermelho por 0,2 × 60 = 12 s. Redução: <b>15 − 12 = 3 s</b>.',
+ w:{A:'1,35 vem de subtrair as chances dos dois sinais juntos antes de tirar a raiz.',C:'9 sai com p = 1/10. Mas a raiz de 4/100 é 2/10.',D:'12,6 sai sem tirar a raiz. 4/100 é a chance dos dois sinais juntos, não de um só.',E:'13,8 sai de dividir 4/100 por 2. Eventos independentes se multiplicam: aqui é raiz, não metade.'}},
+{n:149,t:'Geometria espacial',l:2,c:'E',e:'<p>Em uma empresa é comercializado um produto em embalagens em formato de cilindro circular reto, com raio medindo 3 cm, e altura medindo 15 cm. Essa empresa planeja comercializar o mesmo produto em embalagens em formato de cubo, com capacidade igual a 80% da capacidade da embalagem cilíndrica utilizada atualmente.</p><p>Use 3 como valor aproximado para π.</p><p>A medida da aresta da nova embalagem, em centímetro, deve ser</p>',a:['6','18','6√<span class="rd">6</span>','6∛<span class="rd">6</span>','3∛<span class="rd">12</span>'],
+ s:'Cilindro: 3 × 3² × 15 = 405 cm³. 80% disso: 324 cm³. Aresta: <b>∛324 = ∛(27 × 12) = 3∛12</b>.',
+ w:{A:'6 sai de usar 2r em vez de r² na área da base. O raio vai ao quadrado.',B:'18 é a raiz <b>quadrada</b> de 324. No cubo, V = a³: a raiz é cúbica.',C:'6√6 é uma raiz quadrada. No cubo a raiz é cúbica, e a base usa r².',D:'6∛6 sai de usar o diâmetro (6) no lugar do raio (3).'}}
 ];
-const $=i=>document.getElementById(i),L='ABCDE',R=[];let i=0,sel=null;
-const ev=n=>{try{window.clarity&&window.clarity('event',n)}catch(e){}};
-function show(){const q=Q[i];sel=null;$('nx').disabled=true;$('nx').textContent=i<Q.length-1?'Próxima':'Ver meu resultado';
- $('pos').textContent='Questão '+(i+1)+' de '+Q.length;$('ori').textContent='ENEM 2024 · Q'+q.n;$('pb').style.width=(i/Q.length*100)+'%';$('en').innerHTML=q.e;
- const b=$('alts');b.innerHTML='';q.a.forEach((t,k)=>{const x=document.createElement('button');x.className='alt';x.type='button';x.innerHTML='<b>'+L[k]+'</b><span>'+t+'</span>';x.onclick=()=>{sel=L[k];[...b.children].forEach(c=>c.classList.remove('on'));x.classList.add('on');$('nx').disabled=false};b.appendChild(x)});scrollTo(0,0)}
-function fim(){$('qz').hidden=true;$('fim').hidden=false;scrollTo(0,0);ev('teste_fim');
- const ac=Q.filter((q,k)=>R[k]===q.c).length,er=Q.filter((q,k)=>R[k]!==q.c);
- $('nota').textContent='Você acertou '+ac+' de '+Q.length;
- $('msg').textContent=er.length===0?'Você acertou todas. Agora vale medir os assuntos que estas 5 questões não cobriram.':er.length===1?'Você errou um assunto. É por ele que a sua revisão deve começar.':'Comece a revisão pelos assuntos marcados com X.';
- $('lista').innerHTML=Q.map((q,k)=>{const ok=R[k]===q.c;return '<div class="res"><i class="'+(ok?'y':'n')+'">'+(ok?'✓':'✕')+'</i><div><b>'+q.t+'</b><small>Sua resposta: '+R[k]+' · Certa: '+q.c+'</small>'+(ok?'':'<small>Como melhorar: fazer a Lista '+q.l+' do Combo ENEM, com '+q.q+' questões reais só desse assunto.</small>')+'</div></div>'}).join('');
- $('ofh').textContent=er.length?'Agora treine o que você errou':'Agora veja o resto da prova';
- $('ofp').textContent=er.length?'No Combo ENEM, você faz o teste completo e recebe a ordem exata das listas para corrigir esses erros até 15/11.':'No Combo ENEM, o teste completo mostra sua nota por assunto e a ordem das listas até 15/11.';
- const ativo=Date.now()<Date.parse('2026-11-15T02:59:59Z');$('cb').hidden=!ativo;$('sb').hidden=ativo;
- if(ativo){const u=new URL($('buy').href);u.searchParams.set('coupon','DIAGNOSTICO');$('buy').href=u.toString()}}
-$('go').onclick=()=>{$('ini').hidden=true;$('qz').hidden=false;ev('teste_inicio');show()};
-$('nx').onclick=()=>{R[i]=sel;i++;i<Q.length?show():fim()};
-$('cp').onclick=()=>{try{navigator.clipboard.writeText('DIAGNOSTICO');$('cp').textContent='Copiado'}catch(e){}};
+const $=i=>document.getElementById(i),$$=s=>[...document.querySelectorAll(s)],L='ABCDE',CH='qi_teste_v2';
+const FIMC=Date.parse('2026-11-15T02:59:59Z'),ativo=Date.now()<FIMC;
+let R=[],i=0,sel=null;
+const ev=(n)=>{try{window.clarity&&window.clarity('event',n)}catch(e){}};
+const grava=d=>{try{localStorage.setItem(CH,JSON.stringify({R,i,d:!!d}))}catch(e){}};
+const le=()=>{try{return JSON.parse(localStorage.getItem(CH)||'null')}catch(e){return null}};
+const txt=h=>h.replace(/<span class="rd">(.*?)<\/span>/g,'$1').replace(/\.$/,'');
+
+/* ---- prova ---- */
+function dots(){const d=$('dots');d.innerHTML='';Q.forEach((q,k)=>{const b=document.createElement('button');b.type='button';b.textContent=k+1;b.setAttribute('aria-label','Questão '+(k+1));if(R[k])b.classList.add('fe');if(k===i)b.classList.add('at');b.disabled=k>0&&!R[k-1]&&k!==i;b.onclick=()=>ir(k);d.appendChild(b)})}
+function ir(k){if(sel)R[i]=sel;i=k;grava();show()}
+function show(){const q=Q[i];sel=R[i]||null;$('nx').disabled=!sel;$('bk').disabled=i===0;$('nx').textContent=i<Q.length-1?'Próxima →':'Ver meu diagnóstico →';
+ $('pos').textContent='Questão '+(i+1)+' de '+Q.length;$('ori').textContent='ENEM 2024 · Q'+q.n;dots();$('en').innerHTML=q.e;
+ const b=$('alts');b.innerHTML='';q.a.forEach((t,k)=>{const x=document.createElement('button');x.className='alt'+(sel===L[k]?' on':'');x.type='button';x.innerHTML='<b>'+L[k]+'</b><span>'+t+'</span>';x.onclick=()=>{sel=L[k];R[i]=sel;grava();[...b.children].forEach(c=>c.classList.remove('on'));x.classList.add('on');$('nx').disabled=false;dots()};b.appendChild(x)});scrollTo({top:0,behavior:'auto'})}
+const prox=()=>{if(!sel)return;R[i]=sel;ev('teste_q'+(i+1));if(i<Q.length-1)return ir(i+1);grava(true);$('qz').hidden=true;$('calc').hidden=false;scrollTo({top:0,behavior:'auto'});setTimeout(()=>{$('calc').hidden=true;fim()},1500)};
+$('nx').onclick=prox;$('bk').onclick=()=>{if(i>0)ir(i-1)};
+$('go').onclick=()=>{$('ini').hidden=true;$('qz').hidden=false;$('ftq').style.paddingBottom='';ev('teste_inicio');show()};
+let x0=null,y0=null;$('qz').addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+$('qz').addEventListener('touchend',e=>{if(x0===null)return;const t=e.changedTouches[0],dx=t.clientX-x0,dy=t.clientY-y0;x0=null;if(Math.abs(dx)<80||Math.abs(dx)<Math.abs(dy)*2)return;if(dx<0){if(i<Q.length-1&&sel)prox()}else if(i>0)ir(i-1)},{passive:true});
+
+/* ---- diagnóstico ---- */
+function fim(){grava(true);document.body.classList.remove('rq');document.documentElement.classList.add('anim');
+ $('barw').classList.add('wl');$('ini').hidden=true;$('qz').hidden=true;$('fim').hidden=false;setTimeout(()=>{window.QI_SEM_AVISO=0;window.qiAviso&&window.qiAviso()},7000);$('ftq').style.paddingBottom='';
+ scrollTo({top:0,behavior:'auto'});ev('teste_fim');
+ const ok=k=>R[k]===Q[k].c,ac=Q.filter((q,k)=>ok(k)).length,er=Q.map((q,k)=>k).filter(k=>!ok(k)),n=er.length;
+ try{window.clarity&&window.clarity('set','teste_acertos',String(ac))}catch(e){}
+ const nomes=er.map(k=>Q[k].t);
+ $('nota').innerHTML=n===0?'Você acertou as 5. <span class="mk">Agora meça o resto.</span>':n===1?'Seu ponto fraco: <span class="mk">'+nomes[0]+'</span>':'Você está perdendo ponto em <span class="mk">'+n+' assuntos</span>';
+ $('msg').textContent=n===0?'Ótimo sinal. Mas 5 questões não cobrem a prova: razão e proporção e funções ficaram de fora.':n===1?'É por esse assunto que a sua revisão deve começar.':'Isso tem conserto. Agora você sabe por onde começar.';
+ $('rv').style.setProperty('--o',283);$('rtx').innerHTML='<span>'+ac+'<small>/5</small></span>';$('ring').setAttribute('aria-label',ac+' acertos em 5 questões');
+ $('lista').innerHTML=Q.map((q,k)=>{const y=ok(k);return '<div class="row" style="--c:'+(y?'var(--ok)':'var(--x)')+';--w:'+(y?100:8)+'%;--d:'+(.2+k*.1)+'s"><span>'+q.t+'</span><i><u></u></i><b>'+(y?'1/1':'0/1')+'</b></div>'}).join('');
+ setTimeout(()=>{$('rv').style.setProperty('--o',283-283*ac/5);$('pan').classList.remove('pre')},120);
+ /* erros */
+ if(n){$('errh').innerHTML='O que você errou e <span class="mk">como resolver</span>';$('errp').textContent='Para cada erro: o provável motivo, o caminho certo e a lista de saturação do assunto.';
+  $('erros').innerHTML=er.map((k,p)=>{const q=Q[k],m=R[k],li=LI[q.l],a=q.a[L.indexOf(m)],c=q.a[L.indexOf(q.c)];return '<details class="er rv"'+(p<2?' open':'')+'><summary><span class="xi">✕</span><span class="st"><small>ENEM 2024 · Questão '+q.n+'</small><b>'+q.t+'</b></span></summary><div class="erb"><div class="cmp"><div><span class="lab">Você marcou</span><b>'+m+' · '+txt(a)+'</b></div><div><span class="lab">Resposta certa</span><b>'+q.c+' · '+txt(c)+'</b></div></div><div class="bx"><span class="lab">Provável motivo</span><p>'+(q.w[m]||'')+'</p></div><div class="bx"><span class="lab">O caminho certo</span><p>'+q.s+'</p></div><div class="rem"><img src="lista-'+q.l+'.webp" data-z alt="Páginas reais da Lista de Saturação '+q.l+': '+li.t+'" loading="lazy" width="840" height="560"><div class="remt"><span class="lab">Como corrigir</span><b>Lista de Saturação '+q.l+'</b><span class="d">'+li.q+' questões reais do ENEM só de '+li.t.toLowerCase()+'. Faça até o erro sumir.</span></div></div></div></details>'}).join('');
+ }else $('sErr').hidden=true;
+ /* plano */
+ const dias=Math.ceil((FIMC-Date.now())/864e5),tot=er.reduce((t,k)=>t+LI[Q[k].l].q,0);
+ if(n){$('plano').innerHTML=er.map((k,p)=>{const q=Q[k],li=LI[q.l];return '<li><i>'+(p+1)+'</i><span>Lista '+q.l+' · '+li.t+'</span><em>'+li.q+' questões</em></li>'}).join('');
+  $('dia').innerHTML=ativo&&dias>0?'São <b>'+tot+' questões</b>. Até 14/11, dá <b>cerca de '+Math.ceil(tot/dias)+' por dia</b>.':'São <b>'+tot+' questões</b> para treinar.';
+ }else $('pl1').hidden=true;
+ /* ponte */
+ $('brh').textContent=n===1?'Essa lista está no Combo ENEM':n?'Essas '+n+' listas estão no Combo ENEM':'O resto da prova está no Combo ENEM';
+ $('brp').textContent=n?'Ver uma questão resolvida não fixa. Fazer 20, 30 do mesmo assunto, fixa. Cada lista tem só questões reais do ENEM, com gabarito oficial e as fórmulas e pegadinhas do assunto.':'A Prova Diagnóstico completa mede cada assunto em 30 questões e monta a ordem das 7 listas, só com questões reais do ENEM.';
+ $('ctap').textContent=n?'Quero corrigir meus erros':'Quero o Combo ENEM';
+ $('st2').textContent=n?'7 Listas de Saturação, incluindo '+(n===1?'a sua':'as suas '+n)+' (209 questões reais do ENEM)':'7 Listas de Saturação (209 questões reais do ENEM)';
+ $('ofh').textContent=n?'Corrija o que você errou':'Meça o resto da prova';
+ $('f2h').textContent=n?'Agora você sabe o que treinar.':'Agora meça o resto da prova.';
+ /* carrossel das listas: as do plano vêm primeiro */
+ const pri=er.map(k=>Q[k].l),ord=[...pri,...[1,2,3,4,5,6,7].filter(x=>!pri.includes(x))];
+ $('lcar').innerHTML=ord.map(l=>'<div class="lc'+(pri.includes(l)?' p':'')+'">'+(pri.includes(l)?'<em>SEU PLANO</em>':'')+'<img src="lista-'+l+'.webp" data-z alt="Páginas reais da Lista '+l+'" loading="lazy" width="840" height="560"><div><b>Lista '+l+' · '+LI[l].t+'</b><span>'+LI[l].q+' questões</span></div></div>').join('');
+ /* preço */
+ if(!ativo){['cb1','cb2','ganho'].forEach(x=>$(x).hidden=true);$('pv').textContent='37,90';$('pq').textContent='cerca de R$ 0,18 por questão · ';$('fs').hidden=true;$('fv').textContent='R$ 37,90';$('fm').textContent='Garantia de 7 dias';$('topd').textContent='Seu diagnóstico'}
+ else{$$('.buy').forEach(a=>{const u=new URL(a.href);u.searchParams.set('coupon','DIAGNOSTICO');a.href=u.toString()});relogio()}
+ /* movimento */
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('.mk').forEach(m=>m.classList.add('in'));io.unobserve(e.target)}),{threshold:.08,rootMargin:'0px 0px -4% 0px'});
+ $$('#fim .rv').forEach(x=>io.observe(x));
+ $('fim').querySelectorAll('.mk').forEach(m=>{if(!m.closest('.rv'))m.classList.add('in')});
+ const fl=$('flut'),of=$('oferta');const vis=()=>{const r=of.getBoundingClientRect(),na=r.top<innerHeight*.7&&r.bottom>innerHeight*.3;fl.classList.toggle('show',scrollY>320&&!na)};addEventListener('scroll',vis,{passive:true});vis();
+}
+function relogio(){const b=$$('#timer b'),tk=()=>{const s=Math.max(0,(FIMC-Date.now())/1e3|0),v=[s/86400|0,(s%86400)/3600|0,(s%3600)/60|0,s%60];v.forEach((x,k)=>b[k].textContent=String(x).padStart(2,'0'));$('topd').innerHTML='Desconto: <b>'+v[0]+'d '+v[1]+'h</b>'};tk();setInterval(tk,1000)}
+
+$('ref').onclick=e=>{e.preventDefault();try{localStorage.removeItem(CH)}catch(x){}location.href=location.pathname};
+document.addEventListener('click',e=>{const t=e.target;if(t.matches&&t.matches('img[data-z]')){$('mi').src=t.src;$('mi').alt=t.alt;$('modal').classList.add('on')}else if(t.closest&&(t.closest('#mx')||t.id==='modal'||t.id==='mi'))$('modal').classList.remove('on');const a=t.closest&&t.closest('a.buy');if(a)ev('teste_comprar_'+a.dataset.w)});
+addEventListener('keydown',e=>{if(e.key==='Escape')$('modal').classList.remove('on')});
+
+/* volta de onde parou */
+const s=le();
+if(s&&Array.isArray(s.R)){R=s.R;i=Math.min(s.i||0,Q.length-1);if(s.d&&R.filter(Boolean).length===Q.length)fim();else if(R.filter(Boolean).length){$('go').firstChild.textContent='Continuar o teste ';$('contn').hidden=false}}
 })();
 </script>
 <script src="/qi-track.js" defer></script>
