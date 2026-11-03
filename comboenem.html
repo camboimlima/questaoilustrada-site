@@ -507,7 +507,7 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
       <h1 id="h1">Descubra o que você erra. Treine até <span class="mk">fixar</span>.</h1>
       <p class="lead h-in" style="--d:.95s">Faça a <b>Prova Diagnóstico</b> de 30 questões e veja, na hora, <b>quanto você acerta em cada assunto</b> e onde está perdendo ponto. A página monta a ordem do que estudar e quantas questões fazer por dia. Depois, listas de saturação com questões reais do ENEM, até acertar.</p>
       <div class="hpreco h-in" style="--d:1.2s"><span class="de">Curso completo por</span><b>R$ 37,90</b><span class="obs">até a prova de 15/11</span></div>
-      <div class="h-in" style="--d:1.15s;margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="btn mag" href="#oferta">Quero o Combo ENEM <span class="ar">→</span></a><a class="lk" href="#amostras">Ver amostras em PDF ↓</a></div>
+      <div class="h-in" style="--d:1.15s;margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="btn mag" href="#oferta">Quero o Combo ENEM <span class="ar">→</span></a><a class="lk" href="/teste">Fazer o teste grátis de 5 questões →</a></div>
       <div class="trust h-in" style="--d:1.25s"><span>PDF com acesso imediato</span><span>Garantia de 7 dias</span><span>Pagamento seguro Kiwify</span></div>
     </div>
     <div class="kit-hero h-in" style="--d:.6s"><div class="tab" role="img" aria-label="Exemplo do resultado do diagnóstico num tablet: nota de cada assunto e a ordem do que estudar">
@@ -741,7 +741,7 @@ const prog=$('#prog'),flut=$('#flut'),of=$('#oferta'),pkg=$('#pkg'),stp=$('#step
 function prog01(el,a,b){const r=el.getBoundingClientRect(),h=innerHeight;return Math.max(0,Math.min(1,(h*a-r.top)/(r.height+h*(a-b))))}
 let pend=false;function onScroll(){if(pend)return;pend=true;requestAnimationFrame(()=>{pend=false;const d=document.documentElement,y=d.scrollTop;
   prog.style.transform=`scaleX(${y/(d.scrollHeight-d.clientHeight)||0})`;
-  const r=of.getBoundingClientRect();flut.classList.toggle('show',y>700&&(r.top>innerHeight||r.bottom<0));
+  const r=of.getBoundingClientRect();flut.classList.toggle('show',y>380&&(r.top>innerHeight||r.bottom<0));
   if(!RED){pkg.style.setProperty('--p',prog01(pkg,.8,.5).toFixed(3));stp.style.setProperty('--p',prog01(stp,.9,.3).toFixed(3));
     if(y<1200)cons.style.transform=`translateY(${y*.25}px) rotate(${y*.02}deg)`}})}
 addEventListener('scroll',onScroll,{passive:true});onScroll();

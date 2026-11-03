@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Teste grátis de matemática do ENEM · Questão Ilustrada</title>
+<meta name="description" content="5 questões reais do ENEM para descobrir o que você mais erra em matemática.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg">
+<style>
+:root{--bg:#0D0E0F;--bg2:#15171A;--giz:#F4F1E8;--tx:#E6E2D6;--mut:#A9A69C;--az:#8CC8E6;--line:rgba(244,241,232,.14);--ok:#7FD1A0;--bad:#F08A7E}
+*{box-sizing:border-box}html,body{margin:0}
+body{min-height:100vh;background:var(--bg);background-image:linear-gradient(rgba(230,226,214,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(230,226,214,.04) 1px,transparent 1px);background-size:60px 60px;color:var(--tx);font:17px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.w{max-width:640px;margin:0 auto;padding:0 18px 48px}
+header{display:flex;align-items:center;justify-content:space-between;padding:16px 0;color:var(--giz);font-weight:700}
+header small{color:var(--mut);font-weight:500}
+h1,h2{color:var(--giz);line-height:1.15;margin:0 0 12px;letter-spacing:-.02em}
+h1{font-size:clamp(30px,8vw,42px)}h2{font-size:24px}
+.tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--az);font-weight:700;margin:18px 0 8px}
+.card{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+.btn{display:block;width:100%;border:0;border-radius:12px;background:var(--az);color:#0D0E0F;font:700 17px Inter,system-ui,sans-serif;padding:15px 18px;text-align:center;text-decoration:none;cursor:pointer}
+.btn[disabled]{opacity:.4;cursor:default}
+.bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin:6px 0 14px}.bar i{display:block;height:100%;background:var(--az);transition:width .25s}
+.meta{display:flex;justify-content:space-between;color:var(--mut);font-size:14px}
+.en p{margin:0 0 12px}
+.alt{display:flex;gap:12px;align-items:center;width:100%;text-align:left;background:transparent;color:var(--tx);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;margin:8px 0;font:inherit;cursor:pointer}
+.alt b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1.5px solid rgba(244,241,232,.4);color:var(--giz)}
+.alt.on{border-color:var(--az);background:rgba(140,200,230,.1)}.alt.on b{background:var(--az);border-color:var(--az);color:#0D0E0F}
+.alt:focus-visible,.btn:focus-visible{outline:2px solid var(--az);outline-offset:2px}
+table{border-collapse:collapse;margin:0 0 12px;width:100%}th,td{border:1px solid var(--line);padding:6px 10px;text-align:center}
+.src{font-size:13px;color:var(--mut)}
+.fr{display:inline-flex;flex-direction:column;vertical-align:middle;text-align:center;line-height:1.1;margin:0 3px}.fr span:first-child{border-bottom:1px solid currentColor;padding:0 3px}
+.rd{text-decoration:overline}
+.res{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}.res:first-child{border-top:0}
+.res i{font-style:normal;font-weight:800}.res .y{color:var(--ok)}.res .n{color:var(--bad)}
+.res small{display:block;color:var(--mut)}
+.mk{background:linear-gradient(transparent 55%,rgba(140,200,230,.4) 55%,rgba(140,200,230,.4) 92%,transparent 92%)}
+.preco{font-size:15px;color:var(--mut)}.preco s{margin-right:8px}.preco b{font-size:32px;color:var(--giz)}
+.cup{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1.5px dashed var(--az);border-radius:12px;padding:10px 12px;margin:12px 0;font-weight:700;color:var(--giz)}
+.cup button{background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;padding:7px 10px;font:inherit;font-size:14px;cursor:pointer}
+ul{padding-left:20px;margin:8px 0 14px}
+[hidden]{display:none!important}
+</style></head><body><div class="w">
+<header><span>Questão Ilustrada</span><small>Teste grátis</small></header>
+<main id="app">
+<section id="ini">
+<p class="tag">ENEM · matemática</p>
+<h1>Descubra o que você <span class="mk">mais erra</span>.</h1>
+<p>São 5 questões reais do ENEM, uma de cada assunto. No fim, você vê na hora o que errou e como melhorar.</p>
+<div class="card"><b style="color:var(--giz)">Antes de começar</b><ul><li>Tenha papel e caneta por perto.</li><li>Não pesquise: o objetivo é ver onde você está hoje.</li><li>É grátis e não pede cadastro.</li></ul></div>
+<button class="btn" id="go">Começar o teste</button>
+</section>
+<section id="qz" hidden>
+<div class="meta"><span id="pos"></span><span id="ori"></span></div><div class="bar"><i id="pb"></i></div>
+<div class="card"><div class="en" id="en"></div><div id="alts"></div></div>
+<button class="btn" id="nx" disabled>Próxima</button>
+</section>
+<section id="fim" hidden>
+<p class="tag">Seu resultado</p>
+<h1 id="nota"></h1><p id="msg"></p>
+<div class="card" id="lista"></div>
+<div class="card" id="of">
+<h2 id="ofh"></h2><p id="ofp"></p>
+<ul><li>Diagnóstico completo de 30 questões, com nota por assunto</li><li>7 listas de saturação com 209 questões reais do ENEM</li><li>Plano de questões por dia até a prova</li><li>Estratégia de prova, folha de fórmulas e 80 flashcards de geometria</li></ul>
+<div id="cb"><p class="preco"><s>R$ 37,90</s><b>R$ 29,56</b></p>
+<div class="cup"><span>Cupom: DIAGNOSTICO</span><button id="cp">Copiar</button></div><p class="src">Cupom válido até 14/11, às 23h59.</p></div>
+<div id="sb" hidden><p class="preco"><b>R$ 37,90</b></p></div>
+<a class="btn" id="buy" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM</a>
+<p class="src">PDF com acesso imediato · garantia de 7 dias · pagamento pela Kiwify</p>
+</div>
+<p class="src">Cinco questões mostram só uma amostra. O diagnóstico completo mede cada assunto com mais questões.</p>
+</section>
+</main>
+<p class="src">Questões da aplicação regular do ENEM 2024 (INEP), caderno azul. Gabarito oficial.</p>
+</div>
+<script>
+(()=>{
+const fr=(a,b)=>'<span class="fr"><span>'+a+'</span><span>'+b+'</span></span>';
+const Q=[
+{n:154,t:'Estatística e gráficos',l:5,q:28,c:'C',e:'<p>Contratos de vários serviços disponíveis na internet apresentam uma quantidade excessiva de informações. Isso faz com que o tempo necessário para a leitura desses contratos possa ser longo.</p><p>O quadro apresenta uma amostra do tempo considerado necessário para a leitura completa do contrato de alguns serviços digitais.</p><table><tr><th>Tipo de serviço</th><th>Tempo necessário para a leitura completa do contrato (em minuto)</th></tr><tr><td>A</td><td>36</td></tr><tr><td>B</td><td>17</td></tr><tr><td>C</td><td>27</td></tr><tr><td>D</td><td>13</td></tr><tr><td>E</td><td>13</td></tr><tr><td>F</td><td>13</td></tr></table><p class="src">ROMERO, L. Não li e concordo. Superinteressante, n. 307, ago. 2012 (adaptado).</p><p>O tempo médio, em minuto, necessário para a leitura completa de um contrato de serviço dentre os listados no quadro é, com uma casa decimal, aproximadamente,</p>',a:['13,0.','15,0.','19,8.','20,0.','23,3.']},
+{n:160,t:'Porcentagem e juros',l:3,q:27,c:'D',e:'<p>Uma piscina tem capacidade de 2 500 000 litros. Seu sistema de abastecimento foi regulado para ter uma vazão constante de 6 000 litros de água por minuto. O mesmo sistema foi instalado em uma segunda piscina, com capacidade de 2 750 000 litros, e regulado para ter uma vazão, também constante, capaz de enchê-la em um tempo 20% maior que o gasto para encher a primeira piscina.</p><p>A vazão do sistema de abastecimento da segunda piscina, em litro por minuto, é</p>',a:['8 250.','7 920.','6 545.','5 500.','5 280.']},
+{n:146,t:'Geometria plana',l:1,q:37,c:'B',e:'<p>Um fazendeiro pretende construir um galinheiro ocupando uma região plana de formato retangular, com lados de comprimentos <i>L</i> metro e <i>C</i> metro. Os lados serão cercados por telas de tipos diferentes. Nos lados de comprimento <i>L</i> metro, será utilizada uma tela cujo metro linear custa R$ 20,00, enquanto, nos outros dois lados, uma que custa R$ 15,00. O fazendeiro quer gastar, no máximo, R$ 6 000,00 na compra de toda a tela necessária para o galinheiro, e deseja que o galinheiro tenha a maior área possível.</p><p>Qual será a medida, em metro, do maior lado do galinheiro?</p>',a:['85','100','175','200','350']},
+{n:165,t:'Probabilidade e contagem',l:6,q:30,c:'B',e:'<p>Para melhorar o fluxo de ônibus em uma avenida que tem dois semáforos, a prefeitura reduzirá o tempo em que cada sinal ficará vermelho, que atualmente é de 15 segundos a cada 60 segundos. Admita que o instante de chegada de um ônibus a cada semáforo é aleatório.</p><p>O engenheiro de tráfego da prefeitura calculou a probabilidade de um ônibus encontrar cada um deles vermelho, obtendo '+fr(15,60)+'. A partir daí, estabeleceu uma mesma redução na quantidade do tempo, em segundo, em que cada sinal ficará vermelho, de maneira que a probabilidade de um ônibus encontrar ambos os sinais vermelhos numa mesma viagem seja igual a '+fr(4,100)+', considerando os eventos independentes.</p><p>Para isso, a redução do tempo em que o sinal ficará vermelho, em segundo, estabelecida pelo engenheiro foi de</p>',a:['1,35.','3,00.','9,00.','12,60.','13,80.']},
+{n:149,t:'Geometria espacial',l:2,q:31,c:'E',e:'<p>Em uma empresa é comercializado um produto em embalagens em formato de cilindro circular reto, com raio medindo 3 cm, e altura medindo 15 cm. Essa empresa planeja comercializar o mesmo produto em embalagens em formato de cubo, com capacidade igual a 80% da capacidade da embalagem cilíndrica utilizada atualmente.</p><p>Use 3 como valor aproximado para π.</p><p>A medida da aresta da nova embalagem, em centímetro, deve ser</p>',a:['6','18','6√<span class="rd">6</span>','6∛<span class="rd">6</span>','3∛<span class="rd">12</span>']}
+];
+const $=i=>document.getElementById(i),L='ABCDE',R=[];let i=0,sel=null;
+const ev=n=>{try{window.clarity&&window.clarity('event',n)}catch(e){}};
+function show(){const q=Q[i];sel=null;$('nx').disabled=true;$('nx').textContent=i<Q.length-1?'Próxima':'Ver meu resultado';
+ $('pos').textContent='Questão '+(i+1)+' de '+Q.length;$('ori').textContent='ENEM 2024 · Q'+q.n;$('pb').style.width=(i/Q.length*100)+'%';$('en').innerHTML=q.e;
+ const b=$('alts');b.innerHTML='';q.a.forEach((t,k)=>{const x=document.createElement('button');x.className='alt';x.type='button';x.innerHTML='<b>'+L[k]+'</b><span>'+t+'</span>';x.onclick=()=>{sel=L[k];[...b.children].forEach(c=>c.classList.remove('on'));x.classList.add('on');$('nx').disabled=false};b.appendChild(x)});scrollTo(0,0)}
+function fim(){$('qz').hidden=true;$('fim').hidden=false;scrollTo(0,0);ev('teste_fim');
+ const ac=Q.filter((q,k)=>R[k]===q.c).length,er=Q.filter((q,k)=>R[k]!==q.c);
+ $('nota').textContent='Você acertou '+ac+' de '+Q.length;
+ $('msg').textContent=er.length===0?'Você acertou todas. Agora vale medir os assuntos que estas 5 questões não cobriram.':er.length===1?'Você errou um assunto. É por ele que a sua revisão deve começar.':'Comece a revisão pelos assuntos marcados com X.';
+ $('lista').innerHTML=Q.map((q,k)=>{const ok=R[k]===q.c;return '<div class="res"><i class="'+(ok?'y':'n')+'">'+(ok?'✓':'✕')+'</i><div><b>'+q.t+'</b><small>Sua resposta: '+R[k]+' · Certa: '+q.c+'</small>'+(ok?'':'<small>Como melhorar: fazer a Lista '+q.l+' do Combo ENEM, com '+q.q+' questões reais só desse assunto.</small>')+'</div></div>'}).join('');
+ $('ofh').textContent=er.length?'Agora treine o que você errou':'Agora veja o resto da prova';
+ $('ofp').textContent=er.length?'No Combo ENEM, você faz o teste completo e recebe a ordem exata das listas para corrigir esses erros até 15/11.':'No Combo ENEM, o teste completo mostra sua nota por assunto e a ordem das listas até 15/11.';
+ const ativo=Date.now()<Date.parse('2026-11-15T02:59:59Z');$('cb').hidden=!ativo;$('sb').hidden=ativo;
+ if(ativo){const u=new URL($('buy').href);u.searchParams.set('coupon','DIAGNOSTICO');$('buy').href=u.toString()}}
+$('go').onclick=()=>{$('ini').hidden=true;$('qz').hidden=false;ev('teste_inicio');show()};
+$('nx').onclick=()=>{R[i]=sel;i++;i<Q.length?show():fim()};
+$('cp').onclick=()=>{try{navigator.clipboard.writeText('DIAGNOSTICO');$('cp').textContent='Copiado'}catch(e){}};
+})();
+</script>
+<script src="/qi-track.js" defer></script>
+</body></html>

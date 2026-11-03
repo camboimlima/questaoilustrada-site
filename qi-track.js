@@ -80,10 +80,11 @@
   }, true);
 
   /* 5. aviso de privacidade */
-  document.addEventListener('DOMContentLoaded', function(){
-    if (get('qi_consent')) return;
+  function aviso(){
+    if (get('qi_consent') || document.getElementById('qiN')) return;
     var b = document.createElement('div');
-    b.style.cssText='position:fixed;left:12px;right:12px;bottom:12px;z-index:99999;max-width:560px;margin:auto;background:#17191b;color:#E6E2D6;border:1px solid #333;border-radius:12px;padding:12px 14px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px #0008;display:flex;gap:10px;align-items:center;flex-wrap:wrap';
+    var alto = document.getElementById('flut') ? 84 : 12;
+    b.style.cssText='position:fixed;left:12px;right:12px;bottom:'+alto+'px;z-index:99999;max-width:560px;margin:auto;background:#17191b;color:#E6E2D6;border:1px solid #333;border-radius:12px;padding:12px 14px;font:14px/1.4 system-ui,sans-serif;box-shadow:0 6px 24px #0008;display:flex;gap:10px;align-items:center;flex-wrap:wrap';
     b.innerHTML='<span style="flex:1;min-width:200px">Usamos análise anônima de navegação para melhorar o site.</span>'
       +'<button id="qiN" style="background:none;border:1px solid #555;color:#E6E2D6;border-radius:8px;padding:8px 12px;cursor:pointer">Não permitir</button>'
       +'<button id="qiY" style="background:#8CC8E6;border:0;color:#0D0E0F;border-radius:8px;padding:8px 14px;font-weight:700;cursor:pointer">Ok</button>';
@@ -91,5 +92,13 @@
     function done(v){ set('qi_consent',v); applyConsent(v); b.remove(); }
     b.querySelector('#qiY').onclick=function(){done('yes')};
     b.querySelector('#qiN').onclick=function(){done('no')};
+  }
+  /* o aviso espera a pessoa rolar ou 20 s, para não cobrir o botão principal */
+  document.addEventListener('DOMContentLoaded', function(){
+    if (get('qi_consent')) return;
+    var t = setTimeout(aviso, 20000);
+    window.addEventListener('scroll', function f(){
+      if (window.scrollY > 500) { clearTimeout(t); window.removeEventListener('scroll', f); aviso(); }
+    }, {passive:true});
   });
 })();
