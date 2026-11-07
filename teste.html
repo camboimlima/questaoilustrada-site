@@ -207,7 +207,8 @@ footer{padding:22px 0 calc(96px + env(safe-area-inset-bottom,0px));color:#7D8388
 }
 @media(max-width:380px){.brand span{font-size:14px}.row{grid-template-columns:minmax(0,1fr) 64px 32px}.por{font-size:50px}.qnav .btn.gh{flex-basis:92px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
-</style></head>
+</style><script src="/oferta.js"></script>
+</head>
 <body class="rq">
 <header class="bar"><div class="w" id="barw">
 <span class="brand"><svg viewBox="0 0 100 100" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="17" y="52" width="66" height="26" rx="5" transform="rotate(-4 50 65)" fill="#8CC8E6" opacity=".34"/><rect x="6" y="6" width="88" height="88" rx="18" stroke="#F4F1E8" stroke-width="6"/><path d="M26 74 L74 74 L26 26 Z" stroke="#F4F1E8" stroke-width="6"/><path d="M74 74 L26 26" stroke="#8CC8E6" stroke-width="7"/><path d="M26 62 L38 62 L38 74" stroke="#F4F1E8" stroke-width="4"/><path d="M58 74 A16 16 0 0 1 62.7 62.7" stroke="#F4F1E8" stroke-width="4"/></svg><span>Questão Ilustrada</span></span>
@@ -349,7 +350,7 @@ const Q=[
  w:{A:'6 sai de usar 2r em vez de r² na área da base. O raio vai ao quadrado.',B:'18 é a raiz <b>quadrada</b> de 324. No cubo, V = a³: a raiz é cúbica.',C:'6√6 é uma raiz quadrada. No cubo a raiz é cúbica, e a base usa r².',D:'6∛6 sai de usar o diâmetro (6) no lugar do raio (3).'}}
 ];
 const $=i=>document.getElementById(i),$$=s=>[...document.querySelectorAll(s)],L='ABCDE',CH='qi_teste_v2';
-const FIMC=Date.parse('2026-11-15T02:59:59Z'),ativo=Date.now()<FIMC;
+const FIMC=Date.parse('2026-11-15T02:59:59Z'),ativo=Date.now()<FIMC,OF=!!(window.QI_OFERTA&&window.QI_OFERTA.on);
 let R=[],i=0,sel=null;
 const ev=(n)=>{try{window.clarity&&window.clarity('event',n)}catch(e){}};
 const grava=d=>{try{localStorage.setItem(CH,JSON.stringify({R,i,d:!!d}))}catch(e){}};
@@ -401,7 +402,9 @@ function fim(){grava(true);document.body.classList.remove('rq');document.documen
  $('lcar').innerHTML=ord.map(l=>'<div class="lc'+(pri.includes(l)?' p':'')+'">'+(pri.includes(l)?'<em>SEU PLANO</em>':'')+'<img src="lista-'+l+'.webp" data-z alt="Páginas reais da Lista '+l+'" loading="lazy" width="840" height="560"><div><b>Lista '+l+' · '+LI[l].t+'</b><span>'+LI[l].q+' questões</span></div></div>').join('');
  /* preço */
  if(!ativo){['cb1','cb2','ganho'].forEach(x=>$(x).hidden=true);$('pv').textContent='37,90';$('pq').textContent='cerca de R$ 0,18 por questão · ';$('fs').hidden=true;$('fv').textContent='R$ 37,90';$('fm').textContent='Garantia de 7 dias';$('topd').textContent='Seu diagnóstico'}
- else{$$('.buy').forEach(a=>{const u=new URL(a.href);u.searchParams.set('coupon','DIAGNOSTICO');a.href=u.toString()});relogio()}
+ else{$$('.buy').forEach(a=>{const u=new URL(a.href);u.searchParams.set('coupon',OF?'RETAFINAL':'DIAGNOSTICO');a.href=u.toString()});
+  if(OF){$('ganho').innerHTML='<b>Semana da Matemática: o Combo está pela metade.</b> Sai por R$ 18,95 até sábado, 14/11, 23h59.';$('pv').textContent='18,95';$('pq').textContent='cerca de R$ 0,09 por questão · ';$('fv').textContent='R$ 18,95';$('fm').textContent='metade do preço · garantia de 7 dias';$('cb2').innerHTML='Metade do preço <b>já aplicada</b>';const tm=document.querySelector('#cb1 .tim');if(tm)tm.textContent='A metade do preço acaba em'}
+  relogio()}
  /* movimento */
  const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add('in');e.target.querySelectorAll('.mk').forEach(m=>m.classList.add('in'));io.unobserve(e.target)}),{threshold:.08,rootMargin:'0px 0px -4% 0px'});
  $$('#fim .rv').forEach(x=>io.observe(x));

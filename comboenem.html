@@ -8,6 +8,7 @@
 <meta property="og:description" content="Descubra o que você erra e treine até fixar: diagnóstico + listas de saturação do ENEM até 15/11.">
 <meta property="og:image" content="https://questaoilustrada.com/capa-combo.jpg">
 <link rel="icon" href="/favicon.svg">
+<script src="/oferta.js"></script>
 </head>
 <body style="margin:0">
 <title>Combo ENEM · Questão Ilustrada</title>
@@ -342,6 +343,8 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
 @media(max-width:860px){.sem-video .kit-hero{order:3}.sem-video .kit-hero .kit3d{width:min(82%,340px)}}
 
 /* preço no herói */
+.ofx{display:inline-block;font:800 12px Sora,Inter,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#0D0E0F;background:var(--az);border-radius:6px;padding:4px 9px;margin-bottom:8px}
+.hpreco s{color:var(--mut)}
 .hpreco{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:4px 0 -8px}
 .hpreco .de{color:var(--mut);font-size:15px}.hpreco b{font-family:Sora,Inter,sans-serif;font-size:34px;color:var(--giz);line-height:1}.hpreco .obs{font-size:13px;color:var(--az)}
 .flut .p small{display:block;font:500 11.5px Inter,sans-serif;color:var(--mut)}
@@ -506,7 +509,7 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
       <div class="eyebrow h-in" style="--d:.1s">Combo ENEM · diagnóstico de matemática</div>
       <h1 id="h1">Descubra o que você erra. Treine até <span class="mk">fixar</span>.</h1>
       <p class="lead h-in" style="--d:.95s">Faça a <b>Prova Diagnóstico</b> de 30 questões e veja, na hora, <b>quanto você acerta em cada assunto</b> e onde está perdendo ponto. A página monta a ordem do que estudar e quantas questões fazer por dia. Depois, listas de saturação com questões reais do ENEM, até acertar.</p>
-      <div class="hpreco h-in" style="--d:1.2s"><span class="de">Curso completo por</span><b>R$ 37,90</b><span class="obs">até a prova de 15/11</span></div>
+      <div class="hpreco h-in" style="--d:1.2s" data-of="<span class=de>De <s>R$ 37,90</s> por</span><b>R$ 18,95</b><span class=obs>metade do preço até sáb, 14/11</span>"><span class="de">Curso completo por</span><b>R$ 37,90</b><span class="obs">até a prova de 15/11</span></div>
       <div class="h-in" style="--d:1.15s;margin-top:26px;display:flex;gap:18px;align-items:center;flex-wrap:wrap"><a class="btn mag" href="#oferta">Quero o Combo ENEM <span class="ar">→</span></a><a class="lk" href="/teste">Fazer o teste grátis de 5 questões →</a></div>
       <div class="trust h-in" style="--d:1.25s"><span>PDF com acesso imediato</span><span>Garantia de 7 dias</span><span>Pagamento seguro Kiwify</span></div>
     </div>
@@ -669,9 +672,10 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
       <div style="font-size:14px;color:#4E555B;margin-bottom:8px">A prova de Matemática começa em</div>
       <div class="timer" id="timer"><div><b>--</b><span>dias</span></div><div><b>--</b><span>horas</span></div><div><b>--</b><span>min</span></div><div><b>--</b><span>seg</span></div></div>
       <div style="font-size:14px;color:#4E555B;font-weight:600">Diagnóstico + Saturação + Reta final</div>
-      <div class="por"><small>R$</small><span class="v">37,90</span></div>
-      <div class="parc">à vista no Pix ou parcelado no cartão</div>
-      <a class="btn mag" id="comprar" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM</a>
+      <div class="qi-of" hidden style="margin-top:6px"><span class="ofx">Metade do preço até sábado</span><br><span class="de">de R$ 37,90</span></div>
+      <div class="por"><small>R$</small><span class="v" data-of="18,95">37,90</span></div>
+      <div class="parc" data-of="até sáb, 14/11, 23h59 · Pix ou cartão">à vista no Pix ou parcelado no cartão</div>
+      <a class="btn mag" id="comprar" href="https://pay.kiwify.com.br/ExLvoff" data-of="Quero o Combo pela metade">Quero o Combo ENEM</a>
       <p class="mini">Domingo, 15/11, às 13h30. Comece hoje pelo diagnóstico.</p>
     </div>
   </div>
@@ -697,7 +701,7 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
     <div class="eyebrow">Combo ENEM</div>
     <h2>Pronto para descobrir o que você <span class="mk">erra</span>?</h2>
     <ul class="fimlist"><li>Diagnóstico com 30 questões</li><li>7 listas de saturação, 209 questões do ENEM</li><li>Estratégia de prova e folha de fórmulas</li><li>Bônus: 80 flashcards de geometria</li></ul>
-    <div class="fimpreco"><b>R$ 37,90</b><span>Curso completo</span></div>
+    <div class="fimpreco" data-of="<s>R$ 37,90</s><b>R$ 18,95</b><span>metade do preço até sáb, 14/11</span>"><b>R$ 37,90</b><span>Curso completo</span></div>
     <a class="btn mag" href="https://pay.kiwify.com.br/ExLvoff">Quero o Combo ENEM <span class="ar">→</span></a>
   </div>
 </div></section>
@@ -705,7 +709,7 @@ footer{padding-block:50px calc(90px + env(safe-area-inset-bottom,0px));color:#6c
 
 <footer><div class="w">© 2026 Questão Ilustrada · @questaoilustrada · Questões do ENEM (INEP); textos, figuras e resoluções da Questão Ilustrada. Material de uso pessoal, proibida a revenda.</div></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Página do material"><div class="mbox"><button class="fx" aria-label="Fechar">×</button><div id="mcont"></div></div></div>
-<div class="flut" id="flut"><span class="p">R$ 37,90<small>Combo ENEM · 7 dias de garantia</small></span><a class="btn sm" href="#oferta">Quero o combo</a></div>
+<div class="flut" id="flut"><span class="p" data-of="<s style=opacity:.6;font-weight:600>R$ 37,90</s> R$ 18,95<small>pela metade · acaba em <span class=qi-falta></span></small>">R$ 37,90<small>Combo ENEM · 7 dias de garantia</small></span><a class="btn sm" href="#oferta">Quero o combo</a></div>
 
 <script>
 (()=>{
